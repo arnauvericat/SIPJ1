@@ -11,3 +11,4 @@ title: "Sprint 1: Avaluació, Instal·lació i Configuració de Xarxes i Sisteme
 ## Particions i punts de restauració
 ## Condifuració basica de la xarxa
 ## Comandes generals i instal·lació d'aplicacions
+
