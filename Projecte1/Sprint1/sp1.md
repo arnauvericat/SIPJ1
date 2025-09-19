@@ -7,6 +7,8 @@ title: "Sprint 1: Avaluació, Instal·lació i Configuració de Xarxes i Sisteme
 
 ## Virtualització i instal·lació del SP Ubuntu
 ### Llicenciament
+
+Explicar la llicència GNU Linux
 ## Instal·lacions duals i Gestors d'arrencada
 ## Particions i punts de restauració
 ## Condifuració basica de la xarxa
