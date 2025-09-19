@@ -28,3 +28,6 @@ Se debe dar crédito adecuado, proporcionar un enlace a esta licencia e indicar 
 ---
 
 © 2025 Mireia Consarnau
+
+
+Explicar GNU i crear la nostra llicència
