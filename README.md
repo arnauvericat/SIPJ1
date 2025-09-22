@@ -1,22 +1,19 @@
-# Curso de Machine Learning
+# Curso de Sistemes Informàtics
 
-Este repositorio contiene el material del curso de Machine Learning desarrollado por Mireia Consarnau.
+Aquest repositori contè tot el contingut del nostre projecte de Sistemes Informàtics.
 
-## Contenido
+## Contingut
 
-- Índice y enlaces a las unidades del curso.
-- Recursos en formato PDF, vídeos, y Google Colab.
-- Código y ejemplos prácticos.
+- Índex amb enllaços de cada sprint del projecte 1.
+- Carpetes amb separacions per sprint, amb contingut de cada part.
 
-## Uso
-
-Este repositorio está preparado para ser publicado con GitHub Pages.  
-Puedes ver la versión web pública en:  
+## Us
+Aquest es un projecte per al nostre mòdul de Sistemes Informàtics, es una web on podem accedir a travès d'aquest enllaç.
 https://arnauvericat.github.io/SIPJ1/
 
-## Licencia
+## Llicència
 
-El contenido está bajo licencia [Creative Commons BY-NC-SA 3.0 ES](LICENSE.md).
+Aquets contingut està protegit per la llicència. (LICENSE.md).
 
 
 ---
