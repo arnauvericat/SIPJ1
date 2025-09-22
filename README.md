@@ -18,5 +18,5 @@ Aquets contingut està protegit per la llicència. (LICENSE.md).
 
 ---
 
-© 2025 Mireia Consarnau
+© 2025 Arnau Vericat
 
