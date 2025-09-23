@@ -1,4 +1,4 @@
-# Licencia Creative Commons Reconocimiento - No Comercial - Compartir Igual 3.0 España (CC BY-NC-SA 3.0)
+# Licencia Creative Commons Reconocimiento - No Comercial - Compartir Igual 4.0 España (CC BY-NC-SA 3.0)
 
 <a href="https://arnauvericat.github.io/SIPJ1/">Sistemes Informatics</a> © 2025 by <a href="https://github.com/arnauvericathttps://github.com/arnauvericat">Arnau Vericat</a> aquest treball està licenciat amb la llicènica de <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
 
