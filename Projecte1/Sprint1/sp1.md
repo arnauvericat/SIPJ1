@@ -18,3 +18,4 @@ La llicència GPL (General Public License) és una llicència de programari lliu
 ## Condifuració basica de la xarxa
 ## Comandes generals i instal·lació d'aplicacions
 
+<img width="878" height="575" alt="image" src="https://github.com/user-attachments/assets/c9631aed-6507-480d-8405-ab65f516b9ce" />
