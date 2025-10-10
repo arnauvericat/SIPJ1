@@ -42,3 +42,5 @@ La llicència GPL (General Public License) és una llicència de programari lliu
 <img width="501" height="549" alt="image" src="https://github.com/user-attachments/assets/628c269a-c0d3-485f-b4ba-2984b4d38a3d" />
 
 <img width="803" height="631" alt="image" src="https://github.com/user-attachments/assets/c87f6045-41e0-4801-8855-fe8a1f4031e4" />
+
+<img width="954" height="797" alt="image" src="https://github.com/user-attachments/assets/0b57ce22-54b3-4153-b702-cb3489406885" />
