@@ -15,7 +15,7 @@ La llicència GPL (General Public License) és una llicència de programari lliu
 
 ## Instal·lacions duals i Gestors d'arrencada
 ## Particions i punts de restauració
-## Condifuració basica de la xarxa
+## Configuració basica de la xarxa
 ## Comandes generals i instal·lació d'aplicacions
 ## Instantànies
 
