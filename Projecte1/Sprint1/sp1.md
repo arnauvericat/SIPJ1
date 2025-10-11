@@ -24,9 +24,11 @@ Amb un disc de 25 GB en aquest cas ens serà suficient.
 
 <img width="878" height="575" alt="image" src="https://github.com/user-attachments/assets/c9631aed-6507-480d-8405-ab65f516b9ce" />
 
-Dins del nostre ubuntu, buscarem el nostre disc nou, això ho podem fer amb la comanda sudo fdisk -l, una vegada veiguem quin es el disc que hem ficat, que en aquest cas es sdb, farem la comanda seüent.
+Dins del nostre ubuntu, buscarem el nostre disc nou, això ho podem fer amb la comanda sudo fdisk -l, una vegada veiguem quin es el disc que hem ficat, que en aquest cas es sdb, farem la comanda següent.
 
 <img width="738" height="204" alt="image" src="https://github.com/user-attachments/assets/a80ac162-2b37-4693-a93d-8900f842d191" />
+
+Amb aquesta comanda particionarem el nostre disc, en aquest cas farem servir tot el disc aixi que ficarem els 25GB que tenim de disc, això ho farem fent la comanda fdisk /dev/sdb, una vegada dins del particionador ficarem una 
 
 <img width="855" height="188" alt="image" src="https://github.com/user-attachments/assets/0f2a9819-abf8-4066-9bdf-d418eace50ad" />
 
