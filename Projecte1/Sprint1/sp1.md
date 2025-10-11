@@ -19,6 +19,8 @@ La llicència GPL (General Public License) és una llicència de programari lliu
 ## Comandes generals i instal·lació d'aplicacions
 ## Instantànies
 
+Per a crear instantanies dintre dels nostres sistemes operatius el primer que haurem de fer es crear un disc nou sol per a ficar les nostres instantanies, si sol tenim un disc podem crear una partició i afegir-les allí.
+Amb un disc de 25 GB en aquest cas ens serà suficient.
 <img width="878" height="575" alt="image" src="https://github.com/user-attachments/assets/c9631aed-6507-480d-8405-ab65f516b9ce" />
 
 <img width="738" height="204" alt="image" src="https://github.com/user-attachments/assets/a80ac162-2b37-4693-a93d-8900f842d191" />
