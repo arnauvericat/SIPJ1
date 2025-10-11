@@ -28,7 +28,7 @@ Dins del nostre ubuntu, buscarem el nostre disc nou, això ho podem fer amb la c
 
 <img width="738" height="204" alt="image" src="https://github.com/user-attachments/assets/a80ac162-2b37-4693-a93d-8900f842d191" />
 
-Amb aquesta comanda particionarem el nostre disc, en aquest cas farem servir tot el disc aixi que ficarem els 25GB que tenim de disc, això ho farem fent la comanda fdisk /dev/sdb, una vegada dins del particionador ficarem una 
+Amb aquesta comanda particionarem el nostre disc, en aquest cas farem servir tot el disc aixi que ficarem els 25GB que tenim de disc, això ho farem fent la comanda fdisk /dev/sdb, una vegada dins del particionador ficarem una n per a crear una "new partition", després una p per a ferla primaria i clicarem enter per a tot el següent, això utilitzarà tot l'espai del disc per defecte, una vegada creada clicarem a w per a sortir.
 
 <img width="855" height="188" alt="image" src="https://github.com/user-attachments/assets/0f2a9819-abf8-4066-9bdf-d418eace50ad" />
 
