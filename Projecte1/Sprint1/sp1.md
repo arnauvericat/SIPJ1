@@ -1,3 +1,5 @@
+
+
 ---
 
 layout: default
@@ -5,7 +7,7 @@ title: "Sprint 1: Avaluació, Instal·lació i Configuració de Xarxes i Sisteme
 
 ---
 
-## Virtualització i instal·lació del SP Ubuntu
+## Virtualització i instal·lació del SO Ubuntu
 ### Llicenciament
 
 #### Llicència de GNU Linux
@@ -27,6 +29,8 @@ La llicència GPL (General Public License) és una llicència de programari lliu
 
 
 ## Comandes generals i instal·lació d'aplicacions
+<img width="724" height="148" alt="image" src="https://github.com/user-attachments/assets/6be7a761-f05c-4118-983f-205279778d4c" />
+
 ## Instantànies
 
 Per a crear instantanies dintre dels nostres sistemes operatius el primer que haurem de fer es crear un disc nou sol per a ficar les nostres instantanies, si sol tenim un disc podem crear una partició i afegir-les allí.
