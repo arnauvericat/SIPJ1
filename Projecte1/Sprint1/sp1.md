@@ -16,6 +16,16 @@ La llicència GPL (General Public License) és una llicència de programari lliu
 ## Instal·lacions duals i Gestors d'arrencada
 ## Particions i punts de restauració
 ## Configuració basica de la xarxa
+<img width="582" height="445" alt="image" src="https://github.com/user-attachments/assets/10d472bc-c3af-44a2-a3e3-454eeabb5e60" />
+<img width="925" height="546" alt="image" src="https://github.com/user-attachments/assets/c1df19fa-ca38-4962-a3ec-33bb9b93aa22" />
+<img width="595" height="189" alt="image" src="https://github.com/user-attachments/assets/bf993c24-a150-426b-a276-3f4264d27143" />
+<img width="576" height="466" alt="image" src="https://github.com/user-attachments/assets/6306fcfc-1fef-4156-9466-fc3b8be76e97" />
+<img width="730" height="479" alt="image" src="https://github.com/user-attachments/assets/1145e954-775a-403f-befa-a95e34cd3901" />
+<img width="728" height="308" alt="image" src="https://github.com/user-attachments/assets/9f170759-74a6-4aba-87c5-36d7efe3bc45" />
+<img width="823" height="118" alt="image" src="https://github.com/user-attachments/assets/f25c694f-bfc3-4d34-bb73-c7526cf4b4a4" />
+
+
+
 ## Comandes generals i instal·lació d'aplicacions
 ## Instantànies
 
