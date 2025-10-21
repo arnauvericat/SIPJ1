@@ -17,6 +17,7 @@ La llicència GPL (General Public License) és una llicència de programari lliu
 
 ## Instal·lacions duals i Gestors d'arrencada
 <img width="634" height="327" alt="image" src="https://github.com/user-attachments/assets/ba0b9d92-67da-4aa0-995a-41ee22a29d05" />
+
 <img width="265" height="37" alt="image" src="https://github.com/user-attachments/assets/a95f68f2-032e-4a34-a3b0-4d9750ce1aca" />
 <img width="641" height="478" alt="image" src="https://github.com/user-attachments/assets/323f719e-17b8-4b3a-93c0-2784e2abe9be" />
 <img width="641" height="478" alt="image" src="https://github.com/user-attachments/assets/2e8ada4e-9db7-4297-a9e5-f52381a8d96c" />
