@@ -24,6 +24,8 @@ La llicència GPL (General Public License) és una llicència de programari lliu
 
 <img width="641" height="478" alt="image" src="https://github.com/user-attachments/assets/2e8ada4e-9db7-4297-a9e5-f52381a8d96c" />
 
+<img width="618" height="79" alt="image" src="https://github.com/user-attachments/assets/f7124db8-5cb0-43af-b5a9-d657344815ec" />
+
 
 
 ## Particions i punts de restauració
