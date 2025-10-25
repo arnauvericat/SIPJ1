@@ -58,11 +58,11 @@ Com hem fet avans entrem a la nostra CD-ROM ara del super_grub2.
 
 ![image](https://github.com/user-attachments/assets/2340efe2-a2f2-4f3c-8bf1-8012a314b35b)
 
-Dins de la rom anirem a **"Detect and show boot methods"** i buscarem el nostre ubuntu. 
+Dins de la rom anirem a **"Detect and show boot methods"** i buscarem el nostre ubuntu. <br>
 
 ![image](https://github.com/user-attachments/assets/92f16c1d-a8c9-463a-9f83-61968e5b69b9)
 
-<!-- Las siguientes imágenes se mantienen en el mismo formato -->
+
 ![image](https://github.com/user-attachments/assets/f7124db8-5cb0-43af-b5a9-d657344815ec)
 ![image](https://github.com/user-attachments/assets/535767ad-4359-4c5a-8ea8-011cbe51f43e)
 ![image](https://github.com/user-attachments/assets/29738e40-ba0b-488f-a16e-286788a95e58)
@@ -73,7 +73,8 @@ Per a crear instantanies dintre dels nostres sistemes operatius el primer que ha
 
 ![image](https://github.com/user-attachments/assets/c9631aed-6507-480d-8405-ab65f516b9ce)
 
-<!-- Resto de imágenes en el mismo estilo... -->
+![image](https://github.com/user-attachments/assets/538e6318-7462-48f9-a868-2cf8757045fe) />
+
 
 ## Configuració basica de la xarxa
 ![image](https://github.com/user-attachments/assets/10d472bc-c3af-44a2-a3e3-454eeabb5e60)
