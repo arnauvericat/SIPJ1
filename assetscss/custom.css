@@ -50,6 +50,12 @@ li {
     margin-top: 10px; /* opcional, afegeix espai entre el text i la imatge */
 }
 
+.contenidor {
+  margin: 20px; /* Màrge per tots costats */
+  padding: 10px; /* Espai interior */
+  border: 1px solid black;
+}
+
 
 /* Responsividad básica */
 @media (max-width: 600px) {
