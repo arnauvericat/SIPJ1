@@ -153,4 +153,15 @@ I com podem veure podem sortir a l'exterior com si ho haguessim configurat norma
 
 ## Comandes generals i instal·lació d'aplicacions
 
-<img src="https://github.com/user-attachments/assets/6be7a761-f05c-4118-983f-205279778d4c" style="display:block; margin-top:10px;" alt="imatge">
+Per a instal·lar una versió anterior a la mes nova el primer que hem de fer es mirar quina versió s'instal·larà i quines versions anteriors funcionen, això ho podem fer amb la comanda `apt-cache policy` i el paquet que volem instal·lar, en aquest cas ho faré en python3.
+
+<img width="818" height="206" alt="image" src="https://github.com/user-attachments/assets/63fd8fbc-88fe-4724-a974-1732f8878d00" />
+
+Una vegada sabem quina versió volem ens dirigim a la carpeta `/etc/apt/preferences.d/` i creem un fitxer que es dirà `python3.pref` allí ficarem el contingut següent.
+
+<img width="818" height="206" alt="image" src="https://github.com/user-attachments/assets/aeb7bcd9-7215-4d85-82cf-6735d05a2749" />
+
+I tornem a fer la comanda `apt-cache policy python3` per a veure si s'ha canviat la versió. Una vegada fet això instal·lem el paquet i ja ho tindrem
+
+<img width="818" height="206" alt="image" src="https://github.com/user-attachments/assets/0536aabf-dab3-4ce2-8bd9-c79ecadf0045" />
+
