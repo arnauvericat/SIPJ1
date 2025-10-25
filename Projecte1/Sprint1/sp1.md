@@ -70,7 +70,7 @@ Despres farem un update per a que es quedi guardat i ens dirigirem al arxiu **/e
 
 ![image](https://github.com/user-attachments/assets/535767ad-4359-4c5a-8ea8-011cbe51f43e)
 
-Aqui dins ficarem o buscarem i descomentarem la linea **GRUB_DISABLE_OS_PROBER=false** i ja podrem accedir als nostres dos sistemes.
+Aqui dins ficarem o buscarem i descomentarem la linea **GRUB_DISABLE_OS_PROBER=false** i ja podrem accedir als nostres dos sistemes. <br>
 ![image](https://github.com/user-attachments/assets/29738e40-ba0b-488f-a16e-286788a95e58)
 
 Es veuria tal que així.
