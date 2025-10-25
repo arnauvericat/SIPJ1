@@ -1,3 +1,9 @@
+---
+layout: default
+title: Licencia
+---
+
+
 # Licencia Creative Commons Reconocimiento - No Comercial - Compartir Igual 4.0 España (CC BY-NC-SA 4.0)
 
 [Sistemes Informatics](https://arnauvericat.github.io/SIPJ1/) © 2025 by [Arnau Vericat](https://github.com/arnauvericat)  
