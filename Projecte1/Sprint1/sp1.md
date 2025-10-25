@@ -58,14 +58,24 @@ Com hem fet avans entrem a la nostra CD-ROM ara del super_grub2.
 
 ![image](https://github.com/user-attachments/assets/2340efe2-a2f2-4f3c-8bf1-8012a314b35b)
 
-Dins de la rom anirem a **"Detect and show boot methods"** i buscarem el nostre ubuntu. <br>
+Dins de la rom anirem a **"Detect and show boot methods"** i buscarem el nostre ubuntu. 
 
 ![image](https://github.com/user-attachments/assets/92f16c1d-a8c9-463a-9f83-61968e5b69b9)
 
+Ara dins del nostre ubunt farem la comanda grub-install dins del nostre disc que es el /dev/sdb.
 
 ![image](https://github.com/user-attachments/assets/f7124db8-5cb0-43af-b5a9-d657344815ec)
+
+Despres farem un update per a que es quedi guardat i ens dirigirem al arxiu **/etc/default/grub**
+
 ![image](https://github.com/user-attachments/assets/535767ad-4359-4c5a-8ea8-011cbe51f43e)
+
+Aqui dins ficarem o buscarem i descomentarem la linea **GRUB_DISABLE_OS_PROBER=false** i ja podrem accedir als nostres dos sistemes.
 ![image](https://github.com/user-attachments/assets/29738e40-ba0b-488f-a16e-286788a95e58)
+
+Es veuria tal que així.
+
+![image](https://github.com/user-attachments/assets/703edf6d-cdd1-4051-909d-963843430a13)
 
 ## Particions i punts de restauració
 
