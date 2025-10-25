@@ -87,18 +87,19 @@ Una vegada creada entrarem al nostre ubuntu i farem la comanda següent `fdisk /
 <img src="https://github.com/user-attachments/assets/15ff3d2a-2251-4e3f-ac1e-e44cf8113e09" style="display:block; margin-top:10px;" alt="imatge"/>
 
 Dins del disc clicarem la **N** per a crear una `new partition`.
+Després clicarem la **P** per a fer una partició `primary`. Als següents apartats farem `intro` ja que no son importants per a aquest cas.
 
 <img src="https://github.com/user-attachments/assets/7efbf78b-05a8-477c-a8c3-880e08c7aa63" style="display:block; margin-top:10px;" alt="imatge"/>
 
-Després clicarem la **P** per a fer una partició `primary`. Als següents apartats farem `intro` ja que no son importants per a aquest cas.
+Despres de sortir del particionador farem la comanda `mkfs.ext4 /dev/sdb1` que en aquest cas sdb1 es la nova particio del disc que ocupa els 25GB, aquesta comanda server per a crear un gestor de fitxers `mkfs` amb el format `ext4` dins del disc `/dev/sdb1`.
 
 <img src="https://github.com/user-attachments/assets/5a7f98f9-4418-460e-beaf-86ee149fc1fb" style="display:block; margin-top:10px;" alt="imatge"/>
 
-Despres de sortir del particionador farem la comanda `mkfs.ext4 /dev/sdb1` que en aquest cas sdb1 es la nova particio del disc que ocupa els 25GB, aquesta comanda server per a crear un gestor de fitxers `mkfs` amb el format `ext4` dins del disc `/dev/sdb1`.
+Ara ja estem llistos per a descarregar **Timeshift** que es el que ens servirà per a crear els nostres punts de restauració.
 
 <img src="https://github.com/user-attachments/assets/0ae94e1d-248b-4195-84eb-273907103bec" style="display:block; margin-top:10px;" alt="imatge"/>
 
-Ara ja estem llistos per a descarregar **Timeshift** que es el que ens servirà per a crear els nostres punts de restauració.
+
 
 <img src="https://github.com/user-attachments/assets/538e6318-7462-48f9-a868-2cf8757045fe" style="display:block; margin-top:10px;" alt="imatge">
 
