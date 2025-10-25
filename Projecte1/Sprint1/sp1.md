@@ -121,13 +121,15 @@ I crearem la instantània.
 
 <img src="https://github.com/user-attachments/assets/796a21a8-4749-4b6b-9c3a-999bfe601c59" style="display:block; margin-top:10px;" alt="imatge">
 
-
+Ara sol queda restaurar en cas de que ens pase algo al sistema i ja estaria, aqui tenim un petit exemple del que pasaria si tinguessem que restaurar a la copia que hem fet.
 
 <img src="https://github.com/user-attachments/assets/dd648677-053e-4282-8653-d93dad3677f3" style="display:block; margin-top:10px;" alt="imatge">
 
 <img src="https://github.com/user-attachments/assets/8c6bf066-4767-4e44-bc88-5e9864719cf5" style="display:block; margin-top:10px;" alt="imatge">
 
 ## Configuració bàsica de la xarxa
+
+Per a configurar la xarxa ho podem fer de diferents modes, el primer que tenim es fer-ho des de configuració de xraxa i editant el perfil o creant un perfil nou, despres anem a IPv4 i fiquem la IP que volem, la mascara i la porta d'enllaç que sol ser la IP del router o pots agafar directament la mateixa que la teva pero acabada en 1. Fiquem els dns per a google o qualsevol DNS public que vulguem, els mes coneguts son `8.8.8.8`, `8.8.4.4`, `1.1.1.1`.
 
 <img src="https://github.com/user-attachments/assets/10d472bc-c3af-44a2-a3e3-454eeabb5e60" style="display:block; margin-top:10px;" alt="imatge">
 
@@ -136,6 +138,10 @@ I crearem la instantània.
 <img src="https://github.com/user-attachments/assets/bf993c24-a150-426b-a276-3f4264d27143" style="display:block; margin-top:10px;" alt="imatge">
 
 <img src="https://github.com/user-attachments/assets/6306fcfc-1fef-4156-9466-fc3b8be76e97" style="display:block; margin-top:10px;" alt="imatge">
+
+L'altra forma es pel netplan, dins del arxiu `/etc/netplan/01-network-manager-all-ymal`, aquest ultim fitxer pot variar aixi que el mes fàcil es tabular i ja ens sortira el nostre arxiu.
+
+En aquest arxiu haurem de ficar els parametres següents:
 
 <img src="https://github.com/user-attachments/assets/1145e954-775a-403f-befa-a95e34cd3901" style="display:block; margin-top:10px;" alt="imatge">
 
