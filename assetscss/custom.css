@@ -45,11 +45,9 @@ li {
   line-height: 1.2;
 }
 /* Força totes les imatges del contingut a aparèixer una sota l’altra */
-img {
-  display: block;
-  margin: 1rem auto; /* afegeix una mica d'espai vertical i centra-les horitzontalment */
-  max-width: 100%; /* evita que desbordin */
-  height: auto;
+.baix {
+    display: block;
+    margin-top: 10px; /* opcional, afegeix espai entre el text i la imatge */
 }
 
 
