@@ -111,15 +111,17 @@ I configurarem cada quan volem que es faiguen aquests punts de restauració, en 
 
 <img src="https://github.com/user-attachments/assets/a64e300d-3e33-41c6-a4e7-f0b0f6509e10" style="display:block; margin-top:10px;" alt="imatge">
 
-<img src="https://github.com/user-attachments/assets/5cc3f479-4e55-4fcf-9297-a0e99224be33" style="display:block; margin-top:10px;" alt="imatge">
-
 Ara hem de configurar que volem copiar, en aquest cas copiarem tota la carpeta de l'usuari.
+
+<img src="https://github.com/user-attachments/assets/5cc3f479-4e55-4fcf-9297-a0e99224be33" style="display:block; margin-top:10px;" alt="imatge">
 
 <img src="https://github.com/user-attachments/assets/fcf485fd-5350-4f59-af89-51c68ae9bf6d" style="display:block; margin-top:10px;" alt="imatge">
 
+I crearem la instantània.
+
 <img src="https://github.com/user-attachments/assets/796a21a8-4749-4b6b-9c3a-999bfe601c59" style="display:block; margin-top:10px;" alt="imatge">
 
-I crearem la instantània.
+
 
 <img src="https://github.com/user-attachments/assets/dd648677-053e-4282-8653-d93dad3677f3" style="display:block; margin-top:10px;" alt="imatge">
 
