@@ -82,6 +82,15 @@ Per a crear instantànies dintre dels nostres sistemes operatius, el primer que 
 
 <img src="https://github.com/user-attachments/assets/c9631aed-6507-480d-8405-ab65f516b9ce" style="display:block; margin-top:10px;" alt="imatge">
 
+<img src="https://github.com/user-attachments/assets/15ff3d2a-2251-4e3f-ac1e-e44cf8113e09" style="display:block; margin-top:10px;" alt="imatge"/>
+
+<img src="https://github.com/user-attachments/assets/7efbf78b-05a8-477c-a8c3-880e08c7aa63" style="display:block; margin-top:10px;" alt="imatge"/>
+
+<img src="https://github.com/user-attachments/assets/5a7f98f9-4418-460e-beaf-86ee149fc1fb" style="display:block; margin-top:10px;" alt="imatge"/>
+
+<img src="https://github.com/user-attachments/assets/0ae94e1d-248b-4195-84eb-273907103bec" style="display:block; margin-top:10px;" alt="imatge"/>
+
+
 <img src="https://github.com/user-attachments/assets/538e6318-7462-48f9-a868-2cf8757045fe" style="display:block; margin-top:10px;" alt="imatge">
 
 <img src="https://github.com/user-attachments/assets/44dfc67e-5560-4e50-a445-4fb9f3611d67" style="display:block; margin-top:10px;" alt="imatge">
