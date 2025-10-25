@@ -99,19 +99,27 @@ Ara ja estem llistos per a descarregar **Timeshift** que es el que ens servirà 
 
 <img src="https://github.com/user-attachments/assets/0ae94e1d-248b-4195-84eb-273907103bec" style="display:block; margin-top:10px;" alt="imatge"/>
 
-
+Dins del timeshift crearem una instantànea **RSYNC**.
 
 <img src="https://github.com/user-attachments/assets/538e6318-7462-48f9-a868-2cf8757045fe" style="display:block; margin-top:10px;" alt="imatge">
 
+Després ficarem la ruta on volem que es guarden els punts de restauració que com he dit és el `sdb1`.
+
 <img src="https://github.com/user-attachments/assets/44dfc67e-5560-4e50-a445-4fb9f3611d67" style="display:block; margin-top:10px;" alt="imatge">
+
+I configurarem cada quan volem que es faiguen aquests punts de restauració, en aquest cas he posat arranque però això va a gust del consumidor.
 
 <img src="https://github.com/user-attachments/assets/a64e300d-3e33-41c6-a4e7-f0b0f6509e10" style="display:block; margin-top:10px;" alt="imatge">
 
 <img src="https://github.com/user-attachments/assets/5cc3f479-4e55-4fcf-9297-a0e99224be33" style="display:block; margin-top:10px;" alt="imatge">
 
+Ara hem de configurar que volem copiar, en aquest cas copiarem tota la carpeta de l'usuari.
+
 <img src="https://github.com/user-attachments/assets/fcf485fd-5350-4f59-af89-51c68ae9bf6d" style="display:block; margin-top:10px;" alt="imatge">
 
 <img src="https://github.com/user-attachments/assets/796a21a8-4749-4b6b-9c3a-999bfe601c59" style="display:block; margin-top:10px;" alt="imatge">
+
+I crearem la instantània.
 
 <img src="https://github.com/user-attachments/assets/dd648677-053e-4282-8653-d93dad3677f3" style="display:block; margin-top:10px;" alt="imatge">
 
