@@ -1,8 +1,14 @@
 # Licencia Creative Commons Reconocimiento - No Comercial - Compartir Igual 4.0 España (CC BY-NC-SA 4.0)
 
-<a href="https://arnauvericat.github.io/SIPJ1/">Sistemes Informatics</a> © 2025 by <a href="https://github.com/arnauvericathttps://github.com/arnauvericat">Arnau Vericat</a> aquest treball està licenciat amb la llicènica de <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+[Sistemes Informatics](https://arnauvericat.github.io/SIPJ1/) © 2025 by [Arnau Vericat](https://github.com/arnauvericat)  
+Aquest treball està licenciat amb la llicència de [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+![CC](https://mirrors.creativecommons.org/presskit/icons/cc.svg){: style="max-width:1em; max-height:1em; margin-left:.2em;"}
+![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg){: style="max-width:1em; max-height:1em; margin-left:.2em;"}
+![NC](https://mirrors.creativecommons.org/presskit/icons/nc.svg){: style="max-width:1em; max-height:1em; margin-left:.2em;"}
+![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg){: style="max-width:1em; max-height:1em; margin-left:.2em;"}
+
+---
 
 ## Resumen
 
@@ -17,7 +23,7 @@ Esta licencia permite que otros compartan, copien y distribuyan tu trabajo, así
 ## Texto legal completo
 
 Puedes consultar el texto completo de la licencia aquí:  
-[https://creativecommons.org/licenses/by-nc-sa/4.0/es/legalcode](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.es)
+[Texto legal completo CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.es)
 
 ---
 
@@ -28,4 +34,3 @@ Se debe dar crédito adecuado, proporcionar un enlace a esta licencia e indicar 
 ---
 
 © 2025 Arnau Vericat
-
