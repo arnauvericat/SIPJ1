@@ -64,11 +64,11 @@ Ara dins del nostre Ubuntu farem la comanda `grub-install` dins del nostre disc 
 
 <img src="https://github.com/user-attachments/assets/f7124db8-5cb0-43af-b5a9-d657344815ec" style="display:block; margin-top:10px;" alt="imatge">
 
-Després farem un update per a que es quedi guardat i ens dirigirem al arxiu **/etc/default/grub**.
+Després farem un update per a que es quedi guardat i ens dirigirem al arxiu `/etc/default/grub`.
 
 <img src="https://github.com/user-attachments/assets/535767ad-4359-4c5a-8ea8-011cbe51f43e" style="display:block; margin-top:10px;" alt="imatge">
 
-Aquí dins ficarem o buscarem i descomentarem la línia **GRUB_DISABLE_OS_PROBER=false** i ja podrem accedir als nostres dos sistemes. <br>
+Aquí dins ficarem o buscarem i descomentarem la línia `GRUB_DISABLE_OS_PROBER=false` i ja podrem accedir als nostres dos sistemes. <br>
 
 <img src="https://github.com/user-attachments/assets/29738e40-ba0b-488f-a16e-286788a95e58" style="display:block; margin-top:10px;" alt="imatge">
 
@@ -82,14 +82,23 @@ Per a crear instantànies dintre dels nostres sistemes operatius, el primer que 
 
 <img src="https://github.com/user-attachments/assets/c9631aed-6507-480d-8405-ab65f516b9ce" style="display:block; margin-top:10px;" alt="imatge">
 
+Una vegada creada entrarem al nostre ubuntu i farem la comanda següent `fdisk /dev/sdb` aquest es el disc on ficarem els nostres punts de restauració. Aquesta comanda ens permet parcicionar el disc i donar-li un format.
+
 <img src="https://github.com/user-attachments/assets/15ff3d2a-2251-4e3f-ac1e-e44cf8113e09" style="display:block; margin-top:10px;" alt="imatge"/>
+
+Dins del disc clicarem la **N** per a crear una `new partition`.
 
 <img src="https://github.com/user-attachments/assets/7efbf78b-05a8-477c-a8c3-880e08c7aa63" style="display:block; margin-top:10px;" alt="imatge"/>
 
+Després clicarem la **P** per a fer una partició `primary`. Als següents apartats farem `intro` ja que no son importants per a aquest cas.
+
 <img src="https://github.com/user-attachments/assets/5a7f98f9-4418-460e-beaf-86ee149fc1fb" style="display:block; margin-top:10px;" alt="imatge"/>
+
+Despres de sortir del particionador farem la comanda `mkfs.ext4 /dev/sdb1` que en aquest cas sdb1 es la nova particio del disc que ocupa els 25GB, aquesta comanda server per a crear un gestor de fitxers `mkfs` amb el format `ext4` dins del disc `/dev/sdb1`.
 
 <img src="https://github.com/user-attachments/assets/0ae94e1d-248b-4195-84eb-273907103bec" style="display:block; margin-top:10px;" alt="imatge"/>
 
+Ara ja estem llistos per a descarregar **Timeshift** que es el que ens servirà per a crear els nostres punts de restauració.
 
 <img src="https://github.com/user-attachments/assets/538e6318-7462-48f9-a868-2cf8757045fe" style="display:block; margin-top:10px;" alt="imatge">
 
