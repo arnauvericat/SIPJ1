@@ -41,12 +41,6 @@ body {
   padding: 0 15px;
 }
 
-img {
-    display: block; /* hace que la imagen sea un bloque y no se mezcle con el texto */
-    margin: 20px 0; /* añade espacio arriba y abajo */
-}
-
-
 li {
   line-height: 1.2;
 }
