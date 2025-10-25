@@ -1,8 +1,6 @@
-# Sprint 1: Avaluació, Instal·lació i Configuració de Xarxes i Sistemes Operatius
-
 ---
-
-### Llicenciament
+title: "Sprint 1: Avaluació, Instal·lació i Configuració de Xarxes i Sistemes Operatius"
+---
 
 #### Llicència de GNU Linux
 
