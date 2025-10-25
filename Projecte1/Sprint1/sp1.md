@@ -13,7 +13,7 @@ La llicència GPL (General Public License) és una llicència de programari lliu
 ## Virtualització i instal·lació del SO Ubuntu
 
 Dins de la maquina ja creada hem de ficar mes opcions per a crear nosaltes les particions que volem fer.
-<img width="872" height="703" alt="image" src="https://github.com/user-attachments/assets/18d201f2-db0b-4d24-a5ea-73ac23f8e7ec" />
+<img width="872" height="703" alt="image" src="https://github.com/user-attachments/assets/18d201f2-db0b-4d24-a5ea-73ac23f8e7ec" /> <br>
 
 Dins del particionador clicarem damunt del nostre disc i crearem una partico.
 
