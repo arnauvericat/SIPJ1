@@ -145,6 +145,8 @@ En aquest arxiu haurem de ficar els parametres següents:
 
 <img src="https://github.com/user-attachments/assets/1145e954-775a-403f-befa-a95e34cd3901" style="display:block; margin-top:10px;" alt="imatge">
 
+I com podem veure podem sortir a l'exterior com si ho haguessim configurat normal. Això no afecta en que puguessim arribar a google o a qualsevol lloc.
+
 <img src="https://github.com/user-attachments/assets/9f170759-74a6-4aba-87c5-36d7efe3bc45" style="display:block; margin-top:10px;" alt="imatge">
 
 <img src="https://github.com/user-attachments/assets/f25c694f-bfc3-4d34-bb73-c7526cf4b4a4" style="display:block; margin-top:10px;" alt="imatge">
