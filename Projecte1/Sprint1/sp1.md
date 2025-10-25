@@ -73,7 +73,9 @@ Per a crear instantanies dintre dels nostres sistemes operatius el primer que ha
 
 ![image](https://github.com/user-attachments/assets/c9631aed-6507-480d-8405-ab65f516b9ce)
 
-![image](https://github.com/user-attachments/assets/538e6318-7462-48f9-a868-2cf8757045fe) />
+![image](https://github.com/user-attachments/assets/538e6318-7462-48f9-a868-2cf8757045fe)
+
+<img width="592" height="656" alt="Captura de pantalla de 2025-10-10 12-12-18" src="https://github.com/user-attachments/assets/44dfc67e-5560-4e50-a445-4fb9f3611d67" />
 
 
 ## Configuració basica de la xarxa
