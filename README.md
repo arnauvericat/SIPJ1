@@ -13,7 +13,7 @@ https://arnauvericat.github.io/SIPJ1/
 
 ## Llicència
 
-Aquets contingut està protegit per la llicència. [Creative Commons Reconocimiento - No Comercial - Compartir Igual 4.0 España (CC BY-NC-SA 3.0)](LICENSE.md)
+Aquets contingut està protegit per la llicència. [Creative Commons Reconocimiento - No Comercial - Compartir Igual 4.0 España (CC BY-NC-SA 4.0)](LICENSE.md)
 
 
 ---
