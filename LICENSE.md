@@ -3,10 +3,10 @@
 [Sistemes Informatics](https://arnauvericat.github.io/SIPJ1/) © 2025 by [Arnau Vericat](https://github.com/arnauvericat)  
 Aquest treball està licenciat amb la llicència de [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-![CC](https://mirrors.creativecommons.org/presskit/icons/cc.svg){: style="max-width:1em; max-height:1em; margin-left:.2em;"}
-![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg){: style="max-width:1em; max-height:1em; margin-left:.2em;"}
-![NC](https://mirrors.creativecommons.org/presskit/icons/nc.svg){: style="max-width:1em; max-height:1em; margin-left:.2em;"}
-![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg){: style="max-width:1em; max-height:1em; margin-left:.2em;"}
+![CC](https://mirrors.creativecommons.org/presskit/icons/cc.svg)
+![BY](https://mirrors.creativecommons.org/presskit/icons/by.svg)
+![NC](https://mirrors.creativecommons.org/presskit/icons/nc.svg)
+![SA](https://mirrors.creativecommons.org/presskit/icons/sa.svg)
 
 ---
 
