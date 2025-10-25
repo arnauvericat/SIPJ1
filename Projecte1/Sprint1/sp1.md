@@ -95,7 +95,7 @@ Despres de sortir del particionador farem la comanda `mkfs.ext4 /dev/sdb1` que e
 
 <img src="https://github.com/user-attachments/assets/5a7f98f9-4418-460e-beaf-86ee149fc1fb" style="display:block; margin-top:10px;" alt="imatge"/>
 
-Ara ja estem llistos per a descarregar **Timeshift** que es el que ens servirà per a crear els nostres punts de restauració.
+Ara ja estem llistos per a descarregar **Timeshift** que es el que ens servirà per a crear els nostres punts de restauració. Això ho podem fer amb la comanda `sudo apt install timeshift`.
 
 <img src="https://github.com/user-attachments/assets/0ae94e1d-248b-4195-84eb-273907103bec" style="display:block; margin-top:10px;" alt="imatge"/>
 
