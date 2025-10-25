@@ -11,24 +11,59 @@ La llicència GPL (General Public License) és una llicència de programari lliu
 <img width="319" height="158" alt="image" src="https://github.com/user-attachments/assets/048b4f58-04c3-426f-8e5a-52dd8ccbe14d" />
 
 ## Virtualització i instal·lació del SO Ubuntu
+
+Dins de la maquina ja creada hem de ficar mes opcions per a crear nosaltes les particions que volem fer.
 <img width="872" height="703" alt="image" src="https://github.com/user-attachments/assets/18d201f2-db0b-4d24-a5ea-73ac23f8e7ec" />
+
+Dins del particionador clicarem damunt del nostre disc i crearem una partico.
+
 <img width="847" height="635" alt="image" src="https://github.com/user-attachments/assets/f36625f2-7a2c-4307-924a-184519343596" />
+
+En aquest cas serà una de 40Gb per a ficar el nostre ubuntu i com el disc es de 80Gb tindrem lloc per a ficar el nostre Windows 10.
+Aquesta particio la ficarem com a primaria i el punt de muntatge a la nostra arrel que es la barra invertida.
+
 <img width="540" height="320" alt="image" src="https://github.com/user-attachments/assets/45b42f07-07f4-444f-9798-8613771f7d47" />
+
+Una vegada creada, farem una altra particio per a ficar la efi i ficarem a quina particio volem instal·lar el nostre sistema operatiu que en aquest cas es /dev/sda1.
 <img width="808" height="134" alt="image" src="https://github.com/user-attachments/assets/0118bea7-0982-47aa-b47b-d036d394e41f" />
 
 
-
-
-
-
 ## Instal·lacions duals i Gestors d'arrencada
+
+Una vegada instal·lat un sistema operatiu anirem al nostre virtual box, clicarem a parametres de la nostra maquina i anirem a emmagatzematge allí ficarem la nostra ISO del Windows 10 com a disc òptic.
+
+<img width="267" height="135" alt="image" src="https://github.com/user-attachments/assets/8ef5dbba-b0e4-4f3c-b443-4a22804a105b" />
+
+Després anirem a sistema i activarem la EFI per a poder entrar i der boot amb el disc optic.
+
+<img width="240" height="36" alt="image" src="https://github.com/user-attachments/assets/f2c7e1f6-127f-4dc4-9002-6cae1f41ca1b" /> <br>
+
+Ara iniciarem la maquina i clicarem esc simultaniament, això ens farà entrar a la bios i allí anirem al boot manager i iniciarem alb la nostra CD-ROM que es el disc òptic Windows.
+
+
 <img width="634" height="327" alt="image" src="https://github.com/user-attachments/assets/ba0b9d92-67da-4aa0-995a-41ee22a29d05" /> <br>
 
-<img width="265" height="37" alt="image" src="https://github.com/user-attachments/assets/a95f68f2-032e-4a34-a3b0-4d9750ce1aca" /> <br>
+Dins de l'instal·lador anirem configurant fins a l'apartat de les instal·lacions on ficarem "Instal·lación personalizada" allí ens portara a les taules de particions que tenim, on veurem el nostre Ubuntu
+una partició buida i un altre disc que serà per a la dels punts de restauració. En el nostre cas la ficarem al "Drive 0 Partition 2" que es la nostra partició buida.
 
 <img width="641" height="478" alt="image" src="https://github.com/user-attachments/assets/323f719e-17b8-4b3a-93c0-2784e2abe9be" />
 
+Una vegada fet això ja començarà la instal·lació.
+
 <img width="641" height="478" alt="image" src="https://github.com/user-attachments/assets/2e8ada4e-9db7-4297-a9e5-f52381a8d96c" />
+
+Quan ja tinguessem instal·lat el nostre Windows anirem a la nostra maquina virtual i treurem el disc optic de Windows i afegirem un altre que es diu super_grub2 el qual ens ajudarà a iniciar el nostre ubuntu ja que la instal·lació de windows s'ha carregar el gestor d'arrancada i ja no podem iniciar amb ubuntu.
+
+<img width="247" height="53" alt="image" src="https://github.com/user-attachments/assets/0b1ff183-4b7c-4913-8f89-6383322482ad" />
+
+Com hem fet avans entrem a la nostra CD-ROM ara del super_grub2.
+
+<img width="597" height="270" alt="image" src="https://github.com/user-attachments/assets/2340efe2-a2f2-4f3c-8bf1-8012a314b35b" />
+
+Dins de la rom anirem a **"Detect and show boot methods"** i buscarem el nostre ubuntu. 
+<img width="596" height="265" alt="image" src="https://github.com/user-attachments/assets/92f16c1d-a8c9-463a-9f83-61968e5b69b9" />
+
+
 
 <img width="618" height="79" alt="image" src="https://github.com/user-attachments/assets/f7124db8-5cb0-43af-b5a9-d657344815ec" />
 
