@@ -22,9 +22,11 @@ Aquesta mida si que es pot modificar quan formatem la partició.
 
 La fragmentacio de disc es tot l'espai desaprofitat dintre de la partició.
 
+Per a la fragmentació podem canviar la mida dels sectors en formatar el sistema operatiu, això fara que utilitzem l'espai que hi ha i no perguem lloc, el dolent es que contra mes sectors més lent anirà el sistema operatiu.
+
 ## Fragmentació externa
 
-Per a la fragmentació podem canviar la mida dels sectors en formatar el sistema operatiu, això fara que utilitzem l'espai que hi ha i no perguem lloc, el dolent es que contra mes sectors més lent anirà el sistema operatiu.
+La fragmentació externa es quan l'espai lliure en una memoria o sistema d'emmagatzematge que esta dividit en petits blocs.
 
 
 ## TIpus de formateig
