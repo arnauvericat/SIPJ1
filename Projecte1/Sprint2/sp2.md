@@ -55,13 +55,19 @@ Un volum es una capa d'abstracció que es posa per damunt de les particions.
 
 <img width="269" height="156" alt="image" src="https://github.com/user-attachments/assets/50d32909-7fd7-41fe-9a8b-6fb8cad0e1eb" />
 
----
+* ### Comandes
+  
 <img width="541" height="104" alt="image" src="https://github.com/user-attachments/assets/3137a71c-b5e4-4f8d-88ed-e6af3ed8f8e0" />
 
+<img width="735" height="215" alt="image" src="https://github.com/user-attachments/assets/7cf3b7a8-0972-4566-9cb7-3ac8230a940c" />
+
+<img width="735" height="215" alt="image" src="https://github.com/user-attachments/assets/f55b6694-506a-4713-8ccc-3453c1f9376c" />
+
+<img width="726" height="203" alt="image" src="https://github.com/user-attachments/assets/7b79f31b-cb14-4060-aa82-0f4d3a5883b6" />
 
 
 * ### GPARTED
-* ### Comandes
+
 
 
 
