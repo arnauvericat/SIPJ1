@@ -28,6 +28,10 @@ Per a la fragmentació podem canviar la mida dels sectors en formatar el sistema
 
 La fragmentació externa es quan l'espai lliure en una memoria o sistema d'emmagatzematge que esta dividit en petits blocs.
 
+En windows tenim el desfragmentador de discs per a reduir aquesta fragmentació.
+
+Amb el cas de linux el sistema de fitxers es tan bo que no fa falta fragmentador.
+
 
 ## TIpus de formateig
 ## Particions/volums
