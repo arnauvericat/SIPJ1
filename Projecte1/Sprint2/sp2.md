@@ -3,7 +3,7 @@ layout: default
 title:Sprint 2: Gestió de la Informació del Sistema i Administració
 ---
 
-# ** 1.Sistemes de fitxer i particions **
+#  **1.Sistemes de fitxer i particions**
 
 ## Mida del sector
 Un sector es la unitat minima fisica d'un disc.
