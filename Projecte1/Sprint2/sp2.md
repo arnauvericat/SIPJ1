@@ -40,19 +40,18 @@ La fragmentació externa es quan l'espai lliure en una memoria o sistema d'emmag
 
 ## Tipus de formateig
 
-·Alt nivell
-·Mitg nivell
-·Baix nivell
+* ### Alt nivell
+* ### Mitg nivell
+* ### Baix nivell
 
 ## Particions/volums
+
+Una partició de disc és una subdivisió lògica d’un disc dur físic. Bàsicament, és com dividir un disc gran en “seccions” més petites que el sistema operatiu tracta com a unitats independents.
+
+Un volum es una capa d'abstracció que es posa per damunt de les particions.
+
 * ### GPARTED
 * ### Comandes
-
-
-
-
-
-
 
 
 
