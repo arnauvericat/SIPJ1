@@ -38,7 +38,12 @@ La fragmentació externa es quan l'espai lliure en una memoria o sistema d'emmag
 
 
 
-## TIpus de formateig
+## Tipus de formateig
+
+·Alt nivell
+·Mitg nivell
+·Baix nivell
+
 ## Particions/volums
 * ### GPARTED
 * ### Comandes
