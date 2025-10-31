@@ -7,12 +7,26 @@ title:Sprint 2: Gestió de la Informació del Sistema i Administració
 ## Mida del sector
 Un sector es la unitat minima fisica d'un disc.
 
+<img width="664" height="173" alt="image" src="https://github.com/user-attachments/assets/2072a5a2-b507-4b93-b276-6f845465f488" />
+<img width="385" height="27" alt="image" src="https://github.com/user-attachments/assets/8cf7cd49-7e15-42a0-924c-110dfe063d33" />
+<img width="736" height="422" alt="image" src="https://github.com/user-attachments/assets/dbff9c6c-08ff-41a2-b46c-2c4850b398fe" />
+
+
 ## Mida del block
 Un block es la unitat minima logica d'un sistema operatiu.
 Aquesta mida si que es pot modificar quan formatem la partició.
+<img width="658" height="93" alt="image" src="https://github.com/user-attachments/assets/0e93ba17-f1cb-42d7-8094-9ebc33fa9a63" />
+<img width="658" height="93" alt="image" src="https://github.com/user-attachments/assets/b853c98b-1ca9-4546-9054-1cd9faa2f860" />
 
 ## Fragmentació interna
+
+La fragmentacio de disc es tot l'espai desaprofitat dintre de la partició.
+
 ## Fragmentació externa
+
+Per a la fragmentació podem canviar la mida dels sectors en formatar el sistema operatiu, això fara que utilitzem l'espai que hi ha i no perguem lloc, el dolent es que contra mes sectors més lent anirà el sistema operatiu.
+
+
 ## TIpus de formateig
 ## Particions/volums
 * ### GPARTED
