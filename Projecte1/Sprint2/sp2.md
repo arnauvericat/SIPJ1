@@ -11,6 +11,14 @@ Un sector es la unitat minima fisica d'un disc.
 <img width="385" height="27" alt="image" src="https://github.com/user-attachments/assets/8cf7cd49-7e15-42a0-924c-110dfe063d33" />
 <img width="736" height="422" alt="image" src="https://github.com/user-attachments/assets/dbff9c6c-08ff-41a2-b46c-2c4850b398fe" />
 
+En windows tenim el desfragmentador de discs per a reduir aquesta fragmentació.
+
+Amb el cas de linux el sistema de fitxers es tan bo que no fa falta fragmentador.
+
+<img width="1435" height="888" alt="image" src="https://github.com/user-attachments/assets/c0efc412-6df3-4b53-a6d0-f884ae3e4adf" />
+<img width="1474" height="421" alt="image" src="https://github.com/user-attachments/assets/f354c8e1-0537-4f84-b91d-5a6a142ecdba" />
+
+
 
 ## Mida del block
 Un block es la unitat minima logica d'un sistema operatiu.
@@ -28,9 +36,6 @@ Per a la fragmentació podem canviar la mida dels sectors en formatar el sistema
 
 La fragmentació externa es quan l'espai lliure en una memoria o sistema d'emmagatzematge que esta dividit en petits blocs.
 
-En windows tenim el desfragmentador de discs per a reduir aquesta fragmentació.
-
-Amb el cas de linux el sistema de fitxers es tan bo que no fa falta fragmentador.
 
 
 ## TIpus de formateig
