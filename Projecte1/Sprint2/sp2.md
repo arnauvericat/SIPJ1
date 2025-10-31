@@ -3,13 +3,15 @@ layout: default
 title:Sprint 2: Gestió de la Informació del Sistema i Administració
 ---
 
-1.# Sistemes de fitxer i particions**
+1. # Sistemes de fitxer i particions**
 ## Mida del sector
 Un sector es la unitat minima fisica d'un disc.
 
 <img width="664" height="173" alt="image" src="https://github.com/user-attachments/assets/2072a5a2-b507-4b93-b276-6f845465f488" />
 <img width="385" height="27" alt="image" src="https://github.com/user-attachments/assets/8cf7cd49-7e15-42a0-924c-110dfe063d33" />
 <img width="736" height="422" alt="image" src="https://github.com/user-attachments/assets/dbff9c6c-08ff-41a2-b46c-2c4850b398fe" />
+
+
 
 En windows tenim el desfragmentador de discs per a reduir aquesta fragmentació.
 
@@ -49,6 +51,9 @@ La fragmentació externa es quan l'espai lliure en una memoria o sistema d'emmag
 Una partició de disc és una subdivisió lògica d’un disc dur físic. Bàsicament, és com dividir un disc gran en “seccions” més petites que el sistema operatiu tracta com a unitats independents.
 
 Un volum es una capa d'abstracció que es posa per damunt de les particions.
+
+<img width="269" height="156" alt="image" src="https://github.com/user-attachments/assets/50d32909-7fd7-41fe-9a8b-6fb8cad0e1eb" />
+
 
 * ### GPARTED
 * ### Comandes
