@@ -88,4 +88,23 @@ Un volum es una capa d'abstracció que es posa per damunt de les particions.
 
 2.# Còpies de seguretat i automatització de tasques
 3.# Gestió d'usuaris, grups i permisos
+
+<img width="1201" height="698" alt="image" src="https://github.com/user-attachments/assets/57848529-7400-455e-b369-a96a3338b95d" />
+<img width="1205" height="713" alt="image" src="https://github.com/user-attachments/assets/ce434aac-c401-481d-92ee-55bd4997de0a" />
+<img width="1205" height="713" alt="image" src="https://github.com/user-attachments/assets/395232d9-f102-4f1b-aa94-dab4fb55cb66" />
+<img width="1205" height="713" alt="image" src="https://github.com/user-attachments/assets/c1c979c1-f723-4321-b536-19ef3a17c191" />
+<img width="537" height="381" alt="image" src="https://github.com/user-attachments/assets/0f830fa8-e299-45b3-9509-e2991572f41d" />
+<img width="713" height="313" alt="image" src="https://github.com/user-attachments/assets/efc12a8a-3819-4180-8686-0527aabd6d09" />
+<img width="397" height="39" alt="image" src="https://github.com/user-attachments/assets/feb37c0f-3e3b-4aa9-88a0-00c1671ce389" />
+<img width="731" height="44" alt="image" src="https://github.com/user-attachments/assets/de60d0d6-044f-4862-a09f-dba1a3fb5d37" />
+<img width="511" height="41" alt="image" src="https://github.com/user-attachments/assets/15c9c37f-5bad-4ff9-9ee9-35e33abfc98b" />
+<img width="511" height="41" alt="image" src="https://github.com/user-attachments/assets/585a3b5c-8ceb-4dc3-b3fa-d3c615ec8b99" />
+<img width="526" height="94" alt="image" src="https://github.com/user-attachments/assets/5e0c84e2-1cd9-4326-a5db-44030b3c170b" />
+<img width="444" height="41" alt="image" src="https://github.com/user-attachments/assets/280b2fed-fe76-497f-9eea-fc5dc89d11b8" />
+<img width="481" height="110" alt="image" src="https://github.com/user-attachments/assets/9e0c5ec0-38ad-4b1b-b218-3dc60e9a15b1" />
+<img width="734" height="106" alt="image" src="https://github.com/user-attachments/assets/ff534e70-2dae-4ba1-b0cd-b8db51ebcc6b" />
+
+
+
+
 4.# Gestió de procesos
