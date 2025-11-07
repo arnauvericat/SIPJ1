@@ -122,6 +122,11 @@ Un volum es una capa d'abstracció que es posa per damunt de les particions.
 <img width="894" height="292" alt="image" src="https://github.com/user-attachments/assets/3f5efc90-c291-474d-8a64-e60ee67d9ee6" />
 <img width="433" height="74" alt="image" src="https://github.com/user-attachments/assets/cdefda08-cce3-4e92-83de-17e56fcb3039" />
 
+<img width="682" height="207" alt="image" src="https://github.com/user-attachments/assets/bfc68ace-8d75-4a4c-baab-414efefc902f" />
+<img width="673" height="186" alt="image" src="https://github.com/user-attachments/assets/b97d9245-e924-4e66-8c2a-f039ef3d5bc7" />
+<img width="522" height="356" alt="image" src="https://github.com/user-attachments/assets/bad6eea3-b691-4acf-93bc-8bdb53ddaf98" />
+
+
 ### Creació d'usuaris i ocnfiguració.
 
 
