@@ -105,6 +105,24 @@ Un volum es una capa d'abstracció que es posa per damunt de les particions.
 <img width="734" height="106" alt="image" src="https://github.com/user-attachments/assets/ff534e70-2dae-4ba1-b0cd-b8db51ebcc6b" />
 
 
+<img width="520" height="151" alt="image" src="https://github.com/user-attachments/assets/58318732-0275-4208-87c8-94ddce89e015" />
+<img width="536" height="77" alt="image" src="https://github.com/user-attachments/assets/62b11c66-b800-4462-bcf6-2c534e2ba2a1" />
+<img width="907" height="97" alt="image" src="https://github.com/user-attachments/assets/eb5175fd-8175-440b-bb1d-894b12d06cd3" />
+<img width="902" height="65" alt="image" src="https://github.com/user-attachments/assets/6b9205ff-094b-45d8-8185-be1e19476af9" />
+<img width="421" height="216" alt="image" src="https://github.com/user-attachments/assets/c68e61a2-bd1b-46e9-b5a6-fa50ba6193da" />
+<img width="435" height="151" alt="image" src="https://github.com/user-attachments/assets/7919c607-dd30-436c-98d9-16e7b2a7ea3a" />
+<img width="434" height="46" alt="image" src="https://github.com/user-attachments/assets/5c1e7d97-b114-4c33-9ac4-2a02689cbe2f" />
+<img width="434" height="23" alt="image" src="https://github.com/user-attachments/assets/6db9c054-a8b4-4b3a-85aa-4078bc3f66c1" />
+<img width="428" height="43" alt="image" src="https://github.com/user-attachments/assets/4dd084f7-c4f8-40a2-9a95-3ecf6bf0a214" />
+<img width="302" height="39" alt="image" src="https://github.com/user-attachments/assets/e8d7efa7-bbdb-4470-8df5-5eae92ef5230" />
+<img width="532" height="97" alt="image" src="https://github.com/user-attachments/assets/7f531436-e988-4517-a44d-86e73c9351c6" />
+
+
+<img width="757" height="601" alt="image" src="https://github.com/user-attachments/assets/4f634fa7-2b17-4ee7-8192-69291b0cbf52" />
+<img width="894" height="292" alt="image" src="https://github.com/user-attachments/assets/3f5efc90-c291-474d-8a64-e60ee67d9ee6" />
+<img width="433" height="74" alt="image" src="https://github.com/user-attachments/assets/cdefda08-cce3-4e92-83de-17e56fcb3039" />
+
+### Creació d'usuaris i ocnfiguració.
 
 
 4.# Gestió de procesos
