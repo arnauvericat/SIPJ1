@@ -25,16 +25,17 @@ En windows tenim el desfragmentador de discs per a reduir aquesta fragmentació.
 ###### Foto desfragmentador de windows11
 
 
-Amb el cas de linux el sistema de fitxers es tan bo que no fa falta fragmentador.
+Ambe el cas de Linux no necessita desfragmentador perquè els seus sistemes de fitxers moderns (ext4, XFS, Btrfs) gestionen els blocs de manera intel·ligent, reservant espais contigus i evitant que els fitxers es fragmentin, fins i tot quan creixen. La fragmentació és mínima, només apareix en discos gairebé plens o amb fitxers molt grans.
+
+Igualment aqui veiem una imatge on desfragmentem el disc.
 
 <img width="1435" height="888" alt="image" src="https://github.com/user-attachments/assets/c0efc412-6df3-4b53-a6d0-f884ae3e4adf" />
 <img width="1474" height="421" alt="image" src="https://github.com/user-attachments/assets/f354c8e1-0537-4f84-b91d-5a6a142ecdba" />
 
 
 
-## Mida del block
-Un block es la unitat minima logica d'un sistema operatiu.
-Aquesta mida si que es pot modificar quan formatem la partició.
+## Mida del bloc
+Un bloc és la mínima unitat d’emmagatzematge d’un sistema de fitxers, normalment de 1 a 8 KB. Els fitxers s’emmagatzemen en blocs contigus per evitar fragmentació. La mida del bloc es tria en crear el sistema de fitxers: blocs grans van bé per fitxers grans i blocs petits per fitxers petits.
 
 <img width="658" height="93" alt="image" src="https://github.com/user-attachments/assets/0e93ba17-f1cb-42d7-8094-9ebc33fa9a63" />
 <img width="658" height="93" alt="image" src="https://github.com/user-attachments/assets/b853c98b-1ca9-4546-9054-1cd9faa2f860" />
