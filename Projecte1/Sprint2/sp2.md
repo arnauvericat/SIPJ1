@@ -22,6 +22,9 @@ Aquestes comandes ens serveixen per a crear un fitxer de text amb el contingut q
 
 En windows tenim el desfragmentador de discs per a reduir aquesta fragmentació.
 
+###### Foto desfragmentador de windows11
+
+
 Amb el cas de linux el sistema de fitxers es tan bo que no fa falta fragmentador.
 
 <img width="1435" height="888" alt="image" src="https://github.com/user-attachments/assets/c0efc412-6df3-4b53-a6d0-f884ae3e4adf" />
