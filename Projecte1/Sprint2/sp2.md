@@ -96,10 +96,19 @@ Un volum es una capa d'abstracció que es posa per damunt de les particions.
 * ## GPARTED
 
 * ### Comandes
+ 
+Amb aquestes comandes que veurem ara farem una particio del disc amb terminal i amb el GPARTED.
+
+Primer mirarem quin es el disc al que li volem fer la partició.
   
 <img width="541" height="104" alt="image" src="https://github.com/user-attachments/assets/3137a71c-b5e4-4f8d-88ed-e6af3ed8f8e0" />
 
+Amb la comanda sudo `fdisk /dev/sdb` entrarem al particionador de linux on podrem crear les nostres particions. Després clicarem la `n` per a fer una partició nova, la `p` per a fer una partició primària i crearem la partició amb la mida que vulguem, en aquest cas d'un disc de 10 GB he fet d'aproximadament 5Gb cada partició.
+
+
 <img width="735" height="215" alt="image" src="https://github.com/user-attachments/assets/7cf3b7a8-0972-4566-9cb7-3ac8230a940c" />
+
+
 
 <img width="735" height="215" alt="image" src="https://github.com/user-attachments/assets/f55b6694-506a-4713-8ccc-3453c1f9376c" />
 
