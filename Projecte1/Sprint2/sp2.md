@@ -6,7 +6,9 @@ title:Sprint 2: Gestió de la Informació del Sistema i Administració
 #  **1.Sistemes de fitxer i particions**
 
 ## Mida del sector
-Un sector es la unitat minima fisica d'un disc.
+Un sector és la unitat mínima d’emmagatzematge en un disc o SSD, típicament de 512 bytes o 4 KB, sobre la qual el sistema operatiu pot llegir o escriure dades; s’organitza en pistes i cèrcols i no es pot accedir a fraccions d’un sector.
+
+En aquesta imatge podem veure que es de 512.
 
 <img width="385" height="27" alt="image" src="https://github.com/user-attachments/assets/8cf7cd49-7e15-42a0-924c-110dfe063d33" />
 
