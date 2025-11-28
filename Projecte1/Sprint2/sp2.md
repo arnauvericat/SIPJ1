@@ -108,11 +108,11 @@ Amb la comanda sudo `fdisk /dev/sdb` entrarem al particionador de linux on podre
 
 <img width="735" height="215" alt="image" src="https://github.com/user-attachments/assets/7cf3b7a8-0972-4566-9cb7-3ac8230a940c" />
 
-
-
 <img width="735" height="215" alt="image" src="https://github.com/user-attachments/assets/f55b6694-506a-4713-8ccc-3453c1f9376c" />
 
 <img width="726" height="203" alt="image" src="https://github.com/user-attachments/assets/7b79f31b-cb14-4060-aa82-0f4d3a5883b6" />
+
+Amb el Gparted crearem l'altra partició de 5Gb, aixo ho podem fer anant a la fulla de l'esquerra i configurant una nova partició.
 
 <img width="768" height="209" alt="image" src="https://github.com/user-attachments/assets/721192fb-0e81-420a-acb8-fc96bf649d65" />
 
