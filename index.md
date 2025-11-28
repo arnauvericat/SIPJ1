@@ -1,4 +1,6 @@
-Title: Curs de Sistemes Informàtics
+---
+title: Curs de Sistemes Informàtics
+---
 
 Aquest repositori conte informació de Arnau Vericat Pastor
 
