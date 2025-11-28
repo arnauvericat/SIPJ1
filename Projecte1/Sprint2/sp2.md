@@ -8,7 +8,7 @@ title:Sprint 2: Gestió de la Informació del Sistema i Administració
 ## Mida del sector
 Un sector és la unitat mínima d’emmagatzematge en un disc o SSD, típicament de 512 bytes o 4 KB, sobre la qual el sistema operatiu pot llegir o escriure dades; s’organitza en pistes i cèrcols i no es pot accedir a fraccions d’un sector.
 
-En aquesta imatge podem veure que es de 512.
+Amb la comanda dfisk -l podem veure les particions i els discs que tenim al nostre ordinador, aixi podem veure que en el nostre disc tenim 512 bytes en la mida del sector.
 
 <img width="385" height="27" alt="image" src="https://github.com/user-attachments/assets/8cf7cd49-7e15-42a0-924c-110dfe063d33" />
 
