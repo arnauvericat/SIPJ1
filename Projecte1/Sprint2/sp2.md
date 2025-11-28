@@ -50,13 +50,40 @@ Per a la fragmentació podem canviar la mida dels sectors en formatar el sistema
 
 La fragmentació externa es quan l'espai lliure en una memoria o sistema d'emmagatzematge que esta dividit en petits blocs.
 
+# Tipus de Formateig de Discs
+
+## 1. Formateig d’Alt Nivell (High-Level Formatting)
+- També conegut com **formateig lògic**.
+- Prepara el sistema de fitxers perquè el sistema operatiu pugui emmagatzemar dades.
+- **Accions principals:**
+  - Crear taula de particions.
+  - Instal·lar un sistema de fitxers (FAT, NTFS, ext4, etc.).
+  - Assignar directoris i metadades.
+- **Exemple:** formatar un pendrive a NTFS o ext4.
+- **Objectiu:** que el sistema operatiu pugui llegir i escriure fitxers.
+
+---
+
+## 2. Formateig de Nivell Mitjà (Medium-Level Formatting)
+- Pont entre el baix i l’alt nivell; prepara el mitjà sense tocar dades físiques.
+- **Accions principals:**
+  - Inicialitzar sectors o blocs del disc.
+  - Comprovar integritat bàsica.
+  - Pot incloure una simulació de formateig de baix nivell en discs moderns.
+- **Objectiu:** assegurar que el suport físic és correcte abans del formateig lògic.
+
+---
+
+## 3. Formateig de Baix Nivell (Low-Level Formatting)
+- També anomenat **formateig físic**.
+- Defineix l’estructura física dels sectors i pistes del disc.
+- **Accions principals:**
+  - Crear pistes i sectors físics.
+  - Establir marques de sincronització i bits de control.
+- **Exemple:** discos antics; avui dia els HDD i SSD ja venen preformatats de baix nivell.
+- **Objectiu:** preparar el suport físic per al formateig lògic.
 
 
-## Tipus de formateig
-
-* ### Alt nivell
-* ### Mitg nivell
-* ### Baix nivell
 
 ## Particions/volums
 
