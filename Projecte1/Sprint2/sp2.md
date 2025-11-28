@@ -28,6 +28,7 @@ Amb el cas de linux el sistema de fitxers es tan bo que no fa falta fragmentador
 ## Mida del block
 Un block es la unitat minima logica d'un sistema operatiu.
 Aquesta mida si que es pot modificar quan formatem la partició.
+
 <img width="658" height="93" alt="image" src="https://github.com/user-attachments/assets/0e93ba17-f1cb-42d7-8094-9ebc33fa9a63" />
 <img width="658" height="93" alt="image" src="https://github.com/user-attachments/assets/b853c98b-1ca9-4546-9054-1cd9faa2f860" />
 
