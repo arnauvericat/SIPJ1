@@ -93,6 +93,8 @@ Un volum es una capa d'abstracció que es posa per damunt de les particions.
 
 <img width="269" height="156" alt="image" src="https://github.com/user-attachments/assets/50d32909-7fd7-41fe-9a8b-6fb8cad0e1eb" />
 
+* ## GPARTED
+
 * ### Comandes
   
 <img width="541" height="104" alt="image" src="https://github.com/user-attachments/assets/3137a71c-b5e4-4f8d-88ed-e6af3ed8f8e0" />
@@ -117,14 +119,6 @@ Un volum es una capa d'abstracció que es posa per damunt de les particions.
 
 <img width="294" height="46" alt="image" src="https://github.com/user-attachments/assets/9a18a701-5bec-4696-9586-6c70614acb8d" />
 
-
-* ### GPARTED
-
-
-
-
-
-2.# Còpies de seguretat i automatització de tasques
 3.# Gestió d'usuaris, grups i permisos
 
 <img width="1201" height="698" alt="image" src="https://github.com/user-attachments/assets/57848529-7400-455e-b369-a96a3338b95d" />
@@ -165,7 +159,7 @@ Un volum es una capa d'abstracció que es posa per damunt de les particions.
 <img width="522" height="356" alt="image" src="https://github.com/user-attachments/assets/bad6eea3-b691-4acf-93bc-8bdb53ddaf98" />
 
 
-### Creació d'usuaris i ocnfiguració.
-
+### Creació d'usuaris i configuració.
+2.# Còpies de seguretat i automatització de tasques
 
 4.# Gestió de procesos
