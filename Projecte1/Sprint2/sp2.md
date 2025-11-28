@@ -12,6 +12,8 @@ Amb la comanda dfisk -l podem veure les particions i els discs que tenim al nost
 
 <img width="385" height="27" alt="image" src="https://github.com/user-attachments/assets/8cf7cd49-7e15-42a0-924c-110dfe063d33" />
 
+Aquestes comandes ens serveixen per a crear un fitxer de text amb el contingut que hi ha a la imatge, després podem veure que el fitxer conte 17 bytes de dades reals, però sol ocupa 4KB.
+
 <img width="664" height="173" alt="image" src="https://github.com/user-attachments/assets/2072a5a2-b507-4b93-b276-6f845465f488" />
 
 <img width="736" height="422" alt="image" src="https://github.com/user-attachments/assets/dbff9c6c-08ff-41a2-b46c-2c4850b398fe" />
