@@ -1,6 +1,5 @@
----
-# Curs de Sistemes Informàtics
----
+
+
 Aquest repositori conte informació de Arnau Vericat Pastor
 
 Index amb els apartats del repositori
