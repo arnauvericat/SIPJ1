@@ -251,7 +251,7 @@ Mirem la informació de l'usuari prova6 al fitxer /etc/shadow i veiem que té un
 
 <img width="433" height="74" alt="image" src="https://github.com/user-attachments/assets/cdefda08-cce3-4e92-83de-17e56fcb3039" />
 
-Obrim el fitxer .profile amb l'editor nano, aquest fitxer s'executa quan un usuari inicia sessió al sistema. Veiem que conté comentaris explicatius sobre la seva funció i una línia que estableix la variable Pbo amb el valor "/var". El fitxer també menciona la configuració de la màscara per permisos per defecte.
+Obrim el fitxer .profile amb l'editor nano, aquest fitxer s'executa quan un usuari inicia sessió al sistema. Veiem que conté comentaris explicatius sobre la seva funció i una línia que estableix la variable PWD amb el valor "/var". El fitxer també menciona la configuració de la màscara per permisos per defecte.
 
 <img width="682" height="207" alt="image" src="https://github.com/user-attachments/assets/bfc68ace-8d75-4a4c-baab-414efefc902f" />
 
