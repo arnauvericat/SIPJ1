@@ -218,14 +218,33 @@ Es treu l'usuari prova4 del grup proves amb deluser i també s'intenta treure pr
 S'estableix el grup proves com a grup principal de prova4 amb usermod -g i es verifica amb groups prova4 que ara pertany als grups proves i users.
 
 <img width="435" height="151" alt="image" src="https://github.com/user-attachments/assets/7919c607-dd30-436c-98d9-16e7b2a7ea3a" />
+
+Treiem l'usuari prova4 del grup proves amb una comanda que sembla estar mal escrita però la operació funciona igualment. Després intentem treure l'usuari prova3 del mateix grup però com que prova3 ja no existeix al sistema no podem fer-ho. Quan mirem el fitxer /etc/group veiem que el grup proves encara té l'usuari prova2 dins.
+
 <img width="434" height="46" alt="image" src="https://github.com/user-attachments/assets/5c1e7d97-b114-4c33-9ac4-2a02689cbe2f" />
+
+ Canviem el grup principal de l'usuari prova4 perquè sigui proves amb la comanda usermod. Quan comprovem el fitxer /etc/passwd veiem que prova4 ara té el número de grup 1007 que correspon al grup proves.
+ 
 <img width="434" height="23" alt="image" src="https://github.com/user-attachments/assets/6db9c054-a8b4-4b3a-85aa-4078bc3f66c1" />
+
+ Intentem eliminar un grup anomenat prove però no existeix. Després fem que prova4 tingui com a grup principal el seu propi nom d'usuari. Tornem a intentar eliminar el grup prove sense sort i quan mirem el grup proves encara segueix existint.
+ 
 <img width="428" height="43" alt="image" src="https://github.com/user-attachments/assets/4dd084f7-c4f8-40a2-9a95-3ecf6bf0a214" />
+
+Mirem la configuració del fitxer /etc/adduser.conf on veiem els paràmetres del sistema. La configuració diu que els directoris dels usuaris aniran a /var en lloc de /home. Les opcions per crear directoris per grups o per lletra inicial estan desactivades. Els fitxers que es copien als nous usuaris estan a /etc/skel. També veiem els números que s'assignen automàticament als usuaris i grups del sistema.
+
 <img width="302" height="39" alt="image" src="https://github.com/user-attachments/assets/e8d7efa7-bbdb-4470-8df5-5eae92ef5230" />
+
+ Llistem el que hi ha dins del directori /var i veiem totes les carpetes del sistema juntament amb una carpeta prova5. Consultem la contrasenya de l'usuari prova5 al fitxer /etc/shadow i veiem que té configurada una data de caducitat.
+ 
 <img width="532" height="97" alt="image" src="https://github.com/user-attachments/assets/7f531436-e988-4517-a44d-86e73c9351c6" />
 
+Entrem a la carpeta /etc/skel i veiem que hi ha dos fitxers: accessdirector i fitxer_compartit. Aquests són els fitxers que es copien automàticament quan es crea un usuari nou.
 
 <img width="757" height="601" alt="image" src="https://github.com/user-attachments/assets/4f634fa7-2b17-4ee7-8192-69291b0cbf52" />
+
+Mirem què hi ha dins de /var/prova5 i veiem tant els fitxers del sistema que sempre es creen com els fitxers que venen de /etc/skel. Quan comprovem el fitxer /etc/passwd confirmem que l'usuari prova5 té el número 2000 i que el seu directori personal està ubicat a /var/prova5 en lloc de /home/prova5.
+
 <img width="894" height="292" alt="image" src="https://github.com/user-attachments/assets/3f5efc90-c291-474d-8a64-e60ee67d9ee6" />
 <img width="433" height="74" alt="image" src="https://github.com/user-attachments/assets/cdefda08-cce3-4e92-83de-17e56fcb3039" />
 
