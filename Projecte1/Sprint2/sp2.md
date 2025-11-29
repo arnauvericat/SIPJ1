@@ -116,13 +116,23 @@ Amb el Gparted crearem l'altra partició de 5Gb, aixo ho podem fer anant a la fu
 
 <img width="768" height="209" alt="image" src="https://github.com/user-attachments/assets/721192fb-0e81-420a-acb8-fc96bf649d65" />
 
+I veirem que la mida del bloc es de 2048 bytes.
+
 <img width="556" height="78" alt="image" src="https://github.com/user-attachments/assets/a96e5301-0ca9-4bd6-a567-26a96e28914e" />
+
+En aquesta imatge es pot veure que s’executa la comanda mount -t ext4 /dev/sdb1 /mnt/particio1/, que serveix per muntar la partició /dev/sdb1 al directori /mnt/particio1 utilitzant el sistema de fitxers ext4. També es pot veure que s’entra al directori muntat i es llista el seu contingut, on apareix el directori lost+found, típic dels sistemes ext4. A continuació es crea un fitxer anomenat prova amb touch prova i després es comprova amb ls que el fitxer efectivament es troba dins del punt de muntatge, demostrant que la partició està funcionant en mode lectura i escriptura.
 
 <img width="613" height="95" alt="image" src="https://github.com/user-attachments/assets/2147a87a-b62f-420e-a57c-0f5b2511d91f" />
 
+En aquesta imatge es pot veure que es torna a utilitzar la comanda mount -t ext4 /dev/sdb1 /mnt/particio1/. Un cop muntada la partició, es llista el contingut del directori i tornen a aparèixer lost+found i el fitxer prova. Això confirma que el muntatge manual funciona correctament i que el contingut de la partició es manté accessible després de repetir el procés.
+
 <img width="374" height="62" alt="image" src="https://github.com/user-attachments/assets/935ee461-6458-46a7-b170-9b8d7d2f7b5d" />
 
+En aquesta imatge es pot veure el fitxer de configuració /etc/fstab. A la part inferior s’hi observa una línia que estableix que la partició /dev/sdb1 s’ha de muntar automàticament al directori /mnt/particio1 utilitzant el sistema de fitxers ext4 i amb permisos de lectura i escriptura (rw). Els valors 0 0 indiquen que no es realitzaran comprovacions automàtiques del sistema de fitxers ni còpies amb dump. Aquesta configuració fa que la partició es munte de manera persistent a cada arrencada del sistema.
+
 <img width="612" height="144" alt="image" src="https://github.com/user-attachments/assets/9bd4a661-80de-4656-b5ef-b28cf68221a6" />
+
+En aquesta imatge es pot veure que s’accedeix de nou al directori /mnt/particio1 i se’n llista el contingut. Hi apareixen lost+found i el fitxer prova, cosa que indica que la partició s’ha muntat correctament, tant per la configuració de fstab com pel procés realitzat anteriorment. Això confirma que el muntatge persistent està configurat i funciona com s’esperava.
 
 <img width="725" height="265" alt="image" src="https://github.com/user-attachments/assets/79b65e7e-4ab9-4779-b553-1267767aa103" />
 
