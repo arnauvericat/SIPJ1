@@ -246,10 +246,20 @@ Entrem a la carpeta /etc/skel i veiem que hi ha dos fitxers: accessdirector i fi
 Mirem què hi ha dins de /var/prova5 i veiem tant els fitxers del sistema que sempre es creen com els fitxers que venen de /etc/skel. Quan comprovem el fitxer /etc/passwd confirmem que l'usuari prova5 té el número 2000 i que el seu directori personal està ubicat a /var/prova5 en lloc de /home/prova5.
 
 <img width="894" height="292" alt="image" src="https://github.com/user-attachments/assets/3f5efc90-c291-474d-8a64-e60ee67d9ee6" />
+
+Mirem la informació de l'usuari prova6 al fitxer /etc/shadow i veiem que té una contrasenya configurada amb número 1120399 i algunes opcions de caducitat. Després consultem el fitxer /etc/passwd per veure la seva configuració completa on observem que prova6 té l'UID 2001 i GID 2001, el seu directori personal està a /home/prova6 i utilitza bash com a shell.
+
 <img width="433" height="74" alt="image" src="https://github.com/user-attachments/assets/cdefda08-cce3-4e92-83de-17e56fcb3039" />
 
+Obrim el fitxer .profile amb l'editor nano, aquest fitxer s'executa quan un usuari inicia sessió al sistema. Veiem que conté comentaris explicatius sobre la seva funció i una línia que estableix la variable Pbo amb el valor "/var". El fitxer també menciona la configuració de la màscara per permisos per defecte.
+
 <img width="682" height="207" alt="image" src="https://github.com/user-attachments/assets/bfc68ace-8d75-4a4c-baab-414efefc902f" />
+
+Obrim el fitxer .bash_logout que s'executa quan l'usuari tanca la sessió. Conté un script que neteja la pantalla de la consola per augmentar la privadesa quan es surt del sistema, però només si és una consola local. També hi ha una línia que sembla eliminar contingut d'una carpeta d'imatges.
+
 <img width="673" height="186" alt="image" src="https://github.com/user-attachments/assets/b97d9245-e924-4e66-8c2a-f039ef3d5bc7" />
+
+Llistem el contingut del directori de l'usuari prova10 amb gran detall. Veiem tots els fitxers i carpetes típics d'un usuari de Linux incloent els fitxers de configuració ocults que comencen amb punt. Hi ha carpetes com Desktop, Documents, Downloads i fitxers de configuració de bash com .bashrc i .profile. També observem un fitxer anomenat filter_compartit i diverses carpetes de configuració del sistema.
 <img width="522" height="356" alt="image" src="https://github.com/user-attachments/assets/bad6eea3-b691-4acf-93bc-8bdb53ddaf98" />
 
 
