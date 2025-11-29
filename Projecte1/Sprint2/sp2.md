@@ -136,31 +136,87 @@ En aquesta imatge es pot veure que s’accedeix de nou al directori /mnt/partici
 
 <img width="725" height="265" alt="image" src="https://github.com/user-attachments/assets/79b65e7e-4ab9-4779-b553-1267767aa103" />
 
+I fem un `ls` per a veure que efectivament surt el que hem creat.
+
 <img width="294" height="46" alt="image" src="https://github.com/user-attachments/assets/9a18a701-5bec-4696-9586-6c70614acb8d" />
 
 3.# Gestió d'usuaris, grups i permisos
 
+En aquesta imatge es pot veure que s’està editant el fitxer /etc/passwd amb l’editor nano. Aquest fitxer conté la llista de tots els comptes d’usuari del sistema, amb informació com el nom d’usuari, l’UID, el GID, el directori personal i la shell assignada. Es poden observar entrades del sistema com root, daemon, bin, sys, i moltes altres associades a serveis del sistema, totes amb la shell configurada com /usr/sbin/nologin per evitar que iniciïn sessió. També es veu un usuari final amb UID 1000 que té com a shell /bin/bash, i per tant és un compte real amb capacitat d’inici de sessió. Aquest fitxer serveix principalment com a base de dades visible d’usuaris del sistema.
+
 <img width="1201" height="698" alt="image" src="https://github.com/user-attachments/assets/57848529-7400-455e-b369-a96a3338b95d" />
+
+En aquesta imatge es pot veure que s’està editant el fitxer /etc/group. Aquest fitxer mostra tots els grups del sistema, amb el seu nom, GID i els membres que en formen part. Aquí apareixen grups com root, daemon, adm, cdrom, sudo, audio, video, lp, entre molts altres. També es pot veure que alguns grups tenen com a membres usuaris específics, com per exemple grups on apareix l’usuari principal associat a funcions del sistema, com ara el grup sudo per elevar permisos o el grup adm per accedir a logs. Aquest fitxer és fonamental per controlar permisos col·lectius, ja que determina quins usuaris tenen accés compartit a determinats recursos.
+
 <img width="1205" height="713" alt="image" src="https://github.com/user-attachments/assets/ce434aac-c401-481d-92ee-55bd4997de0a" />
+
+En aquesta imatge es pot veure que s’edita el fitxer /etc/shadow, que conté les contrasenyes encriptades dels usuaris. Les entrades mostren el nom d’usuari i, en lloc de la contrasenya real, una cadena encriptada o símbols com * o !, que bloquegen l’inici de sessió. A continuació hi ha informació addicional com dates d’últim canvi de contrasenya, caducitat, o períodes d’inactivitat. La presència de valors com 19750 o 99999 indica la forma en què el sistema controla la validesa de la contrasenya. Aquest fitxer és molt sensible i només pot ser llegit per root, ja que conté informació crítica per a la seguretat del sistema.
+
 <img width="1205" height="713" alt="image" src="https://github.com/user-attachments/assets/395232d9-f102-4f1b-aa94-dab4fb55cb66" />
+
+En aquesta imatge es pot veure el fitxer /etc/gshadow, que és l’equivalent del fitxer group però amb la informació sensible de contrasenyes de grups i membres administradors dels grups. Aquí es mostren grups com root, daemon, adm, sudo, audio, video, disk, i molts més, amb els seus membres assignats. Igual que amb /etc/shadow, les contrasenyes de grup estan encriptades o bloquejades amb símbols, i s’hi poden definir usuaris administradors del grup. Aquest fitxer proporciona una capa de seguretat afegida als grups, controlant qui pot modificar la seva composició.
+
 <img width="1205" height="713" alt="image" src="https://github.com/user-attachments/assets/c1c979c1-f723-4321-b536-19ef3a17c191" />
+
+Utilitzem la comanda modular per crear un usuari anomenat xina, aquesta comanda crea automàticament l'usuari amb UID 1001 i el grup amb GID 1001, genera el directori personal a /home/xina i copia els fitxers des de /etc/skel, el sistema demana establir una contrasenya però dona error per no introduir-ne cap, després demana informació addicional com nom complet i telèfons que es deixen buits, i finalment es confirma que la informació és correcta.
+
 <img width="537" height="381" alt="image" src="https://github.com/user-attachments/assets/0f830fa8-e299-45b3-9509-e2991572f41d" />
-<img width="713" height="313" alt="image" src="https://github.com/user-attachments/assets/efc12a8a-3819-4180-8686-0527aabd6d09" />
+
+Consultem el fitxer /etc/passwd amb la comanda cat i grep per buscar l'usuari gina, es mostra la informació de l'usuari gina que té UID 1002 i GID 1002, el seu directori personal està configurat a /home/gina i utilitza /bin/bash com a shell per defecte
+
 <img width="397" height="39" alt="image" src="https://github.com/user-attachments/assets/feb37c0f-3e3b-4aa9-88a0-00c1671ce389" />
+
+Llistem el contingut del directori /home/gina amb ls, es mostren les carpetes estàndard Desktop Documents Downloads Music Pictures Public snap Templates i Videos que són les carpetes bàsiques d'un usuari.
+
 <img width="731" height="44" alt="image" src="https://github.com/user-attachments/assets/de60d0d6-044f-4862-a09f-dba1a3fb5d37" />
+
+Consultem el fitxer /etc/passwd per l'usuari casper, es mostra que té UID 1003 i GID 1003, el directori personal és /home/casper i utilitza /bin/sh com a shell inicial.
+
 <img width="511" height="41" alt="image" src="https://github.com/user-attachments/assets/15c9c37f-5bad-4ff9-9ee9-35e33abfc98b" />
+
+Consultem el fitxer /etc/group per buscar el grup casper que té GID 1003, canviem la contrasenya de l'usuari casper amb passwd, el sistema requereix contrasenya de 8 caràcters i s'actualitza correctament.
+
 <img width="511" height="41" alt="image" src="https://github.com/user-attachments/assets/585a3b5c-8ceb-4dc3-b3fa-d3c615ec8b99" />
+
+Modifiquem la shell de casper amb usermod -s /bin/bash canviant de /bin/sh a /bin/bash, creem el directori personal amb mkdir casper, llistem els directoris d'usuari a /home amb ls -l on es veuen arnau casper gina i xina amb els seus propietaris i permisos, i finalment l'usuari casper ja pot accedir amb el nou shell.
+
 <img width="526" height="94" alt="image" src="https://github.com/user-attachments/assets/5e0c84e2-1cd9-4326-a5db-44030b3c170b" />
+
+Veiem el contingut del directori /home amb la comanda ls -l on es llisten tots els usuaris del sistema arnau casper gina i xina cadascú amb el seu propi directori i permisos corresponents observem que l'usuari xina apareix amb identificadors numèrics 1001 en lloc del seu nom i a sota es mostra que l'usuari casper ha iniciat sessió al sistema.
+
 <img width="444" height="41" alt="image" src="https://github.com/user-attachments/assets/280b2fed-fe76-497f-9eea-fc5dc89d11b8" />
+
+Es llisten els directoris del sistema amb ls i es veuen diversos usuaris incloent prova4 que serà eliminat s'utilitza la comanda deluser per eliminar l'usuari prova4 el sistema mostra un advertiment que el grup prova4 ja no té membres però l'eliminació es completa correctament.
+
 <img width="481" height="110" alt="image" src="https://github.com/user-attachments/assets/9e0c5ec0-38ad-4b1b-b218-3dc60e9a15b1" />
+
+S'intenta eliminar l'usuari prova3 amb userdel -r però el sistema no troba el directori de correu d'aquest usuari després de l'eliminació es llisten els directoris i es comprova que prova3 ha desaparegut però prova4 encara apareix al llistat.
+
 <img width="734" height="106" alt="image" src="https://github.com/user-attachments/assets/ff534e70-2dae-4ba1-b0cd-b8db51ebcc6b" />
+
+Es consulta el fitxer /etc/shadow per veure la informació de contrasenya de prova2 es mostra la contrasenya encriptada i les dates de caducitat després s'utilitza usermod -L per bloquejar el compte de prova2 però sembla que hi ha algun error en la execució ja que es torna a consultar i la contrasenya apareix igual.
 
 
 <img width="520" height="151" alt="image" src="https://github.com/user-attachments/assets/58318732-0275-4208-87c8-94ddce89e015" />
+
+S'afegeix l'usuari prova2 al grup proves amb adduser prova2 proves la operació es realitza correctament després s'intenta afegir prova3 al mateix grup amb gpasswd però prova3 ja no existeix al sistema.
+
 <img width="536" height="77" alt="image" src="https://github.com/user-attachments/assets/62b11c66-b800-4462-bcf6-2c534e2ba2a1" />
+
+Es modifica la informació de l'usuari prova4 amb usermod afegint el comentari proves després es consulta repetidament el fitxer /etc/passwd per veure els usuaris prova2 i prova4 però hi ha línies duplicades en els resultats.
+
 <img width="907" height="97" alt="image" src="https://github.com/user-attachments/assets/eb5175fd-8175-440b-bb1d-894b12d06cd3" />
+
+Es consulta el grup proves al fitxer /etc/group i es veu que prova2 n'és membre s'intenta eliminar el grup proves amb groupdel però falla perquè prova4 encara té aquest grup com a grup principal s'utilitza usermod per canviar el grup principal de prova4 i llavors sí que es pot eliminar el grup proves.
+
 <img width="902" height="65" alt="image" src="https://github.com/user-attachments/assets/6b9205ff-094b-45d8-8185-be1e19476af9" />
+
+Es treu l'usuari prova4 del grup proves amb deluser i també s'intenta treure prova3 amb gpasswd -d però prova3 ja no existeix finalment es consulta el grup proves i ja no apareix a la llista.
+
 <img width="421" height="216" alt="image" src="https://github.com/user-attachments/assets/c68e61a2-bd1b-46e9-b5a6-fa50ba6193da" />
+
+S'estableix el grup proves com a grup principal de prova4 amb usermod -g i es verifica amb groups prova4 que ara pertany als grups proves i users.
+
 <img width="435" height="151" alt="image" src="https://github.com/user-attachments/assets/7919c607-dd30-436c-98d9-16e7b2a7ea3a" />
 <img width="434" height="46" alt="image" src="https://github.com/user-attachments/assets/5c1e7d97-b114-4c33-9ac4-2a02689cbe2f" />
 <img width="434" height="23" alt="image" src="https://github.com/user-attachments/assets/6db9c054-a8b4-4b3a-85aa-4078bc3f66c1" />
