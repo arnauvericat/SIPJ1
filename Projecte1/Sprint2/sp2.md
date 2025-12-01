@@ -260,6 +260,7 @@ Obrim el fitxer .bash_logout que s'executa quan l'usuari tanca la sessió. Cont�
 <img width="673" height="186" alt="image" src="https://github.com/user-attachments/assets/b97d9245-e924-4e66-8c2a-f039ef3d5bc7" />
 
 Llistem el contingut del directori de l'usuari prova10 amb gran detall. Veiem tots els fitxers i carpetes típics d'un usuari de Linux incloent els fitxers de configuració ocults que comencen amb punt. Hi ha carpetes com Desktop, Documents, Downloads i fitxers de configuració de bash com .bashrc i .profile. També observem un fitxer anomenat filter_compartit i diverses carpetes de configuració del sistema.
+
 <img width="522" height="356" alt="image" src="https://github.com/user-attachments/assets/bad6eea3-b691-4acf-93bc-8bdb53ddaf98" />
 
 
