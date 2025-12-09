@@ -307,6 +307,14 @@ Treiem les ACLs que hem creat.
 
 <img width="538" height="224" alt="image" src="https://github.com/user-attachments/assets/966b2a15-bdbf-4e06-b474-81175390e912" />
 
+Fiquem permisos per a tot-hom
+<img width="538" height="224" alt="image" src="https://github.com/user-attachments/assets/998a5fdb-23eb-4b71-b412-e5807fee5c37" />
+
+Comprovacions amb usuari blau
+<img width="548" height="637" alt="image" src="https://github.com/user-attachments/assets/e587cd42-8340-4e2e-af0f-a02ee1ebd027" />
+
+Sticky
+<img width="534" height="387" alt="image" src="https://github.com/user-attachments/assets/80d5969b-7ac5-49ab-87d8-9ddfed6eb782" />
 
 
 2.# Còpies de seguretat i automatització de tasques
