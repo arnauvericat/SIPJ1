@@ -263,6 +263,49 @@ Llistem el contingut del directori de l'usuari prova10 amb gran detall. Veiem to
 
 <img width="522" height="356" alt="image" src="https://github.com/user-attachments/assets/bad6eea3-b691-4acf-93bc-8bdb53ddaf98" />
 
+## Gestio persmisos en usuaris
+
+Preparem entorn:
+<img width="502" height="125" alt="image" src="https://github.com/user-attachments/assets/06d96439-8d01-4b08-898c-9e05acb01a82" />
+
+Afegim grup parchis i dos usuaris
+<img width="449" height="280" alt="image" src="https://github.com/user-attachments/assets/c1bc4a2a-ac5d-4d4a-8652-85ed1261e5f2" />
+
+Creem carpeta
+<img width="648" height="132" alt="image" src="https://github.com/user-attachments/assets/9cc8b5af-f5ca-44c2-b1b0-ad54341c2e6a" />
+
+Editem permisos i usuaris de la carpeta
+<img width="768" height="614" alt="image" src="https://github.com/user-attachments/assets/407572dd-5f1e-4656-ba55-aea75329b6f0" />
+
+Altres formes de canviar permisos
+<img width="528" height="133" alt="image" src="https://github.com/user-attachments/assets/57a4534c-b77c-4bbf-8525-61a393fcdd85" />
+
+Comprovem persmisos del usuari groc
+<img width="401" height="118" alt="image" src="https://github.com/user-attachments/assets/dfb36acd-82a4-4c8a-8bce-16ae71cb8605" />
+
+Usuari blau
+<img width="533" height="220" alt="image" src="https://github.com/user-attachments/assets/0ad282ab-940d-4136-a586-303f9fd723ec" />
+
+Usuari verd
+<img width="543" height="157" alt="image" src="https://github.com/user-attachments/assets/1b6d72f6-de0f-4c4f-8ef4-98db0434d5cc" />
+
+## Llistes de control d'accés (ACLs)
+
+<img width="580" height="435" alt="image" src="https://github.com/user-attachments/assets/27f53a26-32f3-46c6-bdc8-0aa01db10b82" />
+
+Comprovacions amb usuari morat
+<img width="411" height="137" alt="image" src="https://github.com/user-attachments/assets/3b94bcef-3454-4291-bbc2-6656ecc6875d" />
+
+Treiem persmisos a l'usuari roig.
+
+<img width="538" height="242" alt="image" src="https://github.com/user-attachments/assets/82ecbbfc-f15b-4fc6-86a9-ec1656278446" />
+
+Comprovacions usuari roig.
+<img width="561" height="153" alt="image" src="https://github.com/user-attachments/assets/0fb039f3-2734-46cf-9e52-784d3c2d2e32" />
+
+Treiem les ACLs que hem creat.
+
+<img width="538" height="224" alt="image" src="https://github.com/user-attachments/assets/966b2a15-bdbf-4e06-b474-81175390e912" />
 
 
 
