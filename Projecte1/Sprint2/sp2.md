@@ -264,6 +264,8 @@ Llistem el contingut del directori de l'usuari prova10 amb gran detall. Veiem to
 <img width="522" height="356" alt="image" src="https://github.com/user-attachments/assets/bad6eea3-b691-4acf-93bc-8bdb53ddaf98" />
 
 
+
+
 2.# Còpies de seguretat i automatització de tasques
 
 4.# Gestió de procesos
