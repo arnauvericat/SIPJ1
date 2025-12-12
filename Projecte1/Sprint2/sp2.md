@@ -391,14 +391,55 @@ Avans anaven per separat però ara treballen els dos conjuntament.
 ### 6. Pràctica automatització
 
 #### 1.Cron
+
+##### Fitxer crontab
+
+<img width="238" height="25" alt="image" src="https://github.com/user-attachments/assets/05c27e26-26e6-4972-9b17-46ad39b940ed" />
+
+
+<img width="922" height="471" alt="image" src="https://github.com/user-attachments/assets/015235b0-bac7-4629-873f-579da0d3786e" />
+
+###### Script copies.sh
+
+<img width="920" height="151" alt="image" src="https://github.com/user-attachments/assets/f8c831ca-38fd-441e-95f9-f0874930b614" />
+
+Donem permisos d'execució.
+
+<img width="499" height="96" alt="image" src="https://github.com/user-attachments/assets/880cdecc-edca-45d9-b6af-c6344d515e25" />
+
+
+
+
 #### 2.Anacron
 
+<img width="764" height="150" alt="image" src="https://github.com/user-attachments/assets/b59c6d38-a72f-4cd7-826f-2a057201c6d0" />
+
+Anacron fitxer
+
+<img width="838" height="256" alt="image" src="https://github.com/user-attachments/assets/6a60d62f-3d13-412d-8438-c8789d95c01d" />
+
+Esta buit
+<img width="918" height="141" alt="image" src="https://github.com/user-attachments/assets/e598e27c-34a0-4201-8724-501ed4861430" />
+
+
+
+##### Fitxers importants:
+
+###### Crontab
+
+<img width="938" height="424" alt="image" src="https://github.com/user-attachments/assets/c73bf161-eaed-4d30-94aa-cf54418caf12" />
 
 
 
 
+###### Directoris cron
+
+<img width="368" height="166" alt="image" src="https://github.com/user-attachments/assets/e0e32182-0d52-428c-9c95-e9f9d1db53c2" />
 
 
+###### Anacron
+
+<img width="854" height="261" alt="image" src="https://github.com/user-attachments/assets/6f4f3f0a-157e-4b89-8071-7ba4f56bbb62" />
 
 
 
