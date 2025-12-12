@@ -323,12 +323,28 @@ Sticky
 
 ## Que es una copia de seguretat?
 
+## Quantes poden caler?
+
+## Tipus de copies:
+
+### Completa:
+### Diferencial
+### Incremental:
+
 
 ### 2.Teoria comandes Backups
 
-#### 1.CP
+#### 1.CP:
+
+Es una copia simple no inteligent, sol s'utilitza en sistemes locals.
+
 #### 2.Rsync
+
+Serveix per a sincronitzar carpetes, es pot fer en local i en remot, es pot connectar per ssh.
+
 #### 3.DD
+
+Es per a clonar particions o discos, no es intel·ligent.
 
 ### 3.Practica comandes backups
 
