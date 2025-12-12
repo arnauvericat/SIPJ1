@@ -421,6 +421,10 @@ Anacron fitxer
 Esta buit
 <img width="918" height="141" alt="image" src="https://github.com/user-attachments/assets/e598e27c-34a0-4201-8724-501ed4861430" />
 
+Funciona!!!
+
+<img width="918" height="141" alt="image" src="https://github.com/user-attachments/assets/c19176cd-5cd6-4467-a660-e9103fb75fc1" />
+
 
 
 ##### Fitxers importants:
