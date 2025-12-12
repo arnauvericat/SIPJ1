@@ -348,20 +348,60 @@ Es per a clonar particions o discos, no es intel·ligent.
 
 ### 3.Practica comandes backups
 
+<img width="535" height="407" alt="image" src="https://github.com/user-attachments/assets/793fe895-48fd-4294-901c-ef3b433f8514" />
+
+<img width="642" height="206" alt="image" src="https://github.com/user-attachments/assets/27415a36-2439-4d1d-9344-cd0f74b0f3a5" />
+
 #### 1.CP
+
+<img width="722" height="183" alt="image" src="https://github.com/user-attachments/assets/ac2bea74-0e69-4b67-a84b-f960bdc95acd" />
+<img width="712" height="127" alt="image" src="https://github.com/user-attachments/assets/b6ec3399-7122-49e7-8d3d-379c62a3c744" />
+
 #### 2.Rsync
+
+<img width="839" height="402" alt="image" src="https://github.com/user-attachments/assets/10846e95-fbcd-4085-8f02-04f528cc0717" />
+
 #### 3.DD
+
+<img width="794" height="129" alt="image" src="https://github.com/user-attachments/assets/660f50fd-ffba-454b-8267-354be8153aff" />
+
 
 ### 4.Pràctica programes Backups
 
-#### 1. Deja-Dup
-#### 2.Duplicity
+#### 1.Duplicity
 
 ### 5.Teoria Automatitzacio scripts, cron i anacron
+
+#### Que es un script?
+
+#### Per a que serveix?
+
+#### Que es el cron?
+
+#### Cron: 
+
+S'utilitza per a automatitzar tasques per a usuaris en una data i una hora concrets i si en aquell moment l'ordinador està tancat la tasca es perd.
+
+#### Anacron: 
+
+Serveix per al mateix pero la tasca no es perd, quan l'ordinador s'engega la tasca es recupera i l'executa, normalment s'utilitza per al manteniment o coses generals del sistema operatiu.
+
+Avans anaven per separat però ara treballen els dos conjuntament.
 
 ### 6. Pràctica automatització
 
 #### 1.Cron
 #### 2.Anacron
+
+
+
+
+
+
+
+
+
+
+
 
 # 4. Gestió de procesos
