@@ -317,6 +317,35 @@ Sticky
 <img width="534" height="387" alt="image" src="https://github.com/user-attachments/assets/80d5969b-7ac5-49ab-87d8-9ddfed6eb782" />
 
 
-2.# Còpies de seguretat i automatització de tasques
+# 2. Còpies de seguretat i automatització de tasques
 
-4.# Gestió de procesos
+### 1.Teoria Còpies de Seguretat
+
+## Que es una copia de seguretat?
+
+
+### 2.Teoria comandes Backups
+
+#### 1.CP
+#### 2.Rsync
+#### 3.DD
+
+### 3.Practica comandes backups
+
+#### 1.CP
+#### 2.Rsync
+#### 3.DD
+
+### 4.Pràctica programes Backups
+
+#### 1. Deja-Dup
+#### 2.Duplicity
+
+### 5.Teoria Automatitzacio scripts, cron i anacron
+
+### 6. Pràctica automatització
+
+#### 1.Cron
+#### 2.Anacron
+
+# 4. Gestió de procesos
