@@ -2,45 +2,81 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Proyecto de Sistemas Informáticos por Arnau Vericat" />
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="assetscss/custom.css" />
+
+  <!-- Favicon opcional -->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+
+  <!-- Hoja de estilos personalizada -->
+  <link rel="stylesheet" href="assets/css/custom.css" />
+
+  <!-- Estilos embebidos para la licencia -->
   <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
     footer.license {
       margin-top: 2rem;
-      text-align: left;
+      padding: 1rem 0;
       font-size: 0.9rem;
       color: #555;
-      position: relative;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 1rem 2rem;
+      border-top: 1px solid #eee;
     }
+
     footer.license img {
       vertical-align: middle;
       margin-top: 0.3rem;
       border: none;
     }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>{{ page.title }}</h1>
+  </header>
 
-  <h1>{{ page.title }}</h1>
+  <main>
+    {{ content }}
+  </main>
 
-  {{ content }}
-
-  <footer class="license">
-    © 2025 <strong>Arnau Vericat</strong><br/>
-    Este proyecto se distribuye bajo la licencia
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener noreferrer">
-      Creative Commons BY-NC-SA 4.0 ES
-    </a><br/>
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener noreferrer">
+  <footer class="license" role="contentinfo">
+    <p>
+      © 2026 <strong>Arnau Vericat</strong><br />
+      Este proyecto se distribuye bajo la licencia
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+         target="_blank"
+         rel="license noopener noreferrer"
+         aria-label="Licencia Creative Commons BY-NC-SA 4.0">
+        Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)
+      </a>.
+    </p>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+       target="_blank"
+       rel="license noopener noreferrer"
+       aria-label="Ver licencia Creative Commons">
       <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"
-           alt="Licencia Creative Commons BY-NC-SA 4.0 ES" />
+           alt="Licencia Creative Commons BY-NC-SA 4.0"
+           loading="lazy" />
     </a>
   </footer>
-
 </body>
 </html>
