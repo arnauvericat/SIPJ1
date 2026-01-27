@@ -77,5 +77,34 @@ INSTAL·LACIÓ DOMINI LDAP I UNIR CLIENT AL DOMINI
 
 <img width="341" height="62" alt="image" src="https://github.com/user-attachments/assets/70eb18d2-d590-4c90-9d7c-73ba519008e5" />
 
+### Servidor samba
 
+Serveix per a compartir arxius, recursos, impresores, etc. Tambe te autenticació a nivell ldap.
+
+<img width="711" height="152" alt="image" src="https://github.com/user-attachments/assets/3a02267b-0321-4930-aaac-494303d0c774" />
+
+<img width="692" height="187" alt="image" src="https://github.com/user-attachments/assets/471bbe62-af35-4bd4-9117-233b7492a059" />
+
+<img width="508" height="470" alt="image" src="https://github.com/user-attachments/assets/ca63b010-94a9-4eeb-b9de-a586dc54dd14" />
+
+<img width="446" height="212" alt="image" src="https://github.com/user-attachments/assets/6d4aa067-8909-4b30-93ab-a3dc30572e97" />
+
+<img width="446" height="212" alt="image" src="https://github.com/user-attachments/assets/1fac8386-36c0-4ece-b4bf-49d47204341d" />
+
+<img width="881" height="660" alt="image" src="https://github.com/user-attachments/assets/2b6b91fd-aa03-4567-9fd1-7513de26760f" />
+
+### Client samba
+
+<img width="543" height="22" alt="image" src="https://github.com/user-attachments/assets/a8b23c6e-dafd-4619-b860-11d5a46b68c5" />
+
+<img width="372" height="97" alt="image" src="https://github.com/user-attachments/assets/b376bbb2-8485-4b47-b710-073ce8fc6642" />
+
+Efectivament no va
+
+<img width="600" height="426" alt="image" src="https://github.com/user-attachments/assets/2f8b6d6b-45b3-48a5-9165-a1476bec3592" />
+
+<img width="600" height="426" alt="image" src="https://github.com/user-attachments/assets/7d9202ab-1ea4-4ae4-ad75-7295cb5ba38f" />
+
+
+### Servidor NFS
 
