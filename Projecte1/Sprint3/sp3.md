@@ -2,8 +2,10 @@
 
 INSTAL·LACIÓ DOMINI LDAP I UNIR CLIENT AL DOMINI
 
+El primer que hem de fer per a instal·lar el domini ldap es ficar una ip fixa per al nostre servidor, ja que els nostres equips amb els usuaris han de connectar-se i es millor una ip fixa per a no tindre que canviar-ho tot el rato.
 
 <img width="580" height="473" alt="image" src="https://github.com/user-attachments/assets/4d1799b8-099c-4589-b809-963d72cc57b5" />
+
 
 <img width="488" height="44" alt="image" src="https://github.com/user-attachments/assets/e3839fc7-9e85-41e3-bc12-1bd5d072defa" />
 
