@@ -110,3 +110,43 @@ Efectivament no va
 
 ### Servidor NFS
 
+Instal·lació nfs-kernel-server
+
+<img width="729" height="340" alt="image" src="https://github.com/user-attachments/assets/a7c544bf-6c19-41ba-afb1-b28fb2bf1811" />
+
+<img width="728" height="203" alt="image" src="https://github.com/user-attachments/assets/a22aa9e8-1f75-4983-94cc-60b54de3886c" />
+
+<img width="728" height="203" alt="image" src="https://github.com/user-attachments/assets/e33166b8-d82f-43ea-a699-543a5450d7e0" />
+
+<img width="730" height="235" alt="image" src="https://github.com/user-attachments/assets/d40aa780-af20-4124-b395-56b50db750ae" />
+
+<img width="366" height="80" alt="image" src="https://github.com/user-attachments/assets/072ce7c3-b5ca-4360-bb1f-78e81205713d" />
+
+<img width="301" height="46" alt="image" src="https://github.com/user-attachments/assets/2e9ddc74-289d-4b52-81e0-6a7462660b25" />
+
+<img width="364" height="256" alt="image" src="https://github.com/user-attachments/assets/a8c5dc74-2553-4b07-a1ca-cd410f430558" />
+
+<img width="728" height="75" alt="image" src="https://github.com/user-attachments/assets/39dd9b73-7022-44f2-9b6b-e992a3a6b581" />
+
+
+### Client NFS
+
+<img width="733" height="313" alt="image" src="https://github.com/user-attachments/assets/c160abed-9fdf-40e0-96a5-8740e851e067" />
+
+<img width="431" height="50" alt="image" src="https://github.com/user-attachments/assets/a5fb86e2-9e34-4423-b985-fce964a435d7" />
+<img width="859" height="28" alt="image" src="https://github.com/user-attachments/assets/167175c5-cc5d-4b5d-aeb7-ed520d530ae2" />
+
+<img width="225" height="25" alt="image" src="https://github.com/user-attachments/assets/7738ae26-c491-4271-96de-7df311e3be17" />
+
+<img width="424" height="83" alt="image" src="https://github.com/user-attachments/assets/a9b0152f-6219-4f69-9301-3b566ec28282" />
+
+<img width="403" height="113" alt="image" src="https://github.com/user-attachments/assets/a270c9e8-6d8a-48f2-969a-4b07a79a8cd7" />
+
+
+<img width="872" height="41" alt="image" src="https://github.com/user-attachments/assets/78aa6299-2270-4c73-af5d-0e0997cbd15a" />
+
+
+
+### Exercici NFS
+
+Connectar un windows a la carpeta del server amb NFS
