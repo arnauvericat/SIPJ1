@@ -124,33 +124,53 @@ Per facilitar la gestió de permisos, es crea un grup anomenat `colors` amb `add
 
 Serveix per a compartir arxius, recursos, impresores, etc. Tambe te autenticació a nivell ldap.
 
-S'edita el fitxer principal `/etc/samba/smb.conf` i s'afegeix el recurs compartit al final del document:
-* `[proves]`: Nom del recurs.
-* `path=/proves`: Ruta del directori a compartir.
-* `guest ok = yes`: Permet l'accés a convidats.
-* `read list = blau, @colors, guest`: Permisos de lectura per a l'usuari blau, el grup colors i els convidats.
-* `write list = blau, guest`: Permisos d'escriptura només per al blau i els convidats.
-* `invalid users = roig`: Es denega explícitament l'accés a l'usuari roig.
+Instal·lació del servidor Samba a la màquina executant `sudo apt install samba`.
   
 <img width="711" height="152" alt="image" src="https://github.com/user-attachments/assets/3a02267b-0321-4930-aaac-494303d0c774" />
 
-Per aplicar la nova configuració, es reinicien els dimonis de Samba executant `systemctl restart smbd nmbd`. A continuació, es verifica que tot funcioni correctament amb `systemctl status smbd nmbd` (es mostren en estat *active/running*).
+Es prepara el directori que es compartirà a la xarxa:
+* Es crea un fitxer de prova amb `touch hola` dins la carpeta `/proves`.
+* S'apliquen permisos totals recursius amb `chmod -R 777 proves`.
+* S'assigna la propietat a "nobody" (sense usuari) i "nogroup" amb `chown -R nobody:nogroup proves/` per evitar restriccions locals del sistema operatiu.
 
 <img width="692" height="187" alt="image" src="https://github.com/user-attachments/assets/471bbe62-af35-4bd4-9117-233b7492a059" />
 
-Finalment, a la màquina client s'instal·la el paquet necessari per connectar-se per terminal: `apt install smbclient`. Tot i això, a l'entorn gràfic es mostra un error ("Efectivament no va") a l'intentar accedir a la carpeta compartida, el que indica que cal revisar la resolució de xarxa o els permisos d'accés des de l'explorador d'arxius d'Ubuntu.
+Per poder gestionar els accessos al recurs compartit, es creen usuaris locals:
+* Es creen tres usuaris (`blau`, `roig`, `groc`) sense directori ni accés a la shell utilitzant `useradd -M -s /sbin/nologin`. Es pot comprovar la creació fent un `tail -3 /etc/passwd`.
+* Se'ls hi assigna una contrasenya de Samba executant `smbpasswd -a nom_usuari` per a cadascun.
 
 <img width="508" height="470" alt="image" src="https://github.com/user-attachments/assets/ca63b010-94a9-4eeb-b9de-a586dc54dd14" />
 
+Es crea un grup per facilitar l'assignació de permisos al recurs:
+* Es crea el grup amb `addgroup colors`.
+* S'afegeixen els usuaris pertinents executant `adduser roig colors` i `adduser groc colors`.
+
 <img width="446" height="212" alt="image" src="https://github.com/user-attachments/assets/6d4aa067-8909-4b30-93ab-a3dc30572e97" />
 
+Es defineix el recurs compartit afegint aquest bloc al fitxer `/etc/samba/smb.conf`:
+* `[proves]`: Nom del recurs compartit.
+* `path=/proves`: Ruta local del directori.
+* `guest ok = yes`: Permet l'accés a convidats (usuaris no autenticats).
+* `direct mask = 0775` i `create mask = 0644`: Defineixen els permisos per defecte per a les carpetes i fitxers que s'hi creïn.
+* `browseable = yes`: Fa que el recurs sigui visible a l'explorador de xarxa.
+* `read only = no`: Permet l'escriptura (no és només lectura).
+* `read list = blau, @colors, guest`: Poden llegir el contingut l'usuari blau, tots els membres del grup colors i els convidats.
+* `write list = blau, guest`: Només poden escriure (crear/esborrar) l'usuari blau i els convidats.
+* `invalid users = roig`: S'impedeix explícitament l'accés a l'usuari roig.
+
 <img width="446" height="212" alt="image" src="https://github.com/user-attachments/assets/1fac8386-36c0-4ece-b4bf-49d47204341d" />
+
+S'apliquen els canvis de configuració reiniciant els dimonis amb `systemctl restart smbd nmbd`. A continuació, amb `systemctl status smbd nmbd`, es comprova que tant el servei `smbd` (encarregat de les connexions) com l'`nmbd` (encarregat de la resolució de noms NetBIOS) estan actius i corrent.
 
 <img width="881" height="660" alt="image" src="https://github.com/user-attachments/assets/2b6b91fd-aa03-4567-9fd1-7513de26760f" />
 
 ### Client samba
 
+Al client, s'instal·len les eines per connectar-se per consola executant `apt install smbclient`. Gràficament, el client ja pot veure la carpeta compartida amb el seu contingut: les subcarpetes "Fortinaiti i la babagi" i "mec", juntament amb el fitxer "hola".
+
 <img width="543" height="22" alt="image" src="https://github.com/user-attachments/assets/a8b23c6e-dafd-4619-b860-11d5a46b68c5" />
+
+Quan s'intenta accedir al recurs des de l'entorn gràfic d'Ubuntu, apareix una finestra demanant credencials (`Cal autenticació`). En introduir l'usuari `roig` i la seva contrasenya, l'accés és denegat. Això confirma que la directiva `invalid users = roig` configurada a l'`smb.conf` funciona correctament (el que a les notes s'indica com "Efectivament no va").
 
 <img width="372" height="97" alt="image" src="https://github.com/user-attachments/assets/b376bbb2-8485-4b47-b710-073ce8fc6642" />
 
@@ -165,41 +185,62 @@ Efectivament no va
 
 Instal·lació nfs-kernel-server
 
+Iniciem el procés instal·lant el paquet principal del servidor NFS executant la comanda `apt install nfs-kernel-server`.
+
 <img width="729" height="340" alt="image" src="https://github.com/user-attachments/assets/a7c544bf-6c19-41ba-afb1-b28fb2bf1811" />
 
+S'executa la comanda `systemctl status nfs-server` per comprovar l'estat del servei NFS. La sortida per pantalla mostra el missatge `active (exited)` en color verd, confirmant que el servei s'ha iniciat correctament.
 <img width="728" height="203" alt="image" src="https://github.com/user-attachments/assets/a22aa9e8-1f75-4983-94cc-60b54de3886c" />
+
+S'executa una seqüència de comandes per preparar el directori a compartir: `mkdir provesNFS` per crear-lo, `chown nobody:nogroup provesNFS/` per assignar-ne el propietari i grup per defecte, i `chmod 777 provesNFS/` per atorgar-li permisos totals. Finalment, s'executa `ls -l | grep proves`, on es verifica visualment que s'han aplicat els permisos `drwxrwxrwx` i el propietari `nobody nogroup`.
 
 <img width="728" height="203" alt="image" src="https://github.com/user-attachments/assets/e33166b8-d82f-43ea-a699-543a5450d7e0" />
 
+Es mostra l'editor de text GNU nano amb el fitxer `/etc/exports` obert. A la darrera línia s'hi ha inserit la directiva `/provesNFS *(rw,sync,no_subtree_check)` per configurar l'exportació del directori a la xarxa.
+
 <img width="730" height="235" alt="image" src="https://github.com/user-attachments/assets/d40aa780-af20-4124-b395-56b50db750ae" />
+
+A la terminal del servidor, s'accedeix al directori compartit amb `cd provesNFS/` i s'executa `touch hola` per crear un fitxer buit. Seguidament s'executa `ls` i es llista únicament el fitxer `hola`.
 
 <img width="366" height="80" alt="image" src="https://github.com/user-attachments/assets/072ce7c3-b5ca-4360-bb1f-78e81205713d" />
 
+Es mostra una execució posterior de la comanda `ls` dins del directori `/provesNFS#` al servidor. El llistat mostra ara dos fitxers: `adeu` i `hola`, confirmant la interacció del client.
+
 <img width="301" height="46" alt="image" src="https://github.com/user-attachments/assets/2e9ddc74-289d-4b52-81e0-6a7462660b25" />
 
+Es mostra el contingut d'un fitxer amb format LDIF (`usu.ldif`) per a la creació de l'usuari `alu2`. S'hi defineixen els paràmetres de l'usuari, incloent-hi la ruta del seu directori personal de xarxa mitjançant la línia `homeDirectory: /perfils/alu2` i el seu identificador `uidNumber: 1033`.
+
 <img width="364" height="256" alt="image" src="https://github.com/user-attachments/assets/a8c5dc74-2553-4b07-a1ca-cd410f430558" />
+
+S'executa la comanda `ldapadd -x -D "cn=admin,dc=gina,dc=cat" -W -f usu.ldif` a la terminal del servidor per inserir l'usuari definit a l'arxiu LDIF dins de la base de dades del directori LDAP.
 
 <img width="728" height="75" alt="image" src="https://github.com/user-attachments/assets/39dd9b73-7022-44f2-9b6b-e992a3a6b581" />
 
 
 ### Client NFS
 
+A la terminal de la màquina client, s'executa la comanda `apt install nfs-common rpcbind` per instal·lar els paquets necessaris que permeten muntar sistemes de fitxers NFS per xarxa.
+
 <img width="733" height="313" alt="image" src="https://github.com/user-attachments/assets/c160abed-9fdf-40e0-96a5-8740e851e067" />
 
+A la màquina client s'accedeix a l'arrel amb `cd /` i s'executa `mkdir divendres` per crear el punt de muntatge local. Tot seguit, s'apliquen permisos totals al directori executant `chmod 777 divendres/`.
+
 <img width="431" height="50" alt="image" src="https://github.com/user-attachments/assets/a5fb86e2-9e34-4423-b985-fce964a435d7" />
+
+Es visualitza una línia de configuració amb els paràmetres de muntatge del recurs compartit per al fitxer `fstab`: `10.0.2.15:provesNFS /divendres nfs auto,noatime,nolock,bg,nfsvers=3,intr,tcp...`
 <img width="859" height="28" alt="image" src="https://github.com/user-attachments/assets/167175c5-cc5d-4b5d-aeb7-ed520d530ae2" />
+
+Al client s'accedeix al directori muntat amb `cd divendres/` i s'executa `ls`, mostrant el fitxer `hola` creat prèviament al servidor. A continuació, s'executa `touch adeu` per realitzar una prova d'escriptura a través de la xarxa.
 
 <img width="225" height="25" alt="image" src="https://github.com/user-attachments/assets/7738ae26-c491-4271-96de-7df311e3be17" />
 
+Al client s'eleven els privilegis amb `sudo su`. S'accedeix a l'arrel amb `cd /`, es crea el directori per als perfils d'usuari amb `mkdir perfils` i se li atorguen permisos amb `chmod 777 perfils/`. Finalment, s'inicia l'escriptura de la comanda `nano /etc/` per editar la configuració pertinent.
+
 <img width="424" height="83" alt="image" src="https://github.com/user-attachments/assets/a9b0152f-6219-4f69-9301-3b566ec28282" />
+
+Es visualitza la línia de configuració corresponent al muntatge del directori de perfils d'usuari: `10.0.2.15:perfils /perfils nfs auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800 0 0`.
 
 <img width="403" height="113" alt="image" src="https://github.com/user-attachments/assets/a270c9e8-6d8a-48f2-969a-4b07a79a8cd7" />
 
 
 <img width="872" height="41" alt="image" src="https://github.com/user-attachments/assets/78aa6299-2270-4c73-af5d-0e0997cbd15a" />
-
-
-
-### Exercici NFS
-
-Connectar un windows a la carpeta del server amb NFS
