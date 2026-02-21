@@ -2,28 +2,20 @@
 
 INSTAL·LACIÓ DOMINI LDAP I UNIR CLIENT AL DOMINI
 
-El primer pas per instal·lar i configurar el domini LDAP és establir una IP fixa per al servidor, ja que els equips clients necessitaran connectar-s'hi de manera estable.
-
-* **Configuració de l'adreça IP:** S'ha configurat manualment la interfície de xarxa amb l'adreça IPv4 `10.0.2.15`, màscara de subxarxa `255.255.255.0` i porta d'enllaç `10.0.2.1`.
-* **Configuració de resolució local:** S'han modificat els fitxers del sistema per establir el nom del servidor:
-    * `/etc/hostname`: S'ha definit el nom `ubuntuserver`.
-    * `/etc/hosts`: S'ha associat la IP `10.0.2.15` al domini complet `ubuntuserver.gina.cat` i a l'àlies `ubuntuserver`.
-* **Estat inicial d'LDAP:** En executar la comanda `slapcat`, es pot observar que el domini base per defecte és `dc=nodomain`.
-
-## 2. Reconfiguració d'slapd (Inici)
-Per establir el nostre propi domini, cal reconfigurar el paquet de servidor OpenLDAP:
-* S'executa l'assistent de configuració (generalment amb `dpkg-reconfigure slapd`).
-* A la pregunta "Voleu ometre la configuració del servidor OpenLDAP?", seleccionem **<No>**.
-* A "Nom del domini DNS", introduïm el nostre domini: `gina.cat`.
-
+El primer pas per instal·lar i configurar el domini LDAP és establir una adreça IP fixa per al servidor. Mitjançant la interfície gràfica de xarxa, configurem el mètode manual i establim la IP `10.0.2.15`, la màscara de subxarxa `255.255.255.0` i la passarel·la `10.0.2.1`.
 ---
 
 <img width="580" height="473" alt="image" src="https://github.com/user-attachments/assets/4d1799b8-099c-4589-b809-963d72cc57b5" />
 
+És necessari configurar la resolució local de noms. Al fitxer `/etc/hostname` establim el nom de la màquina com a `ubuntuserver`. Al fitxer `/etc/hosts` afegim una línia per associar la IP `10.0.2.15` al nom de domini complet `ubuntuserver.gina.cat` i a l'àlies `ubuntuserver`.
 
 <img width="488" height="44" alt="image" src="https://github.com/user-attachments/assets/e3839fc7-9e85-41e3-bc12-1bd5d072defa" />
 
+Si executem la comanda `slapcat` abans de configurar res, podem comprovar l'estat inicial del directori. S'observa que el domini base per defecte és `dc=nodomain`.
+
 <img width="487" height="96" alt="image" src="https://github.com/user-attachments/assets/1816ed3f-ccb7-4770-b942-6704b4f39725" />
+
+Iniciem la reconfiguració del paquet del servidor executant `dpkg-reconfigure slapd`. A la primera finestra que ens demana si volem ometre la configuració del servidor OpenLDAP, hem de seleccionar l'opció **<No>**.
 
 <img width="475" height="256" alt="image" src="https://github.com/user-attachments/assets/58b625dc-e170-4f61-a5b7-b3e403d06068" />
 
