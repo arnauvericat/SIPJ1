@@ -52,51 +52,71 @@ Mostra del contingut d'un fitxer LDIF creat per generar la Unitat Organitzativa 
 
 <img width="365" height="371" alt="image" src="https://github.com/user-attachments/assets/8d262b06-9e25-4dfa-b53e-495cb4f99898" />
 
-Afeigm els `fitxers.ldif` amb la comanda que s'indica a l'imatge.
+Mitjançant la comanda `ldapadd`, s'insereixen els diferents fitxers LDIF al directori servidor. Autenticant-nos amb l'administrador del domini (`-D "cn=admin,dc=gina,dc=cat"`) i demanant contrasenya (`-W`), afegim seqüencialment la unitat organitzativa (`uo.ldif`), l'usuari (`usu.ldif`) i el grup (`grup.ldif`).
 
 <img width="944" height="205" alt="image" src="https://github.com/user-attachments/assets/7cbd69ac-9653-446a-aa38-5172cb1d563d" />
 
 
 # Unir un client al domini ldap
 
+Passem a la màquina client. Per poder unir-la al domini, executem la instal·lació dels paquets d'autenticació necessaris mitjançant la comanda: `apt install libnss-ldap libpam-ldap nscd -y`.
+
 <img width="725" height="27" alt="image" src="https://github.com/user-attachments/assets/db407520-0ee2-466d-b28a-3bd36fb7a723" />
+
+Durant la instal·lació d'aquests paquets, s'obre l'assistent `ldap-auth-config`. El primer que ens demana és la URI del servidor LDAP a on ens hem de connectar. Introduïm la IP del nostre servidor: `ldap://10.0.2.15`.
 
 <img width="853" height="279" alt="image" src="https://github.com/user-attachments/assets/9fcb9dd0-75eb-4297-9842-f636b15f639c" />
 
+Finalment, l'assistent ens demana el nom distingit (DN) de la base de cerca per poder fer les consultes al servidor. Hi posem el domini complet: `dc=gina,dc=cat`.
+
 <img width="837" height="221" alt="image" src="https://github.com/user-attachments/assets/67d6d5d5-fd18-4564-a710-93044906afbe" />
+L'assistent sol·licita quina és la versió del protocol LDAP que s'ha d'utilitzar. Seleccionem la versió **3**, que és la més actual i recomanada.
 
 <img width="837" height="221" alt="image" src="https://github.com/user-attachments/assets/e9857d05-80f5-444c-a3d2-067662bd3c3e" />
+A l'opció que permet fer que les utilitats de contrasenya (PAM) es comportin com si s'estiguessin canviant contrasenyes locals ("Make local root Database admin"), seleccionem **<Sí>**.
 
 <img width="828" height="242" alt="image" src="https://github.com/user-attachments/assets/c6fd37aa-4688-45e6-8ae6-fb8aaa1bb983" />
+L'assistent ens pregunta si la base de dades LDAP requereix login per extreure'n les entrades ("Does the LDAP database require login?"). Per a una configuració normal, seleccionem **<No>**.
 
 <img width="828" height="242" alt="image" src="https://github.com/user-attachments/assets/bc8bff51-68f2-4bce-b594-f49b1aa6770e" />
+Definim el compte LDAP privilegiat que s'utilitzarà quan l'usuari root canviï una contrasenya. Hi introduïm el nostre administrador: `cn=admin,dc=gina,dc=cat`.
 
 <img width="553" height="229" alt="image" src="https://github.com/user-attachments/assets/b62aec64-11fc-4a7a-aea3-12f6d7ab01c0" />
 
+Introduïm la contrasenya corresponent al compte d'administrador definit al pas anterior.
+
 <img width="800" height="298" alt="image" src="https://github.com/user-attachments/assets/11571806-caa2-40dd-b5a2-6f9fb145e1fc" />
 
+Ara definim el nom del compte que s'utilitzarà per fer login a la base de dades LDAP. Seguint la nostra configuració, hi tornem a introduir `cn=admin,dc=gina,dc=cat`.
+
 <img width="851" height="234" alt="image" src="https://github.com/user-attachments/assets/34bae554-8fba-4b52-ba7d-2ceed8a79963" />
+
+Finalment, introduïm la contrasenya pertinent per a aquest últim compte configurat.
 
 <img width="719" height="198" alt="image" src="https://github.com/user-attachments/assets/2e7127e0-ce5a-4df1-92d4-85320d45e0b5" />
 
 ## Nsswitch.conf
+S'edita el fitxer `/etc/nsswitch.conf`. Hem d'afegir la paraula `ldap` al final de les línies `passwd`, `group` i `shadow`. D'aquesta manera, el sistema buscarà els usuaris primer de forma local i després al servidor LDAP.
 
 <img width="696" height="437" alt="image" src="https://github.com/user-attachments/assets/38d6594e-036d-42bc-bfb8-12828d814748" />
 
-## pam.d/common-session
+Al fitxer `/etc/pam.d/common-session` afegim la línia: `session optional pam_mkhomedir.so skel=/etc/skel umask=022`. Això farà que es creï automàticament el directori personal (home) de l'usuari LDAP el primer cop que iniciï sessió.
 
 <img width="554" height="31" alt="image" src="https://github.com/user-attachments/assets/68be4064-a0ab-4ffb-bae9-b4e79272196c" />
-
-## common-password
+Revisem el fitxer `/etc/pam.d/common-password` per comprovar que l'assistent ha afegit correctament el paràmetre `pam_ldap.so`, encarregat de gestionar les contrasenyes contra el directori.
 
 <img width="841" height="95" alt="image" src="https://github.com/user-attachments/assets/359502f7-ccca-47f5-ba65-89ebe728c7a8" />
 
-## Lightdm.conf
+Per poder fer login gràficament amb els usuaris LDAP, editem `/usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf` i hi afegim la línia `greeter-show-manual-login=true`. Això habilita una casella per escriure manualment el nom d'usuari.
 
 <img width="704" height="84" alt="image" src="https://github.com/user-attachments/assets/07db0f95-0c0b-4463-a092-667d42395d81" />
 
 # Proves
+Es realitzen proves des de la consola del client:
+* `getent passwd | grep alu1` i `getent group | grep alumnes`: Confirmen que el client llegeix l'usuari i el grup d'LDAP.
+* `su alu1`: Iniciem sessió amb l'usuari. Es pot observar com automàticament se li crea el directori `/home/alu1`.
 <img width="582" height="114" alt="image" src="https://github.com/user-attachments/assets/d217d225-c639-44e2-b5ba-d5d94a9b1d53" />
+Per facilitar la gestió de permisos, es crea un grup anomenat `colors` amb `addgroup colors`. Seguidament, s'hi afegeixen els usuaris `roig` i `groc` fent servir `adduser nom_usuari colors`.
 
 <img width="341" height="62" alt="image" src="https://github.com/user-attachments/assets/70eb18d2-d590-4c90-9d7c-73ba519008e5" />
 
@@ -104,9 +124,21 @@ Afeigm els `fitxers.ldif` amb la comanda que s'indica a l'imatge.
 
 Serveix per a compartir arxius, recursos, impresores, etc. Tambe te autenticació a nivell ldap.
 
+S'edita el fitxer principal `/etc/samba/smb.conf` i s'afegeix el recurs compartit al final del document:
+* `[proves]`: Nom del recurs.
+* `path=/proves`: Ruta del directori a compartir.
+* `guest ok = yes`: Permet l'accés a convidats.
+* `read list = blau, @colors, guest`: Permisos de lectura per a l'usuari blau, el grup colors i els convidats.
+* `write list = blau, guest`: Permisos d'escriptura només per al blau i els convidats.
+* `invalid users = roig`: Es denega explícitament l'accés a l'usuari roig.
+  
 <img width="711" height="152" alt="image" src="https://github.com/user-attachments/assets/3a02267b-0321-4930-aaac-494303d0c774" />
 
+Per aplicar la nova configuració, es reinicien els dimonis de Samba executant `systemctl restart smbd nmbd`. A continuació, es verifica que tot funcioni correctament amb `systemctl status smbd nmbd` (es mostren en estat *active/running*).
+
 <img width="692" height="187" alt="image" src="https://github.com/user-attachments/assets/471bbe62-af35-4bd4-9117-233b7492a059" />
+
+Finalment, a la màquina client s'instal·la el paquet necessari per connectar-se per terminal: `apt install smbclient`. Tot i això, a l'entorn gràfic es mostra un error ("Efectivament no va") a l'intentar accedir a la carpeta compartida, el que indica que cal revisar la resolució de xarxa o els permisos d'accés des de l'explorador d'arxius d'Ubuntu.
 
 <img width="508" height="470" alt="image" src="https://github.com/user-attachments/assets/ca63b010-94a9-4eeb-b9de-a586dc54dd14" />
 
