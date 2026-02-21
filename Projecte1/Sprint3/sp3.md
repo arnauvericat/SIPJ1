@@ -52,6 +52,8 @@ Mostra del contingut d'un fitxer LDIF creat per generar la Unitat Organitzativa 
 
 <img width="365" height="371" alt="image" src="https://github.com/user-attachments/assets/8d262b06-9e25-4dfa-b53e-495cb4f99898" />
 
+Afeigm els `fitxers.ldif` amb la comanda que s'indica a l'imatge.
+
 <img width="944" height="205" alt="image" src="https://github.com/user-attachments/assets/7cbd69ac-9653-446a-aa38-5172cb1d563d" />
 
 
