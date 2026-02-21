@@ -2,40 +2,53 @@
 
 INSTAL·LACIÓ DOMINI LDAP I UNIR CLIENT AL DOMINI
 
-El primer pas per instal·lar i configurar el domini LDAP és establir una adreça IP fixa per al servidor. Mitjançant la interfície gràfica de xarxa, configurem el mètode manual i establim la IP `10.0.2.15`, la màscara de subxarxa `255.255.255.0` i la passarel·la `10.0.2.1`.
----
-
+El primer pas és establir una IP fixa al servidor perquè els equips clients no perdin la connexió. A la interfície de configuració de xarxa es defineix el mètode manual (IPv4) amb l'adreça `10.0.2.15`, màscara `255.255.255.0` i porta d'enllaç `10.0.2.1`.
 <img width="580" height="473" alt="image" src="https://github.com/user-attachments/assets/4d1799b8-099c-4589-b809-963d72cc57b5" />
 
-És necessari configurar la resolució local de noms. Al fitxer `/etc/hostname` establim el nom de la màquina com a `ubuntuserver`. Al fitxer `/etc/hosts` afegim una línia per associar la IP `10.0.2.15` al nom de domini complet `ubuntuserver.gina.cat` i a l'àlies `ubuntuserver`.
-
+Edició del fitxer de nom de la màquina local utilitzant l'editor `nano`. Al fitxer `/etc/hostname` es defineix el nom del servidor com a `ubuntuserver`.
 <img width="488" height="44" alt="image" src="https://github.com/user-attachments/assets/e3839fc7-9e85-41e3-bc12-1bd5d072defa" />
 
-Si executem la comanda `slapcat` abans de configurar res, podem comprovar l'estat inicial del directori. S'observa que el domini base per defecte és `dc=nodomain`.
-
+Edició del fitxer de resolució de noms locals utilitzant `nano`. Al fitxer `/etc/hosts` s'afegeix la línia `10.0.2.15 ubuntuserver.gina.cat ubuntuserver` per vincular la IP amb el nom de domini complet (FQDN).
 <img width="487" height="96" alt="image" src="https://github.com/user-attachments/assets/1816ed3f-ccb7-4770-b942-6704b4f39725" />
 
-Iniciem la reconfiguració del paquet del servidor executant `dpkg-reconfigure slapd`. A la primera finestra que ens demana si volem ometre la configuració del servidor OpenLDAP, hem de seleccionar l'opció **<No>**.
-
+Abans de reconfigurar, si s'executa la comanda `slapcat` (amb usuari root), podem observar que el directori base creat per defecte està configurat com a `dc=nodomain`.
 <img width="475" height="256" alt="image" src="https://github.com/user-attachments/assets/58b625dc-e170-4f61-a5b7-b3e403d06068" />
 
 # Reconfigure-slapd
 
+S'inicia l'assistent per configurar el paquet LDAP (normalment amb `dpkg-reconfigure slapd`). A la primera pantalla que pregunta "Voleu ometre la configuració del servidor OpenLDAP?", cal seleccionar `<No>`.
+
 <img width="848" height="175" alt="image" src="https://github.com/user-attachments/assets/7d4ef823-64fc-4dc8-a1dc-2848ab06d7d1" />
+
+El següent pas de l'assistent demana el nom del domini DNS base per al directori LDAP. S'introdueix `gina.cat`.
 
 <img width="1400" height="176" alt="image" src="https://github.com/user-attachments/assets/537b0add-0d40-4283-976f-d8a547b86415" />
 
+Continuació de l'assistent de reconfiguració i comprovació del directori.
+
 <img width="778" height="177" alt="image" src="https://github.com/user-attachments/assets/eb3f5f5b-3075-4f96-8b0a-b9ca157619af" />
+
+L'assistent sol·licita el nom de l'organització per fer-lo servir al DN base. En el nostre cas, introduïm `gina`.
 
 <img width="760" height="176" alt="image" src="https://github.com/user-attachments/assets/a9aea36d-4870-428c-bc31-57b2d77ec174" />
 
+A continuació, ens demana la creació d'una contrasenya segura per a l'administrador del directori LDAP.
+
 <img width="1069" height="195" alt="image" src="https://github.com/user-attachments/assets/841be554-5aa0-4dab-b8fa-e501d3433242" />
+
+L'assistent demana introduir de nou la contrasenya definida al pas anterior per confirmar que s'ha escrit correctament.
 
 <img width="651" height="181" alt="image" src="https://github.com/user-attachments/assets/15b47a5f-209c-4a92-a31a-3a7a5823a0fc" />
 
+A la pregunta de si desitgem que s'elimini la base de dades en purgar el paquet `slapd`, hem de seleccionar l'opció `<Sí>`.
+
 <img width="497" height="258" alt="image" src="https://github.com/user-attachments/assets/e048ac1b-45b9-414b-b4c7-e063b3b0d7e0" />
 
+Un cop acabada la reconfiguració, tornem a executar la comanda `slapcat`. Ara podem comprovar que l'estructura (DN) s'ha creat correctament associada al nostre domini: `dc=gina,dc=cat`.
+
 <img width="294" height="97" alt="image" src="https://github.com/user-attachments/assets/48d91f29-cbdd-4268-9c4a-545f86bdd3a1" />
+
+Mostra del contingut d'un fitxer LDIF creat per generar la Unitat Organitzativa d'usuaris. S'observen els atributs `dn: ou=users,dc=gina,dc=cat` i `objectClass: organizationalUnit`.
 
 <img width="365" height="371" alt="image" src="https://github.com/user-attachments/assets/8d262b06-9e25-4dfa-b53e-495cb4f99898" />
 
