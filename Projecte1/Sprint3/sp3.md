@@ -2,7 +2,21 @@
 
 INSTAL·LACIÓ DOMINI LDAP I UNIR CLIENT AL DOMINI
 
-El primer que hem de fer per a instal·lar el domini ldap es ficar una ip fixa per al nostre servidor, ja que els nostres equips amb els usuaris han de connectar-se i es millor una ip fixa per a no tindre que canviar-ho tot el rato.
+El primer pas per instal·lar i configurar el domini LDAP és establir una IP fixa per al servidor, ja que els equips clients necessitaran connectar-s'hi de manera estable.
+
+* **Configuració de l'adreça IP:** S'ha configurat manualment la interfície de xarxa amb l'adreça IPv4 `10.0.2.15`, màscara de subxarxa `255.255.255.0` i porta d'enllaç `10.0.2.1`.
+* **Configuració de resolució local:** S'han modificat els fitxers del sistema per establir el nom del servidor:
+    * `/etc/hostname`: S'ha definit el nom `ubuntuserver`.
+    * `/etc/hosts`: S'ha associat la IP `10.0.2.15` al domini complet `ubuntuserver.gina.cat` i a l'àlies `ubuntuserver`.
+* **Estat inicial d'LDAP:** En executar la comanda `slapcat`, es pot observar que el domini base per defecte és `dc=nodomain`.
+
+## 2. Reconfiguració d'slapd (Inici)
+Per establir el nostre propi domini, cal reconfigurar el paquet de servidor OpenLDAP:
+* S'executa l'assistent de configuració (generalment amb `dpkg-reconfigure slapd`).
+* A la pregunta "Voleu ometre la configuració del servidor OpenLDAP?", seleccionem **<No>**.
+* A "Nom del domini DNS", introduïm el nostre domini: `gina.cat`.
+
+---
 
 <img width="580" height="473" alt="image" src="https://github.com/user-attachments/assets/4d1799b8-099c-4589-b809-963d72cc57b5" />
 
