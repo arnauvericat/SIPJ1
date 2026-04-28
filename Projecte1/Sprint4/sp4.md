@@ -1,5 +1,5 @@
 
-**GUIA PRÀCTICA - Instal·lació i configuració de Windows**
+# **GUIA PRÀCTICA - Instal·lació i configuració de Windows**
 
 
 ### **Fase 1 - Instal·lació del sistema operatiu**
