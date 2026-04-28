@@ -1,93 +1,497 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Projecte educatiu sobre Sistemes Informàtics realitzat per Arnau Vericat." />
-  <meta name="author" content="Arnau Vericat" />
-  <!-- Open Graph (per a prèvies en xarxes socials) -->
-  <meta property="og:title" content="{{ page.title }}" />
-  <meta property="og:description" content="Projecte educatiu sobre Sistemes Informàtics realitzat per Arnau Vericat." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://teu-usuari.github.io/nom-del-repositori/" />
-  <!-- Canvia l'URL anterior pel teu! -->
+  <meta name="description" content="Proyecto de Sistemas Informáticos — Documentación y recursos del proyecto" />
 
-  <title>{{ page.title }}</title>
+  <title>{{ page.title }} — Sistemas Informáticos</title>
 
-  <!-- Favicon (opcional) -->
-  <!-- <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" /> -->
+  <!-- GitHub Pages Cayman / custom theme hook -->
+  <link rel="stylesheet" href="{{ '/custom.css' | relative_url }}" />
 
-  <!-- Fulla d'estils personalitzada -->
-  <link rel="stylesheet" href="assetscss/custom.css" />
+  <!-- Fallback si no se usa Jekyll -->
+  <!-- <link rel="stylesheet" href="custom.css" /> -->
 
-  <!-- Estils embebidos mínims per funcionalitat bàsica -->
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 2rem;
-      min-height: 100vh;
+    /* ── Estilos exclusivos del layout default ─── */
+
+    /* Barra de estado tipo terminal en el header */
+    .header-meta {
       display: flex;
-      flex-direction: column;
-      background-color: #fff;
-      color: #333;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
     }
 
-    main {
-      flex: 1;
+    .header-meta .stat {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
     }
 
-    footer.license {
-      margin-top: 2rem;
-      padding: 1.2rem 0;
-      font-size: 0.9rem;
-      color: #555;
-      border-top: 1px solid #eee;
+    .header-meta .stat .label { color: var(--text-dim); }
+    .header-meta .stat .value { color: var(--accent-green); }
+
+    /* Navbar top */
+    .topbar {
+      background: rgba(5, 10, 15, 0.95);
+      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
     }
 
-    footer.license img {
-      vertical-align: middle;
-      margin-top: 0.3rem;
+    .topbar .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .topbar .brand {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-shadow: var(--glow-cyan);
+    }
+
+    .topbar nav {
+      display: flex;
+      gap: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+    }
+
+    .topbar nav a {
+      color: var(--text-muted);
+      transition: color 0.2s;
+      letter-spacing: 0.05em;
+    }
+
+    .topbar nav a:hover { color: var(--accent-cyan); }
+
+    /* Layout de dos columnas */
+    .page-layout {
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      gap: 3rem;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Panel lateral */
+    .sidebar {
+      position: sticky;
+      top: 3rem;
+      align-self: start;
+    }
+
+    .sidebar-section {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-section h4 {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      color: var(--accent-amber);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-section ul li {
       border: none;
-      height: 31px;
+      padding: 0.25rem 0;
     }
 
-    @media (max-width: 600px) {
-      body {
-        padding: 1rem;
+    .sidebar-section ul li::before {
+      content: '→ ';
+      color: var(--accent-cyan);
+    }
+
+    .sidebar-section ul li a {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .sidebar-section ul li a:hover { color: var(--accent-cyan); }
+
+    /* Chip de tecnología */
+    .tech-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0;
+    }
+
+    .chip {
+      padding: 0.2em 0.6em;
+      background: rgba(0, 255, 157, 0.05);
+      border: 1px solid rgba(0, 255, 157, 0.2);
+      border-radius: 2px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent-green);
+    }
+
+    /* Info stats en sidebar */
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.3rem 0;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      border-bottom: 1px solid rgba(0,229,255,0.04);
+    }
+
+    .stat-row .k { color: var(--text-dim); }
+    .stat-row .v { color: var(--accent-cyan); }
+
+    /* Bloque de contenido principal */
+    .main-content {
+      min-width: 0;
+    }
+
+    /* Hero intro box */
+    .intro-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-green), transparent);
+    }
+
+    .intro-box p:last-child { margin-bottom: 0; }
+
+    /* Terminal block */
+    .terminal {
+      background: #020d14;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--accent-green);
+      margin: 1.5rem 0;
+      position: relative;
+    }
+
+    .terminal::before {
+      content: '● ● ●';
+      display: block;
+      color: var(--text-dim);
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      margin-bottom: 1rem;
+    }
+
+    .terminal .prompt { color: var(--accent-cyan); }
+    .terminal .comment { color: var(--text-muted); }
+    .terminal .output  { color: var(--text-primary); }
+
+    /* Separador decorativo */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2.5rem 0 1.5rem;
+    }
+
+    .section-divider h2 {
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      white-space: nowrap;
+    }
+
+    .section-divider::before {
+      content: '//';
+      font-family: var(--font-mono);
+      color: var(--accent-amber);
+    }
+
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-glow), transparent);
+    }
+
+    /* Feature cards */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    }
+
+    .feature-card:hover {
+      border-color: var(--accent-cyan);
+      box-shadow: var(--glow-cyan);
+      transform: translateY(-2px);
+    }
+
+    .feature-card .icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.7rem;
+      display: block;
+    }
+
+    .feature-card h3 {
+      font-size: 0.8rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .page-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem 1.25rem;
       }
+
+      .sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+      }
+
+      .topbar nav { display: none; }
+      .header-meta { gap: 1rem; }
     }
   </style>
 </head>
+
 <body>
-  <header role="banner">
-    <h1>{{ page.title }}</h1>
+
+  <!-- ── Barra de navegación superior ────────────────────── -->
+  <div class="topbar">
+    <div class="wrapper">
+      <span class="brand">SIS_INFO // PROJECT</span>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#instalacion">Instalación</a>
+        <a href="#arquitectura">Arquitectura</a>
+        <a href="#docs">Docs</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ── Header ──────────────────────────────────────────── -->
+  <header>
+    <div class="wrapper">
+      <h1>{{ site.title | default: "Nombre del Proyecto" }}</h1>
+      <p>{{ site.description | default: "Sistema Informático · v1.0.0 · ACTIVO" }}</p>
+
+      <div class="header-meta">
+        <div class="stat">
+          <span class="label">ESTADO:</span>
+          <span class="value">ONLINE</span>
+        </div>
+        <div class="stat">
+          <span class="label">RAMA:</span>
+          <span class="value">main</span>
+        </div>
+        <div class="stat">
+          <span class="label">BUILD:</span>
+          <span class="value">PASSING</span>
+        </div>
+        <div class="stat">
+          <span class="label">LICENCIA:</span>
+          <span class="value">MIT</span>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <main role="main">
-    {{ content }}
-  </main>
+  <!-- ── Contenido principal + sidebar ───────────────────── -->
+  <div class="page-layout">
 
-  <footer class="license" role="contentinfo">
-    <p>
-      © 2026 <strong>Arnau Vericat</strong><br />
-      Aquest projecte es distribueix sota la llicència
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-         target="_blank"
-         rel="license noopener noreferrer"
-         aria-label="Llicència Creative Commons BY-NC-SA 4.0">
-        Creative Commons Reconeixement-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)
-      </a>.
-    </p>
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-       target="_blank"
-       rel="license noopener noreferrer"
-       aria-label="Veure la llicència Creative Commons">
-      <img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"
-           alt="Llicència Creative Commons BY-NC-SA 4.0"
-           loading="lazy" />
-    </a>
+    <!-- MAIN -->
+    <main class="main-content">
+
+      <!-- Intro -->
+      <div class="intro-box" id="overview">
+        <p>
+          {{ content | default: "
+          Bienvenido a la documentación del proyecto. Este sistema aborda
+          el diseño, implementación y análisis de una arquitectura informática
+          orientada a la resolución de problemas reales de infraestructura,
+          gestión de datos y comunicación entre servicios.
+          " }}
+        </p>
+      </div>
+
+      <!-- Terminal de ejemplo -->
+      <div class="terminal">
+        <span class="prompt">user@sistema:~$ </span>git clone https://github.com/tu-usuario/tu-repo.git<br>
+        <span class="output">Clonando en 'tu-repo'...</span><br>
+        <span class="output">remote: Enumerando objetos: 248, listo.</span><br>
+        <span class="prompt">user@sistema:~$ </span>cd tu-repo &amp;&amp; ./setup.sh<br>
+        <span class="comment"># Iniciando entorno...</span>
+      </div>
+
+      <!-- Características -->
+      <div class="section-divider" id="arquitectura">
+        <h2>Características del sistema</h2>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <span class="icon">⚙️</span>
+          <h3>Arquitectura modular</h3>
+          <p>Componentes desacoplados con interfaces bien definidas.</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon">🔒</span>
+          <h3>Seguridad</h3>
+          <p>Autenticación, cifrado y control de acceso integrados.</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon">📊</span>
+          <h3>Monitorización</h3>
+          <p>Métricas en tiempo real y sistema de alertas configurables.</p>
+        </div>
+        <div class="feature-card">
+          <span class="icon">🚀</span>
+          <h3>Alto rendimiento</h3>
+          <p>Optimizado para baja latencia y alta disponibilidad.</p>
+        </div>
+      </div>
+
+      <!-- Instalación -->
+      <div class="section-divider" id="instalacion">
+        <h2>Instalación</h2>
+      </div>
+
+      <div class="terminal">
+        <span class="comment"># Requisitos previos</span><br>
+        <span class="prompt">$ </span>node --version   <span class="comment"># >= 18.x</span><br>
+        <span class="prompt">$ </span>python --version  <span class="comment"># >= 3.10</span><br><br>
+        <span class="comment"># Instalar dependencias</span><br>
+        <span class="prompt">$ </span>npm install<br><br>
+        <span class="comment"># Ejecutar en desarrollo</span><br>
+        <span class="prompt">$ </span>npm run dev
+      </div>
+
+      <!-- Contenido inyectado por Jekyll -->
+      {{ content }}
+
+      <!-- Documentación -->
+      <div class="section-divider" id="docs">
+        <h2>Documentación</h2>
+      </div>
+
+      <p>Consulta la <a href="docs/">carpeta <code>docs/</code></a> para encontrar la documentación técnica completa, diagramas de arquitectura, guías de contribución y el changelog del proyecto.</p>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-section">
+        <h4>// Info</h4>
+        <div class="stat-row"><span class="k">Versión</span><span class="v">1.0.0</span></div>
+        <div class="stat-row"><span class="k">Lenguaje</span><span class="v">Python</span></div>
+        <div class="stat-row"><span class="k">Plataforma</span><span class="v">Linux / Win</span></div>
+        <div class="stat-row"><span class="k">Licencia</span><span class="v">MIT</span></div>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>// Stack</h4>
+        <div class="tech-chips">
+          <span class="chip">Python</span>
+          <span class="chip">Docker</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">REST API</span>
+          <span class="chip">Linux</span>
+          <span class="chip">Git</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>// Navegación</h4>
+        <ul>
+          <li><a href="#overview">Introducción</a></li>
+          <li><a href="#arquitectura">Arquitectura</a></li>
+          <li><a href="#instalacion">Instalación</a></li>
+          <li><a href="#docs">Documentación</a></li>
+          <li><a href="https://github.com/arnauvericat/SIPJ1">Repositori</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>// Descargas</h4>
+        <ul>
+          <li><a href="https://github.com/arnauvericat/SIPJ1/archive/refs/heads/main.zip">ZIP (main)</a></li>
+          <li><a href="https://github.com/arnauvericat/SIPJ1/releases">Releases</a></li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- ── Footer ──────────────────────────────────────────── -->
+  <footer>
+    <div class="wrapper">
+      <p>
+        {{ site.title | default: "Proyecto Sistemas Informáticos" }} &nbsp;·&nbsp;
+        Generado con <a href="https://pages.github.com/">GitHub Pages</a> &nbsp;·&nbsp;
+        <a href="https://github.com/arnauvericat/SIPJ1">Ver en GitHub</a>
+      </p>
+    </div>
   </footer>
+
 </body>
 </html>
