@@ -358,9 +358,29 @@ tbody tr:hover td {
 /* Images */
 img {
   max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   box-shadow: var(--glow-cyan);
+}
+
+/* Imágenes dentro de párrafos o listas */
+p img, li img, td img {
+  display: inline-block;
+  vertical-align: middle;
+  height: auto;
+}
+
+/* Imágenes standalone en el contenido principal */
+.main-content img,
+#main_content img {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin: 1.5rem auto;
 }
 
 /* ── Sidebar ───────────────────────────────────────────────── */
