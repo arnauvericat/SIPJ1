@@ -12,17 +12,24 @@ Aquest document detalla el procés de configuració d'un entorn Windows per a la
   <img width="500" height="439" alt="image" src="https://github.com/user-attachments/assets/e8f5cd6f-d831-40d8-8e82-fa93b5388ebd" />
 
 * [ ] **Pas 2.** Iniciar Windows i obrir **Gestió de discs**.
+<img width="750" height="594" alt="shot_1778843455" src="https://github.com/user-attachments/assets/60f714c5-3dcd-4f12-b155-88c72e1ce843" />
+
 * [ ] **Pas 3.** Inicialitzar el disc i crear dues particions:
 * `Dades`: Format NTFS.
 * `Portable`: Format FAT32.
+<img width="544" height="112" alt="shot_1778843602" src="https://github.com/user-attachments/assets/e42e2c7b-49a0-4612-aee6-ea1ab78be5ac" />
 
 
 * [ ] **Pas 4.** Assignar lletres d'unitat i verificar la configuració mitjançant la consola amb l'ordre `diskpart`.
+<img width="361" height="497" alt="shot_1778843999" src="https://github.com/user-attachments/assets/3d6c13c2-811b-4520-8097-b21310858df0" />
+<img width="562" height="46" alt="shot_1778843788" src="https://github.com/user-attachments/assets/0d496bd8-cf85-4c99-b4b0-d34935420526" />
 
 ## 👥 Fase 2 – Quotes i usuaris
 
 * [ ] **Pas 5.** Activar les **quotes de disc** a la partició `Dades` (NTFS).
 * [ ] **Pas 6.** Establir un límit de **300 MB** per usuari amb notificació d’advertència.
+<img width="361" height="497" alt="shot_1778843999" src="https://github.com/user-attachments/assets/f81b85df-ce05-4490-928d-f9ff078a6b84" />
+
 * [ ] **Pas 7.** Crear dos usuaris locals: `alumne1` i `alumne2`.
 * [ ] **Pas 8.** Crear un grup anomenat `Limitats` i afegir-hi ambdós usuaris.
 * [ ] **Pas 9.** Provar la còpia de fitxers a `Dades` fins a superar el límit per verificar el bloqueig de la quota.
