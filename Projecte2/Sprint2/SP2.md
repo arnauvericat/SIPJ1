@@ -46,23 +46,28 @@ Aquest document detalla el procés de configuració d'un entorn Windows per a la
 ## 📜 Fase 3 – Script de còpia i automatització
 
 * [ ] **Pas 10.** Afegir un tercer disc virtual i formatar-lo en NTFS com a `Backups`.
-* [ ] **Pas 11.** Crear la carpeta `CòpiesUsuaris` dins de la unitat de `Backups`.
-* [ ] **Pas 12.** Crear un script `.bat` amb el següent contingut:
-```batch
-@echo off
-xcopy "C:\Users\%USERNAME%" "E:\CòpiesUsuaris\%USERNAME%" /E /I /Y
+  <img width="358" height="108" alt="image" src="https://github.com/user-attachments/assets/1d3b05d1-4306-46a6-9bda-0dabc8bff9bf" />
 
-```
+* [ ] **Pas 11.** Crear la carpeta `CòpiesUsuaris` dins de la unitat de `Backups`.
+  <img width="334" height="112" alt="image" src="https://github.com/user-attachments/assets/36d66354-6a88-4ebd-abc1-81a0983a5702" />
+
+* [ ] **Pas 12.** Crear un script `.bat` amb el següent contingut:
+<img width="573" height="154" alt="image" src="https://github.com/user-attachments/assets/c1d9c3f5-0f9b-4314-850b-97ce0bed0e33" />
 
 
 * [ ] **Pas 13.** Obrir `gpedit.msc` → *Configuració d’usuari* → *Scripts* → *Inici de sessió*.
+  <img width="762" height="529" alt="image" src="https://github.com/user-attachments/assets/952ce527-bc65-4d73-bd52-138ebccd7703" />
+
 * [ ] **Pas 14.** Assignar l’script perquè s’executi automàticament en iniciar la sessió els usuaris.
+<img width="385" height="200" alt="image" src="https://github.com/user-attachments/assets/8025fda8-0ec3-46be-8b10-b58c908fca10" />
 
 ## 🔍 Fase 4 – Verificació i documentació
 
 * [ ] **Pas 15.** Iniciar sessió amb `alumne1` i realitzar les comprovacions:
 * L'script s'ha executat i ha creat la còpia a `Backups`.
 * La quota a `Dades` funciona correctament.
+<img width="658" height="153" alt="image" src="https://github.com/user-attachments/assets/9977ce2c-a9d2-4d3f-9ddc-4ac791eff174" />
+<img width="284" height="69" alt="image" src="https://github.com/user-attachments/assets/f6d5985e-c75e-49a8-b695-4c9532d360db" />
 
 
 
@@ -77,16 +82,16 @@ xcopy "C:\Users\%USERNAME%" "E:\CòpiesUsuaris\%USERNAME%" /E /I /Y
 tasklist > C:\Users\%USERNAME%\processos_inici.txt
 
 ```
-
+<img width="610" height="47" alt="image" src="https://github.com/user-attachments/assets/7010a455-6735-44c0-b443-781753ecba5c" />
+| Nom del procés | Memòria usada | Justificació per eliminar-lo |
+<img width="635" height="33" alt="image" src="https://github.com/user-attachments/assets/ecfc9162-1870-4606-bb57-14d441bc7315" />
+<img width="631" height="21" alt="image" src="https://github.com/user-attachments/assets/5ff41f4b-3eff-4d9b-bd28-9ece279c76e0" />
 
 
 ### Pas 20. Identificar processos prescindibles
 
-| Nom del procés | Memòria usada | Justificació per eliminar-lo |
-| --- | --- | --- |
-| `OneDrive.exe` | *Variable* | Sincronització de núvol no necessària en entorn local. |
-| `Teams.exe` | *Alta* | Consum excessiu de RAM per a tasques d'administració. |
-| `SkypeApp.exe` | *Baixa* | Aplicació de comunicació no requerida. |
+
+
 
 ### Pas 21. Eliminar processos manualment
 
