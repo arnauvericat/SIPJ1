@@ -1,7 +1,3 @@
-Aquí tens el text estructurat en format **Markdown** professional, ideal per a un fitxer `README.md` o la documentació d'un repositori a GitHub. He utilitzat encapçalaments, llistes de tasques, blocs de codi i cites per fer-lo més llegible.
-
----
-
 # Guia de Configuració de Sistemes: Discs, Quotes, Scripts i ACLs
 
 Aquest document detalla el procés de configuració d'un entorn Windows per a la gestió d'usuaris, optimització de recursos i control de fitxers.
