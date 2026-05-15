@@ -3,503 +3,199 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Proyecto de Sistemas Informáticos — Documentación y recursos del proyecto" />
+  <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <meta name="author" content="{{ site.author }}" />
 
-  <title>{{ page.title }} — Sistemas Informáticos</title>
+  <!-- Open Graph -->
+  <meta property="og:title"       content="{{ page.title | default: site.title }}" />
+  <meta property="og:description" content="{{ page.description | default: site.description }}" />
+  <meta property="og:type"        content="website" />
 
-  <!-- GitHub Pages Cayman / custom theme hook -->
-  <link rel="stylesheet" href="{{ '/custom.css' | relative_url }}" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Fallback si no se usa Jekyll -->
-  <!-- <link rel="stylesheet" href="custom.css" /> -->
-
-  <style>
-    /* ── Estilos exclusivos del layout default ─── */
-
-    /* Barra de estado tipo terminal en el header */
-    .header-meta {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .header-meta .stat {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 0.4em;
-    }
-
-    .header-meta .stat .label { color: var(--text-dim); }
-    .header-meta .stat .value { color: var(--accent-green); }
-
-    /* Navbar top */
-    .topbar {
-      background: rgba(5, 10, 15, 0.95);
-      border-bottom: 1px solid var(--border);
-      padding: 0.6rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(10px);
-    }
-
-    .topbar .wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .topbar .brand {
-      font-family: var(--font-display);
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--accent-cyan);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      text-shadow: var(--glow-cyan);
-    }
-
-    .topbar nav {
-      display: flex;
-      gap: 1.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-    }
-
-    .topbar nav a {
-      color: var(--text-muted);
-      transition: color 0.2s;
-      letter-spacing: 0.05em;
-    }
-
-    .topbar nav a:hover { color: var(--accent-cyan); }
-
-    /* Layout de dos columnas */
-    .page-layout {
-      display: grid;
-      grid-template-columns: 1fr 240px;
-      gap: 3rem;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Panel lateral */
-    .sidebar {
-      position: sticky;
-      top: 3rem;
-      align-self: start;
-    }
-
-    .sidebar-section {
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .sidebar-section h4 {
-      font-family: var(--font-display);
-      font-size: 0.65rem;
-      color: var(--accent-amber);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .sidebar-section ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .sidebar-section ul li {
-      border: none;
-      padding: 0.25rem 0;
-    }
-
-    .sidebar-section ul li::before {
-      content: '→ ';
-      color: var(--accent-cyan);
-    }
-
-    .sidebar-section ul li a {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .sidebar-section ul li a:hover { color: var(--accent-cyan); }
-
-    /* Chip de tecnología */
-    .tech-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0;
-    }
-
-    .chip {
-      padding: 0.2em 0.6em;
-      background: rgba(0, 255, 157, 0.05);
-      border: 1px solid rgba(0, 255, 157, 0.2);
-      border-radius: 2px;
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--accent-green);
-    }
-
-    /* Info stats en sidebar */
-    .stat-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.3rem 0;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      border-bottom: 1px solid rgba(0,229,255,0.04);
-    }
-
-    .stat-row .k { color: var(--text-dim); }
-    .stat-row .v { color: var(--accent-cyan); }
-
-    /* Bloque de contenido principal */
-    .main-content {
-      min-width: 0;
-    }
-
-    /* Hero intro box */
-    .intro-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-glow);
-      border-radius: var(--radius-lg);
-      padding: 1.8rem;
-      margin-bottom: 2.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .intro-box::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-green), transparent);
-    }
-
-    .intro-box p:last-child { margin-bottom: 0; }
-
-    /* Terminal block */
-    .terminal {
-      background: #020d14;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.2rem 1.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--accent-green);
-      margin: 1.5rem 0;
-      position: relative;
-    }
-
-    .terminal::before {
-      content: '● ● ●';
-      display: block;
-      color: var(--text-dim);
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      margin-bottom: 1rem;
-    }
-
-    .terminal .prompt { color: var(--accent-cyan); }
-    .terminal .comment { color: var(--text-muted); }
-    .terminal .output  { color: var(--text-primary); }
-
-    /* Separador decorativo */
-    .section-divider {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin: 2.5rem 0 1.5rem;
-    }
-
-    .section-divider h2 {
-      font-size: 0.85rem;
-      letter-spacing: 0.2em;
-      white-space: nowrap;
-    }
-
-    .section-divider::before {
-      content: '//';
-      font-family: var(--font-mono);
-      color: var(--accent-amber);
-    }
-
-    .section-divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, var(--border-glow), transparent);
-    }
-
-    /* Feature cards */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-      margin: 1.5rem 0;
-    }
-
-    .feature-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.2rem;
-      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
-    }
-
-    .feature-card:hover {
-      border-color: var(--accent-cyan);
-      box-shadow: var(--glow-cyan);
-      transform: translateY(-2px);
-    }
-
-    .feature-card .icon {
-      font-size: 1.4rem;
-      margin-bottom: 0.7rem;
-      display: block;
-    }
-
-    .feature-card h3 {
-      font-size: 0.8rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .feature-card p {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    /* Responsive */
-    @media (max-width: 700px) {
-      .page-layout {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1.5rem 1.25rem;
-      }
-
-      .sidebar {
-        position: static;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.75rem;
-      }
-
-      .topbar nav { display: none; }
-      .header-meta { gap: 1rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}" />
 </head>
-
 <body>
 
-  <!-- ── Barra de navegación superior ────────────────────── -->
-  <div class="topbar">
-    <div class="wrapper">
-      <span class="brand">SIS_INFO // PROJECT</span>
-      <nav>
-        <a href="#overview">Overview</a>
-        <a href="#instalacion">Instalación</a>
-        <a href="#arquitectura">Arquitectura</a>
-        <a href="#docs">Docs</a>
+  <!-- NOISE OVERLAY -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- GRID BACKGROUND -->
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+
+      <a href="{{ '/' | relative_url }}" class="logo" aria-label="Inicio">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">{{ site.title | default: "SYS//PROJECT" }}</span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="{{ '/' | relative_url }}"                        class="nav-link"><span class="nav-num">01</span>Inicio</a></li>
+          <li><a href="{{ '/about' | relative_url }}"                   class="nav-link"><span class="nav-num">02</span>Proyecto</a></li>
+          <li><a href="{{ '/arquitectura' | relative_url }}"            class="nav-link"><span class="nav-num">03</span>Arquitectura</a></li>
+          <li><a href="{{ '/documentacion' | relative_url }}"           class="nav-link"><span class="nav-num">04</span>Docs</a></li>
+          <li>
+            <a href="{{ site.github.repository_url | default: '#' }}"
+               class="nav-link nav-link--github" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+                  0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+                  -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66
+                  .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15
+                  -.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27
+                  .68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12
+                  .51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+                  0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8
+                  c0-4.42-3.58-8-8-8z"/>
+              </svg>
+              GitHub
+            </a>
+          </li>
+        </ul>
       </nav>
+
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
     </div>
-  </div>
 
-  <!-- ── Header ──────────────────────────────────────────── -->
-  <header>
-    <div class="wrapper">
-      <h1>{{ site.title | default: "Nombre del Proyecto" }}</h1>
-      <p>{{ site.description | default: "Sistema Informático · v1.0.0 · ACTIVO" }}</p>
-
-      <div class="header-meta">
-        <div class="stat">
-          <span class="label">ESTADO:</span>
-          <span class="value">ONLINE</span>
-        </div>
-        <div class="stat">
-          <span class="label">RAMA:</span>
-          <span class="value">main</span>
-        </div>
-        <div class="stat">
-          <span class="label">BUILD:</span>
-          <span class="value">PASSING</span>
-        </div>
-        <div class="stat">
-          <span class="label">LLICÈNCIA:</span>
-          <span class="value">CC BY-NC-SA 4.0</span>
-        </div>
-      </div>
+    <!-- Status bar -->
+    <div class="status-bar" aria-hidden="true">
+      <span class="status-item">
+        <span class="status-dot"></span>SISTEMA ACTIVO
+      </span>
+      <span class="status-item">v{{ site.version | default: "1.0.0" }}</span>
+      <span class="status-item status-date" id="live-date"></span>
     </div>
   </header>
 
-  <!-- ── Contenido principal + sidebar ───────────────────── -->
-  <div class="page-layout">
+  <!-- PAGE HERO (solo si hay título de página) -->
+  {% if page.title %}
+  <section class="page-hero">
+    <div class="hero-inner">
+      {% if page.category %}
+      <p class="hero-category">
+        <span class="hero-cat-line"></span>
+        {{ page.category }}
+      </p>
+      {% endif %}
+      <h1 class="hero-title">{{ page.title }}</h1>
+      {% if page.subtitle %}
+      <p class="hero-subtitle">{{ page.subtitle }}</p>
+      {% endif %}
+      {% if page.date %}
+      <p class="hero-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%d · %m · %Y" }}
+        </time>
+        {% if page.author %}&nbsp;— {{ page.author }}{% endif %}
+      </p>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
 
-    <!-- MAIN -->
-    <main class="main-content">
-
-      <!-- Intro -->
-      <div class="intro-box" id="overview">
-        <p>
-          {{ content | default: "
-          Bienvenido a la documentación del proyecto. Este sistema aborda
-          el diseño, implementación y análisis de una arquitectura informática
-          orientada a la resolución de problemas reales de infraestructura,
-          gestión de datos y comunicación entre servicios.
-          " }}
-        </p>
-      </div>
-
-      <!-- Terminal de ejemplo -->
-      <div class="terminal">
-        <span class="prompt">user@sistema:~$ </span>git clone https://github.com/tu-usuario/tu-repo.git<br>
-        <span class="output">Clonando en 'tu-repo'...</span><br>
-        <span class="output">remote: Enumerando objetos: 248, listo.</span><br>
-        <span class="prompt">user@sistema:~$ </span>cd tu-repo &amp;&amp; ./setup.sh<br>
-        <span class="comment"># Iniciando entorno...</span>
-      </div>
-
-      <!-- Características -->
-      <div class="section-divider" id="arquitectura">
-        <h2>Características del sistema</h2>
-      </div>
-
-      <div class="feature-grid">
-        <div class="feature-card">
-          <span class="icon">⚙️</span>
-          <h3>Arquitectura modular</h3>
-          <p>Componentes desacoplados con interfaces bien definidas.</p>
-        </div>
-        <div class="feature-card">
-          <span class="icon">🔒</span>
-          <h3>Seguridad</h3>
-          <p>Autenticación, cifrado y control de acceso integrados.</p>
-        </div>
-        <div class="feature-card">
-          <span class="icon">📊</span>
-          <h3>Monitorización</h3>
-          <p>Métricas en tiempo real y sistema de alertas configurables.</p>
-        </div>
-        <div class="feature-card">
-          <span class="icon">🚀</span>
-          <h3>Alto rendimiento</h3>
-          <p>Optimizado para baja latencia y alta disponibilidad.</p>
-        </div>
-      </div>
-
-      <!-- Instalación -->
-      <div class="section-divider" id="instalacion">
-        <h2>Instalación</h2>
-      </div>
-
-      <div class="terminal">
-        <span class="comment"># Requisitos previos</span><br>
-        <span class="prompt">$ </span>node --version   <span class="comment"># >= 18.x</span><br>
-        <span class="prompt">$ </span>python --version  <span class="comment"># >= 3.10</span><br><br>
-        <span class="comment"># Instalar dependencias</span><br>
-        <span class="prompt">$ </span>npm install<br><br>
-        <span class="comment"># Ejecutar en desarrollo</span><br>
-        <span class="prompt">$ </span>npm run dev
-      </div>
-
-      <!-- Contenido inyectado por Jekyll -->
+  <!-- MAIN CONTENT -->
+  <main class="page-main" id="main-content" role="main">
+    <div class="content-wrap">
       {{ content }}
+    </div>
+  </main>
 
-      <!-- Documentación -->
-      <div class="section-divider" id="docs">
-        <h2>Documentación</h2>
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <p class="footer-logo">
+          <span class="logo-bracket">[</span>
+          <span class="logo-text">{{ site.title | default: "SYS//PROJECT" }}</span>
+          <span class="logo-bracket">]</span>
+        </p>
+        <p class="footer-desc">{{ site.description | default: "Proyecto de Sistemas Informáticos" }}</p>
       </div>
 
-      <p>Consulta la <a href="docs/">carpeta <code>docs/</code></a> para encontrar la documentación técnica completa, diagramas de arquitectura, guías de contribución y el changelog del proyecto.</p>
-
-    </main>
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-
-      <div class="sidebar-section">
-        <h4>// Info</h4>
-        <div class="stat-row"><span class="k">Versión</span><span class="v">1.0.0</span></div>
-        <div class="stat-row"><span class="k">Lenguaje</span><span class="v">Python</span></div>
-        <div class="stat-row"><span class="k">Plataforma</span><span class="v">Linux / Win</span></div>
-        <div class="stat-row"><span class="k">Llicència</span><span class="v">CC BY-NC-SA 4.0</span></div>
-      </div>
-
-      <div class="sidebar-section">
-        <h4>// Stack</h4>
-        <div class="tech-chips">
-          <span class="chip">Python</span>
-          <span class="chip">Docker</span>
-          <span class="chip">PostgreSQL</span>
-          <span class="chip">REST API</span>
-          <span class="chip">Linux</span>
-          <span class="chip">Git</span>
-        </div>
-      </div>
-
-      <div class="sidebar-section">
-        <h4>// Navegación</h4>
+      <div class="footer-col">
+        <h3 class="footer-heading">Secciones</h3>
         <ul>
-          <li><a href="#overview">Introducción</a></li>
-          <li><a href="#arquitectura">Arquitectura</a></li>
-          <li><a href="#instalacion">Instalación</a></li>
-          <li><a href="#docs">Documentación</a></li>
-          <li><a href="https://github.com/arnauvericat/SIPJ1">Repositorio</a></li>
+          <li><a href="{{ '/' | relative_url }}">Inicio</a></li>
+          <li><a href="{{ '/about' | relative_url }}">Proyecto</a></li>
+          <li><a href="{{ '/arquitectura' | relative_url }}">Arquitectura</a></li>
+          <li><a href="{{ '/documentacion' | relative_url }}">Documentación</a></li>
         </ul>
       </div>
 
-      <div class="sidebar-section">
-        <h4>// Descargas</h4>
+      <div class="footer-col">
+        <h3 class="footer-heading">Recursos</h3>
         <ul>
-          <li><a href="https://github.com/arnauvericat/SIPJ1/archive/refs/heads/main.zip">ZIP (main)</a></li>
-          <li><a href="https://github.com/arnauvericat/SIPJ1/releases">Releases</a></li>
+          <li><a href="{{ site.github.repository_url | default: '#' }}" target="_blank" rel="noopener">Repositorio</a></li>
+          <li><a href="{{ '/changelog' | relative_url }}">Changelog</a></li>
+          <li><a href="{{ '/licencia' | relative_url }}">Licencia</a></li>
         </ul>
       </div>
 
-    </aside>
-  </div>
+    </div>
 
-  <!-- ── Footer ──────────────────────────────────────────── -->
-  <footer>
-    <div class="wrapper">
-      <p>
-        <a href="https://arnauvericat.github.io/SIPJ1/">Sistemes Informatics</a>
-        &nbsp;© 2025&nbsp;
-        <a href="https://github.com/arnauvericat">Arnau Vericat</a>
-      </p>
-      <p style="margin-top:0.5rem; font-size:0.7rem;">
-        Aquest treball està licenciat amb la llicència
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">
-          CC BY-NC-SA 4.0
-        </a>
-        &nbsp;·&nbsp;
-        Creative Commons Reconeixement - No Comercial - Compartir Igual 4.0 Espanya
-      </p>
+    <div class="footer-bottom">
+      <span class="mono">{{ site.author | default: "Autor" }} © {{ site.time | date: "%Y" }}</span>
+      <span class="mono footer-build">BUILD_<span id="build-hash"></span></span>
     </div>
   </footer>
+
+  <script>
+    // ── Live date in status bar ──────────────────────────────
+    const pad  = n => String(n).padStart(2, '0');
+    const now  = new Date();
+    const dateEl = document.getElementById('live-date');
+    if (dateEl) {
+      dateEl.textContent =
+        `${pad(now.getDate())}.${pad(now.getMonth()+1)}.${now.getFullYear()}` +
+        `  ${pad(now.getHours())}:${pad(now.getMinutes())}`;
+    }
+
+    // ── Fake build hash ──────────────────────────────────────
+    const hashEl = document.getElementById('build-hash');
+    if (hashEl) hashEl.textContent = Math.random().toString(16).slice(2,8).toUpperCase();
+
+    // ── Mobile nav toggle ────────────────────────────────────
+    const toggle = document.querySelector('.nav-toggle');
+    const nav    = document.querySelector('.main-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+        nav.classList.toggle('is-open', !isOpen);
+        toggle.classList.toggle('is-open', !isOpen);
+      });
+    }
+
+    // ── Scroll reveal ────────────────────────────────────────
+    const revealObserver = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      }),
+      { threshold: 0.07 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ── Active nav link ──────────────────────────────────────
+    document.querySelectorAll('.nav-link').forEach(l => {
+      if (l.getAttribute('href') === location.pathname) l.classList.add('active');
+    });
+  </script>
 
 </body>
 </html>
