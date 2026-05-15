@@ -17,4 +17,4 @@ Aquest contingut està baix la llicència [Creative Commons BY-NC-SA 4.0 ES](LIC
 ### [Sprint 3: Gestió de Dominis i Accessos](Projecte1/Sprint3/sp3.md)
 ### [Sprint 4: Monitorització, connexió remota i llicenciament](Projecte1/Sprint4/sp4.md)
 ### [Projecte 2](Projecte2)
-### [Sprint 1](Projecte2/Sprint1/SP1.md)
+
