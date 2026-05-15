@@ -40,7 +40,8 @@ Aquest document detalla el procés de configuració d'un entorn Windows per a la
 
 * [ ] **Pas 9.** Provar la còpia de fitxers a `Dades` fins a superar el límit per verificar el bloqueig de la quota.
 <img width="265" height="76" alt="shot_1778859699" src="https://github.com/user-attachments/assets/7a9ae3ff-3f22-4985-8bda-736bcd7934a7" />
-![Uploading shot_1778859749.png…]()
+<img width="498" height="73" alt="shot_1778859749" src="https://github.com/user-attachments/assets/0200a090-1795-4902-a5c3-67e4dd6649e0" />
+
 
 ## 📜 Fase 3 – Script de còpia i automatització
 
