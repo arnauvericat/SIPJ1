@@ -90,29 +90,26 @@ tasklist > C:\Users\%USERNAME%\processos_inici.txt
 
 ### Pas 20. Identificar processos prescindibles
 
-
+<img width="631" height="21" alt="shot_1778861698" src="https://github.com/user-attachments/assets/2b62e91a-7ef7-437f-85ac-1ff9aadd376b" />
 
 
 ### Pas 21. Eliminar processos manualment
 
 Executa per tancar processos innecessaris:
+<img width="498" height="47" alt="shot_1778861811" src="https://github.com/user-attachments/assets/74597f97-34db-43c5-80ff-91190517d307" />
 
-```cmd
-taskkill /IM OneDrive.exe /F
+#### Avans
+<img width="628" height="62" alt="shot_1778861857" src="https://github.com/user-attachments/assets/b38f4a2d-e0db-4ada-ba11-03d728f2f40c" />
 
-```
+#### Després 
+<img width="647" height="39" alt="shot_1778861873" src="https://github.com/user-attachments/assets/aeca6d19-d8f9-4e73-aa63-88e99c48d5b2" />
 
-*Nota: Cal fer captura de pantalla del `tasklist` abans i després.*
 
 ### Pas 22. Automatització
 
 Modifica l'script d'inici de sessió afegint:
+<img width="310" height="112" alt="shot_1778861950" src="https://github.com/user-attachments/assets/1f41c2d8-d6d4-4c01-9c56-95e7e9a327c0" />
 
-```batch
-taskkill /IM OneDrive.exe /F
-taskkill /IM Teams.exe /F
-
-```
 
 ### Pas 23. Documentació de rendiment
 
