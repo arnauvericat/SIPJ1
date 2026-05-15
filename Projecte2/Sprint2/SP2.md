@@ -9,6 +9,8 @@ Aquest document detalla el procés de configuració d'un entorn Windows per a la
 ## 🛠 Fase 1 – Preparació del sistema
 
 * [ ] **Pas 1.** Afegir un nou disc virtual a la màquina virtual.
+  <img width="500" height="439" alt="image" src="https://github.com/user-attachments/assets/e8f5cd6f-d831-40d8-8e82-fa93b5388ebd" />
+
 * [ ] **Pas 2.** Iniciar Windows i obrir **Gestió de discs**.
 * [ ] **Pas 3.** Inicialitzar el disc i crear dues particions:
 * `Dades`: Format NTFS.
