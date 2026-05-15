@@ -1,97 +1,139 @@
-Fase 1 – Preparació del sistema
-Pas 1. Afegir un nou disc virtual a la màquina virtual
-Pas 2. Iniciar Windows i obrir Gestió de discs
-Pas 3. Inicialitzar el disc, crear dues particions: una anomenada Dades i una en FAT32
-anomenada Portable
-Pas 4. Assignar lletres i comprovar amb diskpart la configuració
-Fase 2 – Quotes i usuaris
-Pas 5. Activar quotes de disc a la partició Dades (NTFS)
-Pas 6. Establir límit de 300 MB per usuari, amb notificació d’advertència
-Pas 7. Crear dos usuaris locals: alumne1 i alumne2
-Pas 8. Afegir-los a un grup nou anomenat Limitats
-Pas 9. Provar la còpia de fitxers dins Dades per veure com actuen les quotes (superar límit)
-Fase 3 – Script de còpia i automatització
-Pas 10. Afegir tercer disc virtual, formatar-lo en NTFS com a Backups
-Pas 11. Crear carpeta CòpiesUsuaris dins Backups
-Pas 12. Crear un script .bat que copiï C:\Users\%USERNAME% a
-E:\CòpiesUsuaris\%USERNAME%
-Pas 13. Obre gpedit.msc → Configuració d’usuari → Scripts → Inici de sessió
-Pas 14. Assigna l’script perquè s’executi automàticament quan alumne1 o alumne2 inicien
-sessió
-Fase 4 – Verificació i documentació
-Pas 15. Inicia sessió amb alumne1, comprova que l’script fa la còpia a Backups i que la
-quota de Dades bloqueja si supera el límit, així com comprovacions que tot el que has
-configurat funciona correctament
-Fase 5 – Gestió de processos i serveis
-Pas 19. Llistar processos actius
-● Inicia sessió com alumne1
-● Obre la consola (cmd) com a usuari
-● Executa: tasklist
-● Copia el resultat a un fitxer: tasklist >
-C:\Users\%USERNAME%\processos_inici.txt
-● Observa processos típics: explorer.exe, SearchIndexer.exe, OneDrive.exe,
-etc.
-Pas 20. Identificar processos prescindibles
-● Busca processos no essencials per a l’usuari, com: OneDrive.exe, Teams.exe,
-SkypeApp.exe
-● Fes una taula amb:
-○ Nom del procés
-○ Memòria usada
-○ Justificació per eliminar-lo
-Pas 21. Eliminar processos manualment
-● Encara dins de la consola, executa: taskkill /IM OneDrive.exe /F
-● Comprova amb tasklist si ha desaparegut
-Fes una captura abans i després
-Pas 22. Automatitzar-ho a l’inici de sessió
-● Modifica l’script d’inici de sessió afegint: taskkill /IM OneDrive.exe /F
+Aquí tens el text estructurat en format **Markdown** professional, ideal per a un fitxer `README.md` o la documentació d'un repositori a GitHub. He utilitzat encapçalaments, llistes de tasques, blocs de codi i cites per fer-lo més llegible.
+
+---
+
+# Guia de Configuració de Sistemes: Discs, Quotes, Scripts i ACLs
+
+Aquest document detalla el procés de configuració d'un entorn Windows per a la gestió d'usuaris, optimització de recursos i control de fitxers.
+
+## 🛠 Fase 1 – Preparació del sistema
+
+* [ ] **Pas 1.** Afegir un nou disc virtual a la màquina virtual.
+* [ ] **Pas 2.** Iniciar Windows i obrir **Gestió de discs**.
+* [ ] **Pas 3.** Inicialitzar el disc i crear dues particions:
+* `Dades`: Format NTFS.
+* `Portable`: Format FAT32.
+
+
+* [ ] **Pas 4.** Assignar lletres d'unitat i verificar la configuració mitjançant la consola amb l'ordre `diskpart`.
+
+## 👥 Fase 2 – Quotes i usuaris
+
+* [ ] **Pas 5.** Activar les **quotes de disc** a la partició `Dades` (NTFS).
+* [ ] **Pas 6.** Establir un límit de **300 MB** per usuari amb notificació d’advertència.
+* [ ] **Pas 7.** Crear dos usuaris locals: `alumne1` i `alumne2`.
+* [ ] **Pas 8.** Crear un grup anomenat `Limitats` i afegir-hi ambdós usuaris.
+* [ ] **Pas 9.** Provar la còpia de fitxers a `Dades` fins a superar el límit per verificar el bloqueig de la quota.
+
+## 📜 Fase 3 – Script de còpia i automatització
+
+* [ ] **Pas 10.** Afegir un tercer disc virtual i formatar-lo en NTFS com a `Backups`.
+* [ ] **Pas 11.** Crear la carpeta `CòpiesUsuaris` dins de la unitat de `Backups`.
+* [ ] **Pas 12.** Crear un script `.bat` amb el següent contingut:
+```batch
+@echo off
+xcopy "C:\Users\%USERNAME%" "E:\CòpiesUsuaris\%USERNAME%" /E /I /Y
+
+```
+
+
+* [ ] **Pas 13.** Obrir `gpedit.msc` → *Configuració d’usuari* → *Scripts* → *Inici de sessió*.
+* [ ] **Pas 14.** Assignar l’script perquè s’executi automàticament en iniciar la sessió els usuaris.
+
+## 🔍 Fase 4 – Verificació i documentació
+
+* [ ] **Pas 15.** Iniciar sessió amb `alumne1` i realitzar les comprovacions:
+* L'script s'ha executat i ha creat la còpia a `Backups`.
+* La quota a `Dades` funciona correctament.
+
+
+
+## ⚡ Fase 5 – Gestió de processos i serveis
+
+### Pas 19. Llistar processos actius
+
+1. Inicia sessió com `alumne1`.
+2. Obre la consola (`cmd`).
+3. Executa i exporta el llistat:
+```cmd
+tasklist > C:\Users\%USERNAME%\processos_inici.txt
+
+```
+
+
+
+### Pas 20. Identificar processos prescindibles
+
+| Nom del procés | Memòria usada | Justificació per eliminar-lo |
+| --- | --- | --- |
+| `OneDrive.exe` | *Variable* | Sincronització de núvol no necessària en entorn local. |
+| `Teams.exe` | *Alta* | Consum excessiu de RAM per a tasques d'administració. |
+| `SkypeApp.exe` | *Baixa* | Aplicació de comunicació no requerida. |
+
+### Pas 21. Eliminar processos manualment
+
+Executa per tancar processos innecessaris:
+
+```cmd
+taskkill /IM OneDrive.exe /F
+
+```
+
+*Nota: Cal fer captura de pantalla del `tasklist` abans i després.*
+
+### Pas 22. Automatització
+
+Modifica l'script d'inici de sessió afegint:
+
+```batch
+taskkill /IM OneDrive.exe /F
 taskkill /IM Teams.exe /F
-● Reengega sessió com alumne2 i comprova que aquests processos no es llencen o
-es tanquen
-Pas 23. Documentació
-● Afegeix fitxer de tasklist i taula justificativa a la doc amb MkDocs
-● Explica què passa si mates un procés crític com explorer.exe (prova controlada)
-● Comenta com aquesta gestió pot millorar el rendiment de màquines virtuals o amb
-pocs recursos
-Fase 6 – Gestió de permisos (ACLs)
-Què són les ACLs i com funcionen a Windows
-A Windows, cada fitxer i carpeta té una llista de control d'accés (ACL, Access Control List).
-Aquesta llista defineix qui pot fer què amb aquell recurs.
-Cada entrada d'una ACL es diu ACE (Access Control Entry) i indica:
-● Quina identitat (usuari o grup) està afectada
-● Quins permisos té (lectura, escriptura, execució, control total, etc.)
-Els permisos ACL són molt més detallats que els permisos "normals" de compartició en
-xarxa, perquè:
-● Permeten configurar permisos per fitxer o carpeta específica
-● S'apliquen tant a usuaris com a grups
-● Permeten combinacions com "només lectura", "només esborrar", "control total
-excepte canviar permisos", etc.
-● Poden ser heretats d’una carpeta superior o assignats manualment
-✦ Exemple típic: una carpeta pot tenir permisos diferents per a alumne1 i alumne2,
-tot i que estiguin al mateix grup.
-Volem controlar qui pot accedir i modificar la carpeta Projectes, creada dins la partició
-Dades. El grup Limitats tindrà accés total, però alumne2 tindrà només lectura, tot i
-formar part del grup.
-Pas 24. Crear la carpeta Inicia sessió com a administrador i crea la carpeta
-Pas 25. Assignar permisos normals al grup
-1. A les propietats de la carpeta D:\Projectes, ves a la pestanya Seguretat
-2. Fes clic a Avançat → Desactiva la herència i conserva els permisos existents
-3. Elimina Users o Everyone si hi apareixen
-4. Afegeix el grup Limitats i dona-li Control total
-5. Aplica els canvis
-Ara qualsevol usuari del grup Limitats té accés complet
-Pas 26. Comprovar accés amb alumne1
-1. Inicia sessió com alumne1
-2. Crea un fitxer dins D:\Projectes, modifica’l i elimina’l
-3. Tot hauria de funcionar (perquè té permisos heretats del grup Limitats)
-Pas 27. Aplicar excepció per alumne2
-Torna a iniciar sessió com administrador i executa:icacls "D:\Projectes" /grant:r
-alumne2:(R)
-Això substitueix qualsevol permís anterior d’alumne2 i li dona només lectura
-Pas 28. Comprovar l'excepció amb alumne2
-1. Inicia sessió com alumne2
-2. Intenta obrir un fitxer dins D:\Projectes → ha de poder llegir-lo
-3. Intenta editar-lo o crear-ne un de nou → ha de rebre un missatge de denegació
-Pas 29. Consultar els permisos aplicats Torna a la consola com a admin i escriu: icacls
-"D:\Projectes" i veuràs alguna cosa com: D:\Projectes
-Limitats:(OI)(CI)(F) alumne2:(R)
-Això confirma que el grup té control total i alumne2 té només lectura
+
+```
+
+### Pas 23. Documentació de rendiment
+
+* Explicar l'efecte de matar processos crítics com `explorer.exe` (es perd la interfície gràfica).
+* Comentar la millora de fluïdesa en màquines virtuals en alliberar memòria RAM.
+
+## 🔐 Fase 6 – Gestió de permisos (ACLs)
+
+### Què són les ACLs?
+
+A Windows, cada recurs té una **ACL (Access Control List)** que defineix els permisos detallats per a cada identitat (**ACE - Access Control Entry**).
+
+> [!IMPORTANT]
+> Els permisos ACL permeten un control molt més granular que els permisos de xarxa, permetent herències i excepcions per usuari específic.
+
+### Configuració Pràctica
+
+* **Objectiu:** El grup `Limitats` té accés total a `D:\Projectes`, però l'`alumne2` només pot llegir.
+* [ ] **Pas 24.** Crear la carpeta `D:\Projectes` com a administrador.
+* [ ] **Pas 25.** **Assignar permisos al grup:**
+1. Propietats → Seguretat → Avançat.
+2. Desactivar herència (conservant permisos).
+3. Eliminar `Users`/`Everyone`.
+4. Afegir grup `Limitats` amb **Control Total**.
+
+
+* [ ] **Pas 26.** Verificar amb `alumne1` (ha de poder crear i esborrar).
+* [ ] **Pas 27.** **Aplicar excepció per alumne2:**
+Executar com administrador:
+```cmd
+icacls "D:\Projectes" /grant:r alumne2:(R)
+
+```
+
+
+* [ ] **Pas 28.** Verificar amb `alumne2` (només lectura, denegació en intentar crear fitxers).
+* [ ] **Pas 29.** Consultar permisos finals:
+```cmd
+icacls "D:\Projectes"
+
+```
+
+
+
+---
+
+*Documentació generada per a pràctiques d'Administració de Sistemes Operatius.*
