@@ -21,7 +21,7 @@ Aquest document detalla el procés de configuració d'un entorn Windows per a la
 
 
 * [ ] **Pas 4.** Assignar lletres d'unitat i verificar la configuració mitjançant la consola amb l'ordre `diskpart`.
-<img width="361" height="497" alt="shot_1778843999" src="https://github.com/user-attachments/assets/3d6c13c2-811b-4520-8097-b21310858df0" />
+
 <img width="562" height="46" alt="shot_1778843788" src="https://github.com/user-attachments/assets/0d496bd8-cf85-4c99-b4b0-d34935420526" />
 
 ## 👥 Fase 2 – Quotes i usuaris
@@ -31,8 +31,16 @@ Aquest document detalla el procés de configuració d'un entorn Windows per a la
 <img width="361" height="497" alt="shot_1778843999" src="https://github.com/user-attachments/assets/f81b85df-ce05-4490-928d-f9ff078a6b84" />
 
 * [ ] **Pas 7.** Crear dos usuaris locals: `alumne1` i `alumne2`.
+<img width="466" height="128" alt="shot_1778844108" src="https://github.com/user-attachments/assets/5fa7906e-db20-43f1-a662-be11180bf852" />
+<img width="422" height="122" alt="shot_1778844127" src="https://github.com/user-attachments/assets/328b5877-011b-4628-9f36-0dabee7633cb" />
+
 * [ ] **Pas 8.** Crear un grup anomenat `Limitats` i afegir-hi ambdós usuaris.
+<img width="404" height="44" alt="shot_1778844165" src="https://github.com/user-attachments/assets/8584a6ae-608f-490a-bcb2-39c4c245958c" />
+<img width="498" height="73" alt="shot_1778859749" src="https://github.com/user-attachments/assets/dae73155-a5d9-4284-895b-85495c54064b" />
+
 * [ ] **Pas 9.** Provar la còpia de fitxers a `Dades` fins a superar el límit per verificar el bloqueig de la quota.
+<img width="265" height="76" alt="shot_1778859699" src="https://github.com/user-attachments/assets/7a9ae3ff-3f22-4985-8bda-736bcd7934a7" />
+![Uploading shot_1778859749.png…]()
 
 ## 📜 Fase 3 – Script de còpia i automatització
 
