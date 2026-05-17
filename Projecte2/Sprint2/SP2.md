@@ -111,7 +111,7 @@ Modifica l'script d'inici de sessió afegint:
 
 * Explicar l'efecte de matar processos crítics com `explorer.exe` (es perd la interfície gràfica).
 
-> Quan es mata un procés crític com explorer.exe a Microsoft Windows Explorer, el sistema operatiu continua funcionant, però es perd la interfície gràfica principal de l’usuari. Això significa que desapareixen elements com l’escriptori, la barra de tasques, el menú d’inici i les finestres de l’explorador de fitxers.
+> Quan es mata un procés crític com explorer.exe a Microsoft Windows Explorer, el sistema operatiu continua funcionant, però es perd la interfície gràfica principal de l’usuari. Això significa que > desapareixen elements com l’escriptori, la barra de tasques, el menú d’inici i les finestres de l’explorador de fitxers.
   
 * Comentar la millora de fluïdesa en màquines virtuals en alliberar memòria RAM.
 
