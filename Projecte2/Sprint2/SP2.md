@@ -143,12 +143,12 @@ A Windows, cada recurs té una **ACL (Access Control List)** que defineix els pe
 
 
 * [ ] **Pas 26.** Verificar amb `alumne1` (ha de poder crear i esborrar).
+  <img width="606" height="46" alt="image" src="https://github.com/user-attachments/assets/c5960454-0112-4baf-9703-f284821b6616" />
+
 * [ ] **Pas 27.** **Aplicar excepció per alumne2:**
 Executar com administrador:
-```cmd
-icacls "D:\Projectes" /grant:r alumne2:(R)
+<img width="555" height="65" alt="image" src="https://github.com/user-attachments/assets/a06d7854-9397-49ed-9ae0-9bb141a7c0e3" />
 
-```
 
 
 * [ ] **Pas 28.** Verificar amb `alumne2` (només lectura, denegació en intentar crear fitxers).
