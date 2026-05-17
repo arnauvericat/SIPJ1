@@ -150,8 +150,8 @@ Executar com administrador:
 <img width="555" height="65" alt="image" src="https://github.com/user-attachments/assets/a06d7854-9397-49ed-9ae0-9bb141a7c0e3" />
 
 * [ ] **Pas 28.** Verificar amb `alumne2` (només lectura, denegació en intentar crear fitxers).
+<img width="424" height="297" alt="image" src="https://github.com/user-attachments/assets/0a524ba7-6a18-47cd-9986-51fe80417999" />
 
 * [ ] **Pas 29.** Consultar permisos finals:
-```cmd
-icacls "D:\Projectes"
+<img width="597" height="152" alt="image" src="https://github.com/user-attachments/assets/c19e3f4a-1f11-4b8d-8d11-50e12781328f" />
 
