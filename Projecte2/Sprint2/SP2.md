@@ -115,7 +115,7 @@ Modifica l'script d'inici de sessió afegint:
   
 * Comentar la millora de fluïdesa en màquines virtuals en alliberar memòria RAM.
 
- > Pel que fa a les màquines virtuals, alliberar memòria RAM millora la fluïdesa general perquè el sistema disposa de més recursos disponibles per executar processos.
+ > *Pel que fa a les màquines virtuals, alliberar memòria RAM millora la fluïdesa general perquè el sistema disposa de més recursos disponibles per executar processos.*
 
 ## 🔐 Fase 6 – Gestió de permisos (ACLs)
 
@@ -123,7 +123,7 @@ Modifica l'script d'inici de sessió afegint:
 
 A Windows, cada recurs té una **ACL (Access Control List)** que defineix els permisos detallats per a cada identitat (**ACE - Access Control Entry**).
 
-> Els permisos ACL permeten un control molt més granular que els permisos de xarxa, permetent herències i excepcions per usuari específic.
+> *Els permisos ACL permeten un control molt més granular que els permisos de xarxa, permetent herències i excepcions per usuari específic.*
 
 ### Configuració Pràctica
 
