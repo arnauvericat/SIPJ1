@@ -128,12 +128,18 @@ A Windows, cada recurs té una **ACL (Access Control List)** que defineix els pe
 ### Configuració Pràctica
 
 * **Objectiu:** El grup `Limitats` té accés total a `D:\Projectes`, però l'`alumne2` només pot llegir.
+<img width="225" height="33" alt="image" src="https://github.com/user-attachments/assets/71076dd1-e30f-4c0b-b226-3dc4a29f7e35" />
+
 * [ ] **Pas 24.** Crear la carpeta `D:\Projectes` com a administrador.
+<img width="319" height="103" alt="image" src="https://github.com/user-attachments/assets/a30aa0c4-7f25-4b3c-9d59-10278fdeee0b" />
+
 * [ ] **Pas 25.** **Assignar permisos al grup:**
 1. Propietats → Seguretat → Avançat.
 2. Desactivar herència (conservant permisos).
 3. Eliminar `Users`/`Everyone`.
 4. Afegir grup `Limitats` amb **Control Total**.
+<img width="319" height="103" alt="image" src="https://github.com/user-attachments/assets/c16ce7d7-c862-4f47-b508-91e7e1ccc5d3" />
+
 
 
 * [ ] **Pas 26.** Verificar amb `alumne1` (ha de poder crear i esborrar).
