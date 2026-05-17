@@ -149,17 +149,9 @@ A Windows, cada recurs té una **ACL (Access Control List)** que defineix els pe
 Executar com administrador:
 <img width="555" height="65" alt="image" src="https://github.com/user-attachments/assets/a06d7854-9397-49ed-9ae0-9bb141a7c0e3" />
 
-
-
 * [ ] **Pas 28.** Verificar amb `alumne2` (només lectura, denegació en intentar crear fitxers).
+
 * [ ] **Pas 29.** Consultar permisos finals:
 ```cmd
 icacls "D:\Projectes"
 
-```
-
-
-
----
-
-*Documentació generada per a pràctiques d'Administració de Sistemes Operatius.*
