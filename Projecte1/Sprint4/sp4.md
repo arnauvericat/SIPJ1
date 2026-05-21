@@ -42,11 +42,13 @@ Explicar una mica aixó la monitoritzacio i després entrar per exemple al firef
 
 - EN la última, veiem les particions que té els discs i el que ocupen.
 
-<img width="842" height="718" alt="image" src="https://github.com/user-attachments/assets/9df6f9c2-6475-4292-99fe-bd7cac0bacf8" />
+<img width="730" height="486" alt="image" src="https://github.com/user-attachments/assets/11ceeb0d-5bda-452e-84cb-884c0f2baa68" />
 
-<img width="842" height="718" alt="image" src="https://github.com/user-attachments/assets/f3818018-fe5a-4c42-860e-cc6471a16928" />
+<img width="733" height="490" alt="image" src="https://github.com/user-attachments/assets/861e35cc-659e-4f2d-b5bb-520c1dfce3b2" />
 
-<img width="842" height="718" alt="image" src="https://github.com/user-attachments/assets/2c648192-d2d0-4285-bbc0-d893c1cba736" />
+
+<img width="660" height="526" alt="image" src="https://github.com/user-attachments/assets/a22a0dea-2996-4a66-badd-dc10e91056c3" />
+
 
 **LOGS**
 
@@ -56,7 +58,8 @@ QUE VEIEM?
 
 - Aqui entrem al directori on contenen tots els tipus de logs del sistema, inclús errors i també la rotació de logs. Però, no es que es guardin tots els logs en general, sinó que es veuen diferents tipus de logs, per exemple també hi ha els logs d'instal·lació de paquets, intents d'autentificació, informació de l'arrancada del sistema. Però on realment es guarden tots tots els logs, es al syslog. Per tant, el que es fa aqui es tenir un registre de la monitorització del sistema, pero des del terminal.
 
-<img width="842" height="718" alt="image" src="https://github.com/user-attachments/assets/df2b32a4-686d-447b-b770-2dee90b9b3e5" />
+<img width="661" height="329" alt="image" src="https://github.com/user-attachments/assets/3439f1c6-bea1-425b-814f-9c2bb1df61b9" />
+
 
 quan trobem dmesg.1.gz i els altres això significa que es la rotació de logs, va guardant logs i va  Dintre de nano /etc/logrotate.conf podem decidir el temps de rotació de logs dels serveis en general.
 
