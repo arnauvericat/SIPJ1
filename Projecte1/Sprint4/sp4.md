@@ -70,11 +70,12 @@ Amb cd /etc/logrotate.d/ serveix per si es vol canviar la rotació dels logs fen
 
 - Amb aquesta commanda, podem fer proves forçant logs:
 
-<img width="724" height="262" alt="image" src="https://github.com/user-attachments/assets/d7365d4b-c2e5-4f2f-bb61-a1a4eaf950ca" />
+<img width="972" height="377" alt="image" src="https://github.com/user-attachments/assets/86f54d41-d4c2-48cf-8417-977745db3bd2" />
+
 
 - Després amb l'altra terminal entrem a aquest axriu:
 
-<img width="599" height="47" alt="image" src="https://github.com/user-attachments/assets/3049a3e1-b16b-4575-8d3b-da5368c9c1ef" />
+<img width="963" height="72" alt="image" src="https://github.com/user-attachments/assets/7c29cd01-5530-440e-97c1-11779a6fe706" />
 
 Aqui amb el *.* decidim que tot anirà al syslog 
 
@@ -82,7 +83,8 @@ Aqui amb el *.* decidim que tot anirà al syslog
 
 - Creem una prova
  
-<img width="795" height="606" alt="image" src="https://github.com/user-attachments/assets/dee09f2b-1d02-4894-9eee-399bf1ba327d" />
+<img width="765" height="619" alt="image" src="https://github.com/user-attachments/assets/870af2c4-a3c5-4271-8abf-ffddea78c5ae" />
+
 
 - entrem al rsyslog i li canviem la prioritat al mail i despres reiniciem el syslog
 
