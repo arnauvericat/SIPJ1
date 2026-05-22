@@ -219,7 +219,7 @@ Afegim aquesta configuració i reiniciem `syslog`:
 
 <img width="722" height="83" alt="image" src="https://github.com/user-attachments/assets/db28b764-87e3-440b-addd-3b34c6cc6455" />
 
-Això crearà un nou fitxer anomenat `aitor.log`, on es guardaran els missatges definits.
+Això crearà un nou fitxer anomenat `arnau.log`, on es guardaran els missatges definits.
 
 <img width="951" height="574" alt="image" src="https://github.com/user-attachments/assets/8a4dc053-5719-4134-9b61-eaacd9b409fd" />
 
@@ -388,7 +388,7 @@ ping 10.0.2.15
 Des del client executem:
 
 ```bash
-ssh aitor@10.0.2.15
+ssh arnau@10.0.2.15
 ```
 
 Això permet que el client conegui i accepti la clau del servidor.
