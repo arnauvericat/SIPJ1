@@ -1,194 +1,404 @@
 # MONITORITZACIÓ, CONNEXIÓ REMOTA I LLICENCIAMENT
 
+# Teoria de la monitorització
 
-**##Teoria MONITORTIZACIÓ**
+La monitorització del sistema serveix per controlar l’estat dels serveis, processos i recursos del sistema operatiu. Gràcies a això podem detectar errors, problemes de rendiment o possibles incidències abans que afectin el funcionament del servidor o de l’equip.
 
-logger[opcions][-p prioritat][missatge]
+Una de les eines més utilitzades per generar logs manualment és la comanda `logger`.
 
-logger -i -s -p mail.err Aturant el sistema
+```bash
+logger [opcions] [-p prioritat] [missatge]
+```
 
-Server.prioritat accio
+Exemple:
 
-**Serveis**
-  
-- **auth**
-- **mail**
-- **lpr**
-- **cron**
-- **kern**
+```bash
+logger -i -s -p mail.err "Aturant el sistema"
+```
 
-**Prioritats dels serveis**
+Aquesta comanda envia un missatge al sistema de logs amb una prioritat determinada.
 
+La sintaxi general dels logs és:
 
-Prioritat de menos a més important, per exemple si posem Mail.alert ---> sera que la prioritat sera del nivell cap a dalt, soigue de alert a emerg,panic.
-Si fiques Mail.=alert sera sol aquesta. SI fiquem *.crit es per a tots
+```bash
+servei.prioritat acció
+```
+
+## Serveis més habituals
+
+- **auth** → autenticació i accessos
+- **mail** → serveis de correu
+- **lpr** → impressió
+- **cron** → tasques programades
+- **kern** → nucli del sistema
+
+---
+
+# Prioritats dels serveis
+
+Les prioritats indiquen la gravetat dels missatges. Van des de missatges informatius fins a errors crítics.
+
+Per exemple:
+
+```bash
+mail.alert
+```
+
+significa que es registraran els missatges des del nivell `alert` cap amunt (`emerg` i `panic`).
+
+En canvi, si escrivim:
+
+```bash
+mail.=alert
+```
+
+només es guardaran els missatges exactament del nivell `alert`.
+
+També podem utilitzar:
+
+```bash
+*.crit
+```
+
+per aplicar-ho a tots els serveis.
+
+## Nivells de prioritat
+
+De menys a més important:
 
 - **debug**
-- **infor**
+- **info**
 - **notice**
-- **warning,warn**
-- **err,error**
+- **warning** o **warn**
+- **err** o **error**
 - **crit**
 - **alert**
-- **emerg,panic**
+- **emerg** o **panic**
 
------------------------------------------------------------------------
+---
 
-Explicar una mica aixó la monitoritzacio i després entrar per exemple al firefox i mirar que consumeix, la prioritat, etc.
+# Monitorització del sistema
 
-- El que veem en les següents imatges es la motorització dels processos del sistema en temps real. En la primera veiem tots els processos, aqui podem veure que es el que consumeixen, si un procés no respon, es pot matar. També podem veure la prioritat, per exemple si volem descarregar algo, li podem canviar la prioritat i destinar tots els recursos o no al procés.
-  
-- En la segona imatge, veiem cuanta RAM s'esta utilitzant, les xarxa d'internet, quantes dades envia i rep.
+La monitorització permet veure en temps real l’estat dels processos i recursos del sistema. Per exemple, podem obrir Firefox i comprovar quanta CPU o memòria RAM està consumint.
 
-- EN la última, veiem les particions que té els discs i el que ocupen.
+A les següents imatges es mostren diferents apartats de monitorització:
+
+- A la primera captura es poden veure tots els processos actius del sistema. Aquí és possible identificar quin procés consumeix més CPU o RAM, modificar la seva prioritat o finalitzar-lo si deixa de respondre.
+
+- A la segona imatge apareix informació relacionada amb la memòria RAM, l’activitat de la xarxa i la quantitat de dades enviades i rebudes.
+
+- A la tercera captura es mostren les particions dels discs i l’espai utilitzat en cadascuna.
 
 <img width="730" height="486" alt="image" src="https://github.com/user-attachments/assets/11ceeb0d-5bda-452e-84cb-884c0f2baa68" />
 
 <img width="733" height="490" alt="image" src="https://github.com/user-attachments/assets/861e35cc-659e-4f2d-b5bb-520c1dfce3b2" />
 
-
 <img width="660" height="526" alt="image" src="https://github.com/user-attachments/assets/a22a0dea-2996-4a66-badd-dc10e91056c3" />
 
+---
 
-**LOGS**
+# LOGS DEL SISTEMA
 
-- Entrar als LOGS ---> cd /var/log i després un ls
+Per accedir als logs del sistema:
 
-QUE VEIEM?
+```bash
+cd /var/log
+ls
+```
 
-- Aqui entrem al directori on contenen tots els tipus de logs del sistema, inclús errors i també la rotació de logs. Però, no es que es guardin tots els logs en general, sinó que es veuen diferents tipus de logs, per exemple també hi ha els logs d'instal·lació de paquets, intents d'autentificació, informació de l'arrancada del sistema. Però on realment es guarden tots tots els logs, es al syslog. Per tant, el que es fa aqui es tenir un registre de la monitorització del sistema, pero des del terminal.
+## Què trobem dins `/var/log`?
+
+En aquest directori es guarden diferents registres del sistema operatiu. Aquí podem trobar:
+
+- Errors del sistema
+- Registres d’autenticació
+- Informació de l’arrencada
+- Instal·lació de paquets
+- Activitat dels serveis
+- Rotació de logs
+
+El fitxer principal on es centralitzen la majoria dels registres és el `syslog`.
+
+Per tant, aquesta carpeta permet consultar tota la informació relacionada amb la monitorització i activitat del sistema des del terminal.
 
 <img width="661" height="329" alt="image" src="https://github.com/user-attachments/assets/3439f1c6-bea1-425b-814f-9c2bb1df61b9" />
 
+---
 
-quan trobem dmesg.1.gz i els altres això significa que es la rotació de logs, va guardant logs i va  Dintre de nano /etc/logrotate.conf podem decidir el temps de rotació de logs dels serveis en general.
+# Rotació de logs
 
-Amb cd /etc/logrotate.d/ serveix per si es vol canviar la rotació dels logs fent el canvi de manera personalitzada de la rotació crean un arxiu i personalitzant-lo
+Quan apareixen fitxers com:
 
+```bash
+dmesg.1.gz
+```
 
--Obrim dos terminals
+significa que s’està aplicant una rotació de logs. El sistema guarda versions antigues comprimides per evitar que ocupin massa espai.
 
-- Amb aquesta commanda, podem fer proves forçant logs:
+El fitxer principal de configuració és:
+
+```bash
+nano /etc/logrotate.conf
+```
+
+Aquí podem configurar cada quant temps es roten els logs.
+
+També existeix el directori:
+
+```bash
+cd /etc/logrotate.d/
+```
+
+que serveix per crear configuracions personalitzades per a serveis específics.
+
+---
+
+# Proves amb logs
+
+Primer obrim dos terminals.
+
+Amb aquesta comanda podem generar logs manualment:
 
 <img width="972" height="377" alt="image" src="https://github.com/user-attachments/assets/86f54d41-d4c2-48cf-8417-977745db3bd2" />
 
-
-- Després amb l'altra terminal entrem a aquest axriu:
+A l’altre terminal entrem a l’arxiu de configuració:
 
 <img width="963" height="72" alt="image" src="https://github.com/user-attachments/assets/7c29cd01-5530-440e-97c1-11779a6fe706" />
 
-Aqui amb el *.* decidim que tot anirà al syslog 
+Amb:
+
+```bash
+*.*
+```
+
+indiquem que tots els serveis i prioritats es guardaran al `syslog`.
 
 <img width="598" height="31" alt="image" src="https://github.com/user-attachments/assets/9b150846-c9ec-4564-87d2-cac41d65f1dc" />
 
-- Creem una prova
- 
+---
+
+# Creació d’una prova
+
 <img width="765" height="619" alt="image" src="https://github.com/user-attachments/assets/870af2c4-a3c5-4271-8abf-ffddea78c5ae" />
 
+---
 
-- entrem al rsyslog i li canviem la prioritat al mail i despres reiniciem el syslog
+# Modificació de prioritats al rsyslog
 
-<img width="795" height="292" alt="image" src="https://github.com/user-attachments/assets/cd8a3bd4-a3ed-44a7-9fd1-8e63ce77f8d3" />
+Entrem a la configuració del `rsyslog`, canviem la prioritat del servei `mail` i reiniciem el servei:
 
-<img width="795" height="292" alt="image" src="https://github.com/user-attachments/assets/47eb2a92-14ec-488d-92ef-3c0f22e5fdf2" />
+<img width="689" height="272" alt="image" src="https://github.com/user-attachments/assets/b468e1b4-7070-4f6d-b6e1-1d0d9e1d961b" />
 
-- Ara fem la prova i al cat mail.log no tindria que sortir el canvi, pero al syslog si:
+<img width="689" height="272" alt="image" src="https://github.com/user-attachments/assets/7343a733-249c-4698-ae76-6e1110747eec" />
 
-<img width="775" height="419" alt="image" src="https://github.com/user-attachments/assets/79b4f521-16d4-446d-bc93-15582093f119" />
+Després fem una prova. Els missatges no haurien d’aparèixer a `mail.log`, però sí a `syslog`.
 
-- Ara cambien a mail.=crit, reiniciem el syslog  i fem la prova i solament al mail.log se veura el de la prioritat crit els altres sol al syslog per tant sol veura el 7 , el 5 i 6 sol al syslog
+<img width="694" height="391" alt="image" src="https://github.com/user-attachments/assets/7a2f7693-e696-4917-ba62-9d9ac53f7f24" />
 
-<img width="758" height="299" alt="image" src="https://github.com/user-attachments/assets/e4a22612-a512-470f-9741-717d9187ffc0" />
+---
 
-<img width="758" height="572" alt="image" src="https://github.com/user-attachments/assets/6e839e4c-9906-4309-9b4f-b318a5b1a7b0" />
+Ara canviem la configuració a:
 
-- ara agregem aquesta commanda primera i reiniciem syslog, al crear el aitor.log nou, farem una prova amb diferents prioritats:
+```bash
+mail.=crit
+```
+
+Reiniciem el servei `syslog` i fem una nova prova.
+
+En aquest cas, només els missatges amb prioritat `crit` apareixeran a `mail.log`. La resta continuaran guardant-se únicament al `syslog`.
+
+<img width="706" height="288" alt="image" src="https://github.com/user-attachments/assets/84820d74-71d1-420d-a768-6e971c799b2e" />
+
+<img width="771" height="622" alt="image" src="https://github.com/user-attachments/assets/95b596ec-92d9-4b69-a417-ef98237888f5" />
+
+---
+
+# Creació d’un log personalitzat
+
+Afegim aquesta configuració i reiniciem `syslog`:
 
 <img width="722" height="83" alt="image" src="https://github.com/user-attachments/assets/db28b764-87e3-440b-addd-3b34c6cc6455" />
 
-<img width="805" height="451" alt="image" src="https://github.com/user-attachments/assets/ee35c4c4-6898-453f-8329-1d0dd93deac4" />
+Això crearà un nou fitxer anomenat `aitor.log`, on es guardaran els missatges definits.
 
+<img width="951" height="574" alt="image" src="https://github.com/user-attachments/assets/8a4dc053-5719-4134-9b61-eaacd9b409fd" />
 
-**Exercici**: simular servidor de logs centralitzat, a una maquina actuara com a srver i l'altra rebra logs del client
+---
 
-**Part server**
+# Exercici: servidor de logs centralitzat
 
-- Primer que tot, obro la maquina que simula el server i poso nano /etc/rsyslog.conf i es descomenten aquestes dos linies i després reiniciem amb systemctl restart syslog:
-  
+L’objectiu és simular un servidor centralitzat de logs, on una màquina actuarà com a servidor i una altra enviarà els registres.
+
+---
+
+# Part servidor
+
+Primer obrim la màquina servidor i editem:
+
+```bash
+nano /etc/rsyslog.conf
+```
+
+Descomentem aquestes línies i reiniciem el servei:
+
+```bash
+systemctl restart syslog
+```
+
 <img width="825" height="87" alt="image" src="https://github.com/user-attachments/assets/9a81e49f-bb00-4904-a205-5cf4de02f894" />
 
-- mirem la ip del server en 1p a:
+Després comprovem la IP del servidor amb:
 
-<img width="909" height="149" alt="image" src="https://github.com/user-attachments/assets/7a29918b-a524-4b1b-9af2-a649f4e60c53" />
+```bash
+ip a
+```
 
+<img width="794" height="171" alt="image" src="https://github.com/user-attachments/assets/87be802b-fa6e-46aa-b4cf-330d405de6c4" />
 
-**Part Client**
+---
 
-- Ara entrem --> nano /etc/rsyslog.d/50-default.conf, i al final de tot posem *.* la ip del server:514 (que son els ports que hem obert junt amb la ip que apuntarà)
+# Part client
 
-<img width="909" height="412" alt="image" src="https://github.com/user-attachments/assets/e71bd7ce-c841-47f4-a9fd-aa8a7e928316" />
+Entrem al fitxer:
 
-- Ara reiniciem systemctl restart syslog.
+```bash
+nano /etc/rsyslog.d/50-default.conf
+```
 
-- Per últim farem una prova ---> farem una prova amb logger -i -s -p cron.alert dient que aquest SI que tindria que sortir, i a la màquina del server fem un tail del syslog per veure si ens surt el log amb l'avis del servei:
+Al final afegim:
 
-<img width="1625" height="831" alt="image" src="https://github.com/user-attachments/assets/c47e0f37-970b-4c49-8fa7-2de9d73dc95b" />
+```bash
+*.* @IP_DEL_SERVER:514
+```
 
-- Veem que surt el log correctament al servidor, fem una altra prova:
+El port `514` és el port estàndard utilitzat pel servei `syslog`.
 
-<img width="1784" height="402" alt="image" src="https://github.com/user-attachments/assets/9baaff45-fedd-4ada-8ae7-5286d8ff26ed" />
+<img width="856" height="439" alt="image" src="https://github.com/user-attachments/assets/f09d342a-38d2-498a-aee7-945d1c2522df" />
 
+Després reiniciem el servei:
 
-**CONNEXIÓ REMOTA**
+```bash
+systemctl restart syslog
+```
 
-- Primer que tot, ens hem de descarregar aquests dos arxius de VNC VIEWER, un ens servirà per a la part client i l'altre per a la part servidor, però sinó fem apt install
-tightvncserver :
+---
 
-<img width="763" height="231" alt="image" src="https://github.com/user-attachments/assets/c54fd68b-74ef-4fb9-ae74-ee3b570e3e8e" />
+# Proves de funcionament
 
-**Part server**
+Fem una prova enviant un log:
 
--Fem un sudo dpkg -i del arxiu de la part servidor:
+```bash
+logger -i -s -p cron.alert "Prova de monitorització"
+```
 
-<img width="1033" height="445" alt="image" src="https://github.com/user-attachments/assets/e0a04f62-c7e4-4bc7-88d2-f8744781b3f0" />
+A la màquina servidor executem:
 
-- Posem aquestes dues commandes: sudo systemctl enable vncserver-x11-serviced i sudo systemctl start vncserver-x11-serviced per tal d'activar el servidor
+```bash
+tail -f /var/log/syslog
+```
 
-<img width="751" height="94" alt="image" src="https://github.com/user-attachments/assets/10a2fe38-8354-4eab-999e-c82e0806c3d9" />
+per comprovar si el missatge arriba correctament.
 
-**Part client**
+<img width="1024" height="523" alt="image" src="https://github.com/user-attachments/assets/fe6888c5-5919-4233-94d7-398fd667472f" />
 
-- ens hem de descarregar VNC VIEWER, que ens servirà per a la part client:
+Es pot observar que el log arriba correctament al servidor centralitzat.
 
-<img width="760" height="184" alt="image" src="https://github.com/user-attachments/assets/ba09ae20-39f3-41b0-96a6-102b21b595c5" />
+Fem una altra prova:
 
----------------
+<img width="990" height="224" alt="image" src="https://github.com/user-attachments/assets/dec058aa-29a5-4fe5-9534-b3215187f717" />
 
-- Ara per a que funcioni desde la arxa NAT que tenim crearem una clau SSH al **servidor**, primer un update, després apt install openssh-server:
+---
 
-<img width="761" height="265" alt="image" src="https://github.com/user-attachments/assets/5a0c9f11-5a31-43ca-a41c-5b90e85e54d9" />
+# CONNEXIÓ REMOTA
 
-- Ara tenim que mirar la ip del nostre servidor amb ip a que es 10.0.2.15 i obrim el **client** i comprove que va un ping al server:
+Per establir una connexió remota utilitzarem **VNC Viewer**.
 
-<img width="881" height="173" alt="image" src="https://github.com/user-attachments/assets/19fb46f4-c710-4f35-a61f-b3bb97953347" />
+Primer descarreguem els paquets necessaris per al client i el servidor. També es pot instal·lar amb:
 
-- A partir de que tenim una connexió fem: ssh aitor@10.0.2.15 per a que conegui i reconegui el servidor
+```bash
+apt install tightvncserver
+```
 
-<img width="737" height="153" alt="image" src="https://github.com/user-attachments/assets/68947007-8d10-47d7-88f2-4fff85a8ee4d" />
+<img width="907" height="312" alt="image" src="https://github.com/user-attachments/assets/cf0fff96-d3ed-46ad-86c3-98f87684881d" />
 
-- Ara creem el tunel amb ssh:
+---
 
-<img width="737" height="435" alt="image" src="https://github.com/user-attachments/assets/300661aa-e5d7-4f0e-9830-b9f63900d838" />
+# Part servidor
 
+Instal·lem el paquet del servidor:
 
+```bash
+sudo dpkg -i nom_del_paquet.deb
+```
 
+<img width="747" height="287" alt="image" src="https://github.com/user-attachments/assets/bba4d82b-0190-4a07-9d0b-48b6b5abd55b" />
 
+Activem el servei VNC amb:
 
+```bash
+sudo systemctl enable vncserver-x11-serviced
+sudo systemctl start vncserver-x11-serviced
+```
 
+<img width="1004" height="132" alt="image" src="https://github.com/user-attachments/assets/f3fd0d3b-41f6-4376-8de4-3477be564aa6" />
 
+---
 
+# Part client
 
+Instal·lem **VNC Viewer**, que ens permetrà connectar-nos remotament al servidor.
 
-  
+<img width="988" height="245" alt="image" src="https://github.com/user-attachments/assets/d5db2390-b02f-4646-aa28-ee922f3ca719" />
 
+---
 
+# Accés remot mitjançant SSH
+
+Perquè la connexió funcioni correctament dins de la xarxa NAT, instal·lem el servei SSH al servidor.
+
+Primer actualitzem els repositoris i instal·lem:
+
+```bash
+apt update
+apt install openssh-server
+```
+
+<img width="969" height="352" alt="image" src="https://github.com/user-attachments/assets/bfc599f7-fe04-40dc-96d3-1c3e85fba138" />
+
+Comprovem la IP del servidor amb:
+
+```bash
+ip a
+```
+
+En aquest cas és `10.0.2.15`.
+
+Des del client comprovem la connectivitat amb:
+
+```bash
+ping 10.0.2.15
+```
+
+<img width="801" height="201" alt="image" src="https://github.com/user-attachments/assets/a41d5efb-0472-4336-96c6-6120784418c5" />
+
+---
+
+# Primera connexió SSH
+
+Des del client executem:
+
+```bash
+ssh aitor@10.0.2.15
+```
+
+Això permet que el client conegui i accepti la clau del servidor.
+
+<img width="991" height="222" alt="image" src="https://github.com/user-attachments/assets/be049bd6-1a1f-498b-b7a4-b18149990db1" />
+
+---
+
+# Creació d’un túnel SSH
+
+Finalment, creem el túnel SSH per encapsular la connexió VNC de forma segura.
+
+<img width="960" height="607" alt="image" src="https://github.com/user-attachments/assets/6111d79f-c541-4911-ae1c-382703580a48" />
