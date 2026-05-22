@@ -217,7 +217,8 @@ En aquest cas, només els missatges amb prioritat `crit` apareixeran a `mail.log
 
 Afegim aquesta configuració i reiniciem `syslog`:
 
-<img width="722" height="83" alt="image" src="https://github.com/user-attachments/assets/db28b764-87e3-440b-addd-3b34c6cc6455" />
+<img width="466" height="125" alt="image" src="https://github.com/user-attachments/assets/dc69531b-a8d6-4c54-ab16-6115b5d2f505" />
+
 
 Això crearà un nou fitxer anomenat `arnau.log`, on es guardaran els missatges definits.
 
